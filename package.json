@@ -1,0 +1,22 @@
+{
+  "name": "intelligence-academy",
+  "version": "1.0.0",
+  "description": "Landing page for Rowan University's AI Startup Accelerator & Unicorn Factory",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve",
+    "dev": "serve"
+  },
+  "keywords": [
+    "ai",
+    "startup",
+    "accelerator",
+    "rowan",
+    "university"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "serve": "^14.0.0"
+  }
+}

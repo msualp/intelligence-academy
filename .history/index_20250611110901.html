@@ -12,10 +12,19 @@
         }
 
         :root {
-            --primary: #0A84FF;
-            --secondary: #BF5AF2;
-            --accent: #30D158;
+            --primary: #007AFF;
+            --secondary: #5856D6;
+            --accent: #00FFF0;
+            --dark: #000000;
+            --light: #FFFFFF;
+            --gray: #8E8E93;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --blur: 20px;
             --rowan-orange: #FF8C00;
+            --unicorn-purple: #5856D6;
+            --unicorn-blue: #007AFF;
+            --header-height: 80px;
+            --header-height-scrolled: 60px;
         }
 
         body {
@@ -54,66 +63,56 @@
 
         .header-left {
             display: flex;
-            align-items: center;
-            gap: 16px;
+            flex-direction: column;
         }
 
         .header-title {
             display: flex;
-            flex-direction: row;
             align-items: center;
-            gap: 12px;
+            font-size: 24px;
+            font-weight: 700;
         }
 
         .header-logo {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 8px 14px;
-            border-radius: 10px;
-            margin-right: 0;
-            font-size: 18px;
-            font-weight: 700;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-        }
-
-        .header-title-text {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            padding: 5px 10px;
+            border-radius: 8px;
+            margin-right: 10px;
+            font-weight: 800;
         }
 
         .header-name {
-            font-weight: 600;
-            color: #fff;
-            font-size: 20px;
+            background: linear-gradient(135deg, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
+
         .header-rowan {
-            font-weight: 700;
             color: var(--rowan-orange);
-            margin-left: 4px;
-            font-size: 20px;
+            font-weight: 600;
         }
 
         .header-subtitle {
-            font-size: 13px;
-            margin-top: 0;
-            margin-left: 0;
-            opacity: 0.8;
+            font-size: 14px;
+            margin-top: 5px;
+            margin-left: 10px;
             display: flex;
             align-items: center;
         }
 
         .header-subtitle-ai {
-            font-weight: 400;
             color: rgba(255, 255, 255, 0.7);
         }
+
         .header-subtitle-unicorn {
-            font-weight: 600;
-            background: linear-gradient(135deg, #FF8C00, #FF5E62);
+            background: linear-gradient(135deg, var(--unicorn-purple), var(--unicorn-blue));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-left: 6px;
+            font-weight: 600;
+            margin-left: 5px;
         }
 
         .header-right {
@@ -127,25 +126,24 @@
 
         .header-apply-pill {
             position: absolute;
-            top: -16px;
-            right: -6px;
-            font-size: 10px;
-            padding: 1px 6px;
-            border-radius: 10px;
-            background: linear-gradient(135deg, #30D158, #0A84FF);
-            font-weight: 500;
+            top: -15px;
+            right: -10px;
+            background: var(--rowan-orange);
             color: white;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            font-size: 12px;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-weight: 600;
         }
 
         .header-apply-btn {
-            padding: 8px 20px;
-            font-size: 15px;
-            border-radius: 40px;
-            font-weight: 600;
+            padding: 10px 25px;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
             text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
             transition: all 0.3s ease;
         }
 
@@ -694,16 +692,14 @@
     <!-- Header -->
     <header>
         <div class="header-left">
-            <div class="header-logo">IA</div>
-            <div class="header-title-text">
-                <div>
-                    <span class="header-name">Intelligence Academy</span>
-                    <span class="header-rowan">@ Rowan</span>
-                </div>
-                <div class="header-subtitle">
-                    <span class="header-subtitle-ai">AI Startup Accelerator &</span>
-                    <span class="header-subtitle-unicorn">Unicorn Factory</span>
-                </div>
+            <div class="header-title">
+                <div class="header-logo">IA]</div>
+                <div class="header-name">Intelligence Academy</div>
+                <div class="header-rowan">@ Rowan</div>
+            </div>
+            <div class="header-subtitle">
+                <span class="header-subtitle-ai">AI Startup Accelerator &</span>
+                <span class="header-subtitle-unicorn">Unicorn Factory</span>
             </div>
         </div>
         <div class="header-right">
@@ -1043,60 +1039,3 @@
     </script>
 </body>
 </html>
-
-        .hero-title {
-            font-size: clamp(42px, 6vw, 72px);
-            letter-spacing: -0.5px;
-            font-weight: 700;
-            line-height: 1.15;
-        }
-
-        .hero-subtitle {
-            font-size: clamp(18px, 2.5vw, 28px);
-            font-weight: 400;
-            color: rgba(255, 255, 255, 0.85);
-        }
-
-        .hero-description {
-            font-size: 18px;
-            color: rgba(255, 255, 255, 0.75);
-            max-width: 700px;
-        }
-
-        .stat-card {
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 8px 24px rgba(10, 132, 255, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: scale(1.03);
-            box-shadow: 0 12px 32px rgba(10, 132, 255, 0.1);
-        }
-
-        .cta-primary,
-        .cta-secondary {
-            font-size: 17px;
-            font-weight: 600;
-            padding: 14px 36px;
-            border-radius: 14px;
-        }
-
-        .cta-secondary {
-            font-weight: 500;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-        }
-
-        .timeline-item {
-            transition: all 0.6s ease-out;
-        }
-
-        .timeline-item.visible {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .timeline-item:not(.visible) {
-            transform: translateY(40px);
-            opacity: 0;
-        }

@@ -829,6 +829,179 @@
             line-height: 1.6;
         }
 
+        /* Application Section */
+        .application-section {
+            padding: 100px 20px;
+            background: linear-gradient(180deg, #0a0a0a 0%, #000 100%);
+        }
+
+        .application-form {
+            max-width: 800px;
+            margin: 60px auto;
+            background: var(--card-bg);
+            backdrop-filter: blur(var(--blur));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 60px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-section {
+            margin-bottom: 50px;
+        }
+
+        .form-section:last-of-type {
+            margin-bottom: 40px;
+        }
+
+        .form-section h3 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: var(--accent);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .char-count {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 400;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 15px 20px;
+            font-size: 16px;
+            color: white;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 0 3px rgba(0, 255, 240, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .char-counter {
+            text-align: right;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 5px;
+        }
+
+        .form-submit {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 20px 60px;
+            font-size: 20px;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 122, 255, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(0, 122, 255, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .form-note {
+            margin-top: 20px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .after-submit {
+            max-width: 800px;
+            margin: 60px auto 0;
+            background: var(--card-bg);
+            backdrop-filter: blur(var(--blur));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        .after-submit h3 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: var(--accent);
+        }
+
+        .after-submit ol {
+            list-style: none;
+            counter-reset: steps;
+            padding: 0;
+        }
+
+        .after-submit li {
+            counter-increment: steps;
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        .after-submit li::before {
+            content: counter(steps);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
         /* CTA Section */
         .cta-section {
             padding: 120px 20px;
@@ -1192,7 +1365,7 @@
                 <div class="feature-icon">💰</div>
                 <h3 class="feature-title">$100K SAFE Investment</h3>
                 <p class="feature-description">
-                    Receive substantial seed funding through Rowan Innovation Venture Fund with potential for follow-on investment.
+                    Standard accelerator terms with founder-friendly conditions. 4% equity stake, no board control, and follow-on rights for future rounds.
                 </p>
             </div>
             <div class="feature-card">
@@ -1226,15 +1399,110 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section" id="apply">
-        <h2 class="cta-title">Ready to Build the Future?</h2>
-        <p class="cta-subtitle">
-            Join the East Coast's premier AI accelerator and transform your vision into a venture-backed reality.
-        </p>
-        <div class="cta-container">
-            <a href="#" class="cta-primary">Start Your Application</a>
-            <a href="#" class="cta-secondary">Schedule Info Session</a>
+    <!-- Application Section -->
+    <section class="application-section" id="apply">
+        <div class="section-header">
+            <h2 class="section-title">Ready to Build Your AI Unicorn?</h2>
+            <p class="section-subtitle">Submit your 2-minute application and take the first step toward billion-dollar impact</p>
+        </div>
+
+        <form class="application-form" id="applicationForm">
+            <div class="form-section">
+                <h3>Founder Information</h3>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="founderName">Primary Founder Name *</label>
+                        <input type="text" id="founderName" name="founderName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="coFounders">All Co-Founder Names</label>
+                        <textarea id="coFounders" name="coFounders" rows="2"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Startup Information</h3>
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label for="affiliation">Current Affiliation *</label>
+                        <select id="affiliation" name="affiliation" required>
+                            <option value="">Select your affiliation</option>
+                            <option value="rowan-student">Rowan Student</option>
+                            <option value="rowan-faculty">Rowan Faculty</option>
+                            <option value="rowan-alumni">Rowan Alumni</option>
+                            <option value="external-entrepreneur">External Entrepreneur</option>
+                            <option value="corporate-employee">Corporate Employee</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="aiIdea">AI Startup Idea * <span class="char-count">(500 characters max)</span></label>
+                        <textarea id="aiIdea" name="aiIdea" rows="4" maxlength="500" required placeholder="Describe your AI solution, target market, and the problem you're solving"></textarea>
+                        <div class="char-counter"><span id="aiIdeaCount">0</span>/500</div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="marketOpportunity">Market Opportunity * <span class="char-count">(300 characters max)</span></label>
+                        <textarea id="marketOpportunity" name="marketOpportunity" rows="3" maxlength="300" required placeholder="What's the size of the market and why is timing right now?"></textarea>
+                        <div class="char-counter"><span id="marketCount">0</span>/300</div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="unicornPotential">Unicorn Potential * <span class="char-count">(300 characters max)</span></label>
+                        <textarea id="unicornPotential" name="unicornPotential" rows="3" maxlength="300" required placeholder="Why do you believe this could become a billion-dollar company?"></textarea>
+                        <div class="char-counter"><span id="unicornCount">0</span>/300</div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="whyIA">Why Intelligence Academy * <span class="char-count">(300 characters max)</span></label>
+                        <textarea id="whyIA" name="whyIA" rows="3" maxlength="300" required placeholder="What specifically attracts you to our unicorn-focused program?"></textarea>
+                        <div class="char-counter"><span id="whyIACount">0</span>/300</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Team Background</h3>
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label for="technicalExpertise">Technical Expertise * <span class="char-count">(200 characters max)</span></label>
+                        <textarea id="technicalExpertise" name="technicalExpertise" rows="2" maxlength="200" required placeholder="Brief summary of your team's AI/technical capabilities"></textarea>
+                        <div class="char-counter"><span id="techCount">0</span>/200</div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="businessExperience">Business Experience * <span class="char-count">(200 characters max)</span></label>
+                        <textarea id="businessExperience" name="businessExperience" rows="2" maxlength="200" required placeholder="Relevant business, sales, or entrepreneurship experience"></textarea>
+                        <div class="char-counter"><span id="bizCount">0</span>/200</div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="achievements">Previous Achievements * <span class="char-count">(200 characters max)</span></label>
+                        <textarea id="achievements" name="achievements" rows="2" maxlength="200" required placeholder="Notable accomplishments that demonstrate execution capability"></textarea>
+                        <div class="char-counter"><span id="achieveCount">0</span>/200</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-submit">
+                <button type="submit" class="submit-btn">Submit 2-Min Application</button>
+                <p class="form-note">* Required fields</p>
+            </div>
+        </form>
+
+        <div class="after-submit">
+            <h3>What Happens Next</h3>
+            <ol>
+                <li><strong>Application Review:</strong> We'll review your submission within 2 weeks</li>
+                <li><strong>Invitation Decision:</strong> Qualified candidates receive invitation for full application</li>
+                <li><strong>Full Application:</strong> Complete comprehensive application with detailed materials</li>
+                <li><strong>Selection Process:</strong> Final evaluation, interviews, and program acceptance</li>
+                <li><strong>Program Launch:</strong> Begin 16-week unicorn development program in April 2026</li>
+            </ol>
         </div>
     </section>
 
@@ -1350,6 +1618,53 @@
         // Smooth scroll
         function scrollToSection(sectionId) {
             document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Character counters for form
+        const textareas = [
+            { id: 'aiIdea', counterId: 'aiIdeaCount' },
+            { id: 'marketOpportunity', counterId: 'marketCount' },
+            { id: 'unicornPotential', counterId: 'unicornCount' },
+            { id: 'whyIA', counterId: 'whyIACount' },
+            { id: 'technicalExpertise', counterId: 'techCount' },
+            { id: 'businessExperience', counterId: 'bizCount' },
+            { id: 'achievements', counterId: 'achieveCount' }
+        ];
+
+        textareas.forEach(({ id, counterId }) => {
+            const textarea = document.getElementById(id);
+            const counter = document.getElementById(counterId);
+            
+            if (textarea && counter) {
+                textarea.addEventListener('input', () => {
+                    counter.textContent = textarea.value.length;
+                });
+            }
+        });
+
+        // Form submission
+        const applicationForm = document.getElementById('applicationForm');
+        if (applicationForm) {
+            applicationForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(applicationForm);
+                const data = Object.fromEntries(formData.entries());
+                
+                // Here you would normally send the data to a server
+                // For now, we'll just show an alert
+                alert('Thank you for your application! We will review it and get back to you within 2 weeks.');
+                
+                // Optionally reset the form
+                // applicationForm.reset();
+                
+                // Reset character counters
+                textareas.forEach(({ counterId }) => {
+                    const counter = document.getElementById(counterId);
+                    if (counter) counter.textContent = '0';
+                });
+            });
         }
 
         // Intersection Observer for timeline animations

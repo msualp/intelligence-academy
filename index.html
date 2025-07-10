@@ -102,6 +102,18 @@
             padding: 10px 40px;
             background: rgba(0, 0, 0, 0.95);
         }
+        
+        header.scrolled .header-name {
+            font-size: 20px;
+        }
+        
+        header.scrolled .header-rowan {
+            font-size: 20px;
+        }
+        
+        header.scrolled .header-subtitle {
+            font-size: 13px;
+        }
 
         .header-left {
             display: flex;
@@ -128,7 +140,8 @@
         .header-name {
             font-weight: 600;
             color: #fff;
-            font-size: 20px;
+            font-size: 24px;
+            transition: font-size 0.3s ease;
         }
         
         .header-rowan {
@@ -138,14 +151,16 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             margin-left: 4px;
-            font-size: 20px;
+            font-size: 24px;
+            transition: font-size 0.3s ease;
         }
 
         .header-subtitle {
-            font-size: 13px;
+            font-size: 16px;
             margin-top: 2px;
             display: flex;
             align-items: center;
+            transition: font-size 0.3s ease;
         }
 
         .header-subtitle-ai {
@@ -449,13 +464,24 @@
 
         .hero-disclaimer {
             font-size: 12px;
-            color: rgba(255, 255, 255, 0.5);
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-top: 30px;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
             font-style: italic;
             animation: fadeInUp 1s ease-out 0.9s both;
+        }
+        
+        .cta-footnote {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 10px;
+            font-style: italic;
+            animation: fadeInUp 1s ease-out 0.8s both;
         }
 
         /* CTA Buttons */
@@ -1980,7 +2006,7 @@
                 </div>
                 <div class="header-subtitle">
                     <span class="header-subtitle-ai">AI Startup Accelerator &</span>
-                    <span class="header-subtitle-unicorn">Unicorn Factory</span>
+                    <span class="header-subtitle-unicorn">Unicorn Factory*</span>
                 </div>
             </div>
         </div>
@@ -2047,9 +2073,7 @@
 
         <div class="hero-content">
             <div class="hero-badge">🚀 Now Accepting Applications for Spring 2026 Cohort</div>
-            <h1 class="hero-title">Intelligence Academy @ Rowan University</h1>
-            <p class="hero-subtitle">AI Startup Accelerator & Unicorn Factory*</p>
-            <h2 class="hero-tagline">The AI Unicorn Advantage is Real</h2>
+            <h1 class="hero-title">The AI Unicorn Advantage is Real</h1>
             <p class="hero-description">
                 More AI startups are reaching billion-dollar valuations in quarter the time with half the team and double the success rate vs. traditional unicorns. Our program focuses on the specific methodology and partnerships that maximize your AI startup's unicorn potential.
             </p>
@@ -2068,11 +2092,14 @@
                 </div>
             </div>
             <div class="cta-container">
-                <a href="apply.html" class="cta-primary">Submit 2-Min Application</a>
+                <a href="apply.html" class="cta-primary">Submit Early 2-Min Application</a>
                 <a href="#stats" class="cta-secondary">Learn More ↓</a>
             </div>
             <p class="hero-disclaimer">
                 *Aspiring unicorn catalyst based on AI sector performance data. While unicorn outcomes remain statistically rare (2% of AI startups vs. 1% traditional), our methodology systematically addresses the factors that give AI companies demonstrable advantages in achieving billion-dollar valuations.
+            </p>
+            <p class="cta-footnote">
+                Get invited to apply for Spring 2026 cohort
             </p>
         </div>
 

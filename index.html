@@ -3,7 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intelligence Academy @ Rowan | AI Startup Accelerator & Unicorn Factory</title>
+    <title>Intelligence Academy @ Rowan University | AI Startup Accelerator & Unicorn Factory</title>
+    <meta name="description" content="Join Greater Philadelphia's premier AI startup accelerator. $100K investment, Fortune 500 partnerships, and unicorn-focused methodology. Apply for Spring 2026 cohort.">
+    <meta name="keywords" content="AI startup accelerator, unicorn factory, artificial intelligence entrepreneurship, Greater Philadelphia startups, university accelerator, NSF I-Corps, Fortune 500 partnerships, AI unicorn development">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Intelligence Academy - AI Startup Accelerator & Unicorn Factory">
+    <meta property="og:description" content="Transform your AI startup into a billion-dollar company with $100K investment and Fortune 500 partnerships">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://intelligence-academy.rowan.edu">
+    <meta property="og:site_name" content="Intelligence Academy @ Rowan University">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Intelligence Academy - AI Startup Accelerator & Unicorn Factory">
+    <meta name="twitter:description" content="Transform your AI startup into a billion-dollar company with $100K investment and Fortune 500 partnerships">
     <style>
         * {
             margin: 0;
@@ -12,10 +26,20 @@
         }
 
         :root {
-            --primary: #0A84FF;
-            --secondary: #BF5AF2;
-            --accent: #30D158;
-            --rowan-orange: #FF8C00;
+            --primary: #007AFF;
+            --secondary: #5856D6;
+            --accent: #00FFF0;
+            --dark: #000000;
+            --light: #FFFFFF;
+            --gray: #8E8E93;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --blur: 20px;
+            --success: #00C851;
+            --warning: #FFBB33;
+            --danger: #FF4444;
+            --info: #33B5E5;
+            --gradient-2: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-3: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
         }
 
         body {
@@ -26,15 +50,37 @@
             line-height: 1.6;
         }
 
-        /* Header */
-        header {
+        /* Disclaimer Banner */
+        .disclaimer-banner {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
+            z-index: 9999;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            color: white;
+            box-shadow: 0 2px 10px rgba(255, 107, 107, 0.3);
+        }
+
+        .disclaimer-banner a {
+            color: white;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 38px;
+            left: 0;
+            right: 0;
             z-index: 1000;
-            padding: 20px 40px;
-            background: rgba(0, 0, 0, 0.7);
+            padding: 15px 40px;
+            background: rgba(0, 0, 0, 0.9);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -42,116 +88,91 @@
             justify-content: space-between;
             align-items: center;
             transition: all 0.3s ease;
-            height: var(--header-height);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         }
 
         header.scrolled {
-            height: var(--header-height-scrolled);
             padding: 10px 40px;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.95);
         }
 
         .header-left {
             display: flex;
             align-items: center;
-            gap: 16px;
-        }
-
-        .header-title {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 12px;
+            gap: 20px;
         }
 
         .header-logo {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 8px 14px;
-            border-radius: 10px;
-            margin-right: 0;
-            font-size: 18px;
-            font-weight: 700;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-        }
-
-        .header-title-text {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .header-name {
-            font-weight: 600;
-            color: #fff;
             font-size: 20px;
-        }
-        .header-rowan {
             font-weight: 700;
-            color: var(--rowan-orange);
-            margin-left: 4px;
-            font-size: 20px;
-        }
-
-        .header-subtitle {
-            font-size: 13px;
-            margin-top: 0;
-            margin-left: 0;
-            opacity: 0.8;
-            display: flex;
-            align-items: center;
-        }
-
-        .header-subtitle-ai {
-            font-weight: 400;
-            color: rgba(255, 255, 255, 0.7);
-        }
-        .header-subtitle-unicorn {
-            font-weight: 600;
-            background: linear-gradient(135deg, #FF8C00, #FF5E62);
+            background: linear-gradient(135deg, var(--primary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-left: 6px;
         }
 
-        .header-right {
+        .header-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: white;
+        }
+
+        .header-title span {
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 16px;
+        }
+
+        /* Navigation */
+        nav {
             display: flex;
+            gap: 30px;
             align-items: center;
         }
 
-        .header-apply {
+        nav a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.3s ease;
             position: relative;
         }
 
-        .header-apply-pill {
-            position: absolute;
-            top: -16px;
-            right: -6px;
-            font-size: 10px;
-            padding: 1px 6px;
-            border-radius: 10px;
-            background: linear-gradient(135deg, #30D158, #0A84FF);
-            font-weight: 500;
+        nav a:hover {
             color: white;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
         }
 
-        .header-apply-btn {
-            padding: 8px 20px;
-            font-size: 15px;
-            border-radius: 40px;
-            font-weight: 600;
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .apply-btn {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            text-decoration: none;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: 600;
             transition: all 0.3s ease;
         }
 
-        .header-apply-btn:hover {
+        .apply-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0, 122, 255, 0.3);
+        }
+
+        .apply-btn::after {
+            display: none;
         }
 
         /* Hero Section */
@@ -162,7 +183,7 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            padding-top: 80px;
+            padding-top: 118px;
         }
 
         /* 3D Neural Network Background */
@@ -275,13 +296,59 @@
             animation: fadeInUp 1s ease-out 0.4s both;
         }
 
-        .hero-description {
-            font-size: 20px;
-            color: rgba(255, 255, 255, 0.7);
-            max-width: 800px;
-            margin: 0 auto 50px;
-            animation: fadeInUp 1s ease-out 0.6s both;
+        .hero-tagline {
+            font-size: clamp(24px, 4vw, 36px);
             font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 50px;
+            justify-content: center;
+            margin: 40px 0;
+            animation: fadeInUp 1s ease-out 0.7s both;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat .stat-value {
+            font-size: 36px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-stat .stat-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 5px;
+        }
+
+        .hero-disclaimer {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-style: italic;
+            animation: fadeInUp 1s ease-out 0.9s both;
         }
 
         /* CTA Buttons */
@@ -368,6 +435,165 @@
             0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
             40% { transform: translateX(-50%) translateY(-20px); }
             60% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        /* AI Advantage Section */
+        .ai-advantage-section {
+            padding: 100px 20px;
+            background: #0a0a0a;
+            position: relative;
+        }
+
+        .comparison-table {
+            max-width: 1200px;
+            margin: 60px auto;
+            overflow-x: auto;
+        }
+
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            backdrop-filter: blur(var(--blur));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .comparison-table th {
+            background: rgba(255, 255, 255, 0.05);
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .table-source {
+            text-align: center;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        .unicorn-examples {
+            max-width: 1200px;
+            margin: 80px auto;
+        }
+
+        .unicorn-examples h3 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .examples-subtitle {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 40px;
+        }
+
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .example-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(var(--blur));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .example-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .example-card h4 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .valuation {
+            font-size: 20px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .timeframe {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .differentiators {
+            max-width: 1200px;
+            margin: 80px auto 0;
+        }
+
+        .differentiators h3 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .differentiators-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .differentiator-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(var(--blur));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .differentiator-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .differentiator-card .icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .differentiator-card h4 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+
+        .differentiator-card p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
         }
 
         /* Stats Section */
@@ -520,8 +746,17 @@
             color: var(--accent);
         }
 
+        .phase-weeks {
+            font-size: 14px;
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-weight: 600;
+            opacity: 0.8;
+        }
+
         .phase-description {
             color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
         }
 
         /* Features Grid */
@@ -691,35 +926,17 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="header-left">
-            <div class="header-logo">IA</div>
-            <div class="header-title-text">
-                <div>
-                    <span class="header-name">Intelligence Academy</span>
-                    <span class="header-rowan">@ Rowan</span>
-                </div>
-                <div class="header-subtitle">
-                    <span class="header-subtitle-ai">AI Startup Accelerator &</span>
-                    <span class="header-subtitle-unicorn">Unicorn Factory</span>
-                </div>
-            </div>
-        </div>
-        <div class="header-right">
-            <div class="header-apply">
-                <div class="header-apply-pill">Spring 2026</div>
-                <a href="#apply" class="header-apply-btn">Apply Now</a>
-            </div>
-        </div>
-    </header>
+    <!-- Disclaimer Banner -->
+    <div class="disclaimer-banner">
+        ⚠️ DRAFT WEBSITE - This is a conceptual proposal and does not represent an official Rowan University program. <a href="mailto:msualp@rowan.edu">Contact for more info</a>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="neural-bg" id="neuralBg"></div>
         
         <!-- Floating 3D Elements -->
-        <div class="floating-element" style="top: 20%; left: 10%;">
+        <div class="floating-element" style="top: 10%; left: 10%;">
             <div class="cube">
                 <div class="cube-face">🦄</div>
                 <div class="cube-face">🦄</div>
@@ -741,11 +958,34 @@
         </div>
 
         <div class="hero-content">
-            <h1 class="hero-title">Transform your AI vision into a venture-backed reality</h1>
-            <p class="hero-subtitle">Rowan University's flagship AI accelerator. $100K investment. 16-week program. Unlimited potential.</p>
-            <div class="cta-container">
-                <a href="#learn-more" class="cta-secondary">Learn More</a>
+            <div class="hero-badge">🚀 Now Accepting Applications for Spring 2026 Cohort</div>
+            <h1 class="hero-title">Intelligence Academy @ Rowan University</h1>
+            <p class="hero-subtitle">AI Startup Accelerator & Unicorn Factory*</p>
+            <h2 class="hero-tagline">The AI Unicorn Advantage is Real</h2>
+            <p class="hero-description">
+                More AI startups are reaching billion-dollar valuations in quarter the time with half the team and double the success rate vs. traditional unicorns. Our program focuses on the specific methodology and partnerships that maximize your AI startup's unicorn potential.
+            </p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="stat-value">1/4</div>
+                    <div class="stat-label">Time to $1B</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="stat-value">1/2</div>
+                    <div class="stat-label">Team Size</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="stat-value">2x</div>
+                    <div class="stat-label">Success Rate</div>
+                </div>
             </div>
+            <div class="cta-container">
+                <a href="#apply" class="cta-primary">Submit 2-Min Application</a>
+                <a href="#ai-advantage" class="cta-secondary">Learn More ↓</a>
+            </div>
+            <p class="hero-disclaimer">
+                *Aspiring unicorn catalyst based on AI sector performance data. While unicorn outcomes remain statistically rare (2% of AI startups vs. 1% traditional), our methodology systematically addresses the factors that give AI companies demonstrable advantages in achieving billion-dollar valuations.
+            </p>
         </div>
 
         <div class="scroll-arrow" onclick="scrollToSection('stats')">
@@ -756,24 +996,136 @@
         </div>
     </section>
 
+    <!-- AI Advantage Section -->
+    <section class="ai-advantage-section" id="ai-advantage">
+        <div class="section-header">
+            <h2 class="section-title">Why AI Companies Become Unicorns Differently</h2>
+            <p class="section-subtitle">The statistics that drive our unicorn-focused methodology</p>
+        </div>
+
+        <div class="comparison-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Unicorn Metric</th>
+                        <th>Traditional Startups</th>
+                        <th>AI Startups</th>
+                        <th class="highlight">AI Advantage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Time to $1B Valuation</td>
+                        <td>25 years average</td>
+                        <td>7 years average</td>
+                        <td class="highlight">Quarter the time</td>
+                    </tr>
+                    <tr>
+                        <td>Team Size at Unicorn Status</td>
+                        <td>1,000+ employees</td>
+                        <td>200-500 employees</td>
+                        <td class="highlight">Half the team size</td>
+                    </tr>
+                    <tr>
+                        <td>Success Rate to Unicorn</td>
+                        <td>1% of startups</td>
+                        <td>2% of AI startups</td>
+                        <td class="highlight">Double the success</td>
+                    </tr>
+                    <tr>
+                        <td>Capital Efficiency</td>
+                        <td>$500M+ raised</td>
+                        <td>$100-200M raised</td>
+                        <td class="highlight">2.5x more efficient</td>
+                    </tr>
+                    <tr>
+                        <td>Market Penetration Speed</td>
+                        <td>10-20 years</td>
+                        <td>3-5 years</td>
+                        <td class="highlight">5x faster adoption</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="table-source">Sources: CB Insights State of AI Report 2024, PitchBook Unicorn Analysis, McKinsey AI Index</p>
+        </div>
+
+        <div class="unicorn-examples">
+            <h3>Recent AI Unicorn Examples</h3>
+            <p class="examples-subtitle">Proving the acceleration is real:</p>
+            <div class="examples-grid">
+                <div class="example-card">
+                    <h4>OpenAI</h4>
+                    <p class="valuation">$80B valuation</p>
+                    <p class="timeframe">in 8 years (2015-2023)</p>
+                </div>
+                <div class="example-card">
+                    <h4>Anthropic</h4>
+                    <p class="valuation">$18B valuation</p>
+                    <p class="timeframe">in 3 years (2021-2024)</p>
+                </div>
+                <div class="example-card">
+                    <h4>Character.AI</h4>
+                    <p class="valuation">$5B valuation</p>
+                    <p class="timeframe">in 3 years (2021-2024)</p>
+                </div>
+                <div class="example-card">
+                    <h4>Stability AI</h4>
+                    <p class="valuation">$4B valuation</p>
+                    <p class="timeframe">in 2 years (2020-2022)</p>
+                </div>
+                <div class="example-card">
+                    <h4>Midjourney</h4>
+                    <p class="valuation">$5B+ valuation</p>
+                    <p class="timeframe">in 2 years (2021-2023)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="differentiators">
+            <h3>What Makes AI Unicorns Different</h3>
+            <div class="differentiators-grid">
+                <div class="differentiator-card">
+                    <div class="icon">🚀</div>
+                    <h4>Technology Scalability</h4>
+                    <p>AI solutions improve automatically with more data and users, creating network effects that traditional businesses can't match. Your product gets better and more valuable without proportional cost increases.</p>
+                </div>
+                <div class="differentiator-card">
+                    <div class="icon">⏰</div>
+                    <h4>Market Timing Advantage</h4>
+                    <p>Post-ChatGPT enterprise adoption reached an inflection point. With $400B+ in projected corporate AI spending through 2030, market timing has never been better for practical AI solutions.</p>
+                </div>
+                <div class="differentiator-card">
+                    <div class="icon">💰</div>
+                    <h4>Capital Efficiency</h4>
+                    <p>Small teams of AI experts can build massive value through automation and intelligent systems. You need fewer people to reach unicorn scale, reducing costs and organizational complexity.</p>
+                </div>
+                <div class="differentiator-card">
+                    <div class="icon">🎯</div>
+                    <h4>Strategic Premium</h4>
+                    <p>Tech giants and Fortune 500 companies pay premium valuations for AI capabilities. Your startup could become a strategic asset worth billions to the right acquirer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Stats Section -->
     <section class="stats-section" id="stats">
         <div class="stats-container">
             <div class="stat-card">
-                <div class="stat-number">$100K</div>
-                <div class="stat-label">Investment per Startup</div>
+                <div class="stat-number">$55M</div>
+                <div class="stat-label">Investment Capital Attracted</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">5%</div>
-                <div class="stat-label">Equity Exchange</div>
+                <div class="stat-number">480</div>
+                <div class="stat-label">Jobs Created</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">16</div>
-                <div class="stat-label">Week Program</div>
+                <div class="stat-number">44</div>
+                <div class="stat-label">AI Startups Launched</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">$40M</div>
-                <div class="stat-label">Target Capital Raised</div>
+                <div class="stat-number">$209M</div>
+                <div class="stat-label">Economic Impact</div>
             </div>
         </div>
     </section>
@@ -788,29 +1140,33 @@
         <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <h3 class="phase-title">Phase 1: Foundation</h3>
-                    <p class="phase-description">Customer discovery, AI ethics training, and shared-intelligence frameworks</p>
+                    <h3 class="phase-title">Phase 1: Discovery & Validation</h3>
+                    <p class="phase-weeks">Weeks 1-4</p>
+                    <p class="phase-description">Complete 50+ customer interviews using NSF I-Corps methodology. Validate $10B+ market opportunity and design revenue model for unicorn scale.</p>
                 </div>
                 <div class="timeline-dot"></div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <h3 class="phase-title">Phase 2: Build</h3>
-                    <p class="phase-description">Rapid prototyping with access to GPU clusters and technical mentorship</p>
+                    <h3 class="phase-title">Phase 2: Build & Prototype</h3>
+                    <p class="phase-weeks">Weeks 5-10</p>
+                    <p class="phase-description">Develop MVP with unicorn-scale architecture. Launch pilot programs with Fortune 500 partners and build key technical team.</p>
                 </div>
                 <div class="timeline-dot"></div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <h3 class="phase-title">Phase 3: Pilot</h3>
-                    <p class="phase-description">Launch with real users through Rowan's extensive partner network</p>
+                    <h3 class="phase-title">Phase 3: Scale & Revenue</h3>
+                    <p class="phase-weeks">Weeks 11-14</p>
+                    <p class="phase-description">Generate first revenue from enterprise customers. Build scalable operations and prepare for Series A funding.</p>
                 </div>
                 <div class="timeline-dot"></div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <h3 class="phase-title">Phase 4: Scale</h3>
-                    <p class="phase-description">Go-to-market strategy and Demo Day with top VCs</p>
+                    <h3 class="phase-title">Phase 4: Launch & Growth</h3>
+                    <p class="phase-weeks">Weeks 15-16</p>
+                    <p class="phase-description">Demo Day presentation to investors and corporate partners. Execute 12-month growth plan with clear unicorn milestones.</p>
                 </div>
                 <div class="timeline-dot"></div>
             </div>
@@ -891,13 +1247,14 @@
     <script>
         // Header scroll effect
         window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
+            const header = document.getElementById('header');
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
             }
         });
+
         // Neural Network Animation
         function createNeuralNetwork() {
             const neuralBg = document.getElementById('neuralBg');
@@ -1043,60 +1400,3 @@
     </script>
 </body>
 </html>
-
-        .hero-title {
-            font-size: clamp(42px, 6vw, 72px);
-            letter-spacing: -0.5px;
-            font-weight: 700;
-            line-height: 1.15;
-        }
-
-        .hero-subtitle {
-            font-size: clamp(18px, 2.5vw, 28px);
-            font-weight: 400;
-            color: rgba(255, 255, 255, 0.85);
-        }
-
-        .hero-description {
-            font-size: 18px;
-            color: rgba(255, 255, 255, 0.75);
-            max-width: 700px;
-        }
-
-        .stat-card {
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 8px 24px rgba(10, 132, 255, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: scale(1.03);
-            box-shadow: 0 12px 32px rgba(10, 132, 255, 0.1);
-        }
-
-        .cta-primary,
-        .cta-secondary {
-            font-size: 17px;
-            font-weight: 600;
-            padding: 14px 36px;
-            border-radius: 14px;
-        }
-
-        .cta-secondary {
-            font-weight: 500;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-        }
-
-        .timeline-item {
-            transition: all 0.6s ease-out;
-        }
-
-        .timeline-item.visible {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .timeline-item:not(.visible) {
-            transform: translateY(40px);
-            opacity: 0;
-        }

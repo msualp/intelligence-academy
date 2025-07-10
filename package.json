@@ -5,8 +5,7 @@
   "main": "index.html",
   "scripts": {
     "start": "serve",
-    "dev": "serve",
-    "vercel-build": "mkdir -p public && cp -r index.html public/"
+    "dev": "serve"
   },
   "keywords": [
     "ai",

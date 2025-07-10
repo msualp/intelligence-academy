@@ -1,0 +1,2012 @@
+-------------------------HARDWARE INVENTORY------------------------
+
+[InstanceID: AHCI.Slot.3-1]
+Device Type = Controller
+AlarmState = Alarm Not supported
+AutoConfigBehavior = NotApplicable
+Bus = 5E
+CPUAffinity = Not Applicable
+CacheSizeInMB = 0 MB
+CachecadeCapability = Cachecade Virtual Disk not supported
+ConfigLockdownCapable = False
+ConfigLockdownState = Disabled
+ConnectorCount = 0
+ControllerFirmwareVersion = 2.5.13.3024
+CurrentControllerMode = NotSupported
+Device = 0
+DeviceCardDataBusWidth = 8x or x8
+DeviceCardManufacturer = DELL
+DeviceCardSlotLength = LongLength
+DeviceCardSlotType = PCI Express Gen3 x16
+DeviceDescription = AHCI controller in slot 3
+DriverVersion = Not Applicable
+EncryptionCapability = None
+EncryptionMode = None
+FQDD = AHCI.Slot.3-1
+Function = 0
+InstanceID = AHCI.Slot.3-1
+LastSystemInventoryTime = 2025-06-14T22:30:38
+LastUpdateTime = 2025-06-14T23:30:38
+MaxAvailablePCILinkSpeed = Not Applicable
+MaxPossiblePCILinkSpeed = Not Applicable
+PCIDeviceID = 9230
+PCISlot = 3
+PCISubDeviceID = 1FE2
+PCISubVendorID = 1028
+PCIVendorID = 1B4B
+PatrolReadState = Unknown
+PersistentHotspare = Not Applicable
+PrimaryStatus = Unknown
+ProductName = BOSS-S1
+RealtimeCapability = Incapable
+RollupStatus = Unknown
+SASAddress = Not Applicable
+SecurityStatus = Encryption Not Capable
+SharedSlotAssignmentAllowed = Not Applicable
+SlicedVDCapability = Sliced Virtual Disk creation not supported
+SupportControllerBootMode = Not Supported
+SupportEnhancedAutoForeignImport = Not Supported
+SupportRAID10UnevenSpans = Not supported
+SupportsLKMtoSEKMTransition = No
+T10PICapability = Not supported
+UpdateLockdownCapable = False
+UpdateLockdownState = Disabled
+-------------------------------------------------------------------
+
+[InstanceID: AHCI.Embedded.2-1]
+Device Type = Controller
+AlarmState = Alarm Not present
+AutoConfigBehavior = NotApplicable
+Bus = 0
+CPUAffinity = Not Applicable
+CacheSizeInMB = 0 MB
+CachecadeCapability = Cachecade Virtual Disk not supported
+ConfigLockdownCapable = False
+ConfigLockdownState = Disabled
+ConnectorCount = 0
+CurrentControllerMode = NotSupported
+Device = 0
+DeviceCardDataBusWidth = Unknown
+DeviceCardManufacturer = DELL
+DeviceCardSlotLength = Unknown
+DeviceCardSlotType = Unknown
+DeviceDescription = Embedded AHCI 2
+DriverVersion = Not Applicable
+EncryptionCapability = None
+EncryptionMode = None
+FQDD = AHCI.Embedded.2-1
+Function = 0
+InstanceID = AHCI.Embedded.2-1
+LastSystemInventoryTime = 2025-06-14T22:30:38
+LastUpdateTime = 2025-06-12T16:55:35
+MaxAvailablePCILinkSpeed = Not Applicable
+MaxPossiblePCILinkSpeed = Not Applicable
+PCIDeviceID = A182
+PCISubDeviceID = 737
+PCISubVendorID = 1028
+PCIVendorID = 8086
+PatrolReadState = Unknown
+PersistentHotspare = Not Applicable
+PrimaryStatus = Unknown
+ProductName = C620 Series Chipset Family SATA Controller [AHCI mode]
+RealtimeCapability = Incapable
+RollupStatus = Unknown
+SASAddress = Not Applicable
+SecurityStatus = Encryption Not Capable
+SharedSlotAssignmentAllowed = Not Applicable
+SlicedVDCapability = Sliced Virtual Disk creation not supported
+SupportControllerBootMode = Not Supported
+SupportEnhancedAutoForeignImport = Not Supported
+SupportRAID10UnevenSpans = Not supported
+SupportsLKMtoSEKMTransition = No
+T10PICapability = Not supported
+UpdateLockdownCapable = False
+UpdateLockdownState = Disabled
+-------------------------------------------------------------------
+
+[InstanceID: AHCI.Embedded.1-1]
+Device Type = Controller
+AlarmState = Alarm Not present
+AutoConfigBehavior = NotApplicable
+Bus = 0
+CPUAffinity = Not Applicable
+CacheSizeInMB = 0 MB
+CachecadeCapability = Cachecade Virtual Disk not supported
+ConfigLockdownCapable = False
+ConfigLockdownState = Disabled
+ConnectorCount = 0
+CurrentControllerMode = NotSupported
+Device = 0
+DeviceCardDataBusWidth = Unknown
+DeviceCardManufacturer = DELL
+DeviceCardSlotLength = Unknown
+DeviceCardSlotType = Unknown
+DeviceDescription = Embedded AHCI 1
+DriverVersion = Not Applicable
+EncryptionCapability = None
+EncryptionMode = None
+FQDD = AHCI.Embedded.1-1
+Function = 0
+InstanceID = AHCI.Embedded.1-1
+LastSystemInventoryTime = 2025-06-14T22:30:38
+LastUpdateTime = 2025-06-12T16:55:35
+MaxAvailablePCILinkSpeed = Not Applicable
+MaxPossiblePCILinkSpeed = Not Applicable
+PCIDeviceID = A1D2
+PCISubDeviceID = 737
+PCISubVendorID = 1028
+PCIVendorID = 8086
+PatrolReadState = Unknown
+PersistentHotspare = Not Applicable
+PrimaryStatus = Unknown
+ProductName = C620 Series Chipset Family SSATA Controller [AHCI mode]
+RealtimeCapability = Incapable
+RollupStatus = Unknown
+SASAddress = Not Applicable
+SecurityStatus = Encryption Not Capable
+SharedSlotAssignmentAllowed = Not Applicable
+SlicedVDCapability = Sliced Virtual Disk creation not supported
+SupportControllerBootMode = Not Supported
+SupportEnhancedAutoForeignImport = Not Supported
+SupportRAID10UnevenSpans = Not supported
+SupportsLKMtoSEKMTransition = No
+T10PICapability = Not supported
+UpdateLockdownCapable = False
+UpdateLockdownState = Disabled
+-------------------------------------------------------------------
+
+[InstanceID: CPU.Socket.2]
+Device Type = CPU
+CPUFamily = Intel(R) Xeon(TM)
+CPUStatus = CPU Enabled
+Cache1Associativity = 8-way Set-Associative
+Cache1ErrorMethodology = Parity
+Cache1InstalledSize = 1280 KB
+Cache1Level = L1
+Cache1Location = Internal
+Cache1PrimaryStatus = OK
+Cache1SRAMType = Unknown
+Cache1Size = 1280 KB
+Cache1Type = Unified
+Cache1WritePolicy = Write Back
+Cache2Associativity = 16-way Set-Associative
+Cache2ErrorMethodology = Single-bit ECC
+Cache2InstalledSize = 20480 KB
+Cache2Level = L2
+Cache2Location = Internal
+Cache2PrimaryStatus = OK
+Cache2SRAMType = Unknown
+Cache2Size = 20480 KB
+Cache2Type = Unified
+Cache2WritePolicy = Write Back
+Cache3Associativity = Fully Associative
+Cache3ErrorMethodology = Single-bit ECC
+Cache3InstalledSize = 28160 KB
+Cache3Level = L3
+Cache3Location = Internal
+Cache3PrimaryStatus = OK
+Cache3SRAMType = Unknown
+Cache3Size = 28160 KB
+Cache3Type = Unified
+Cache3WritePolicy = Write Back
+Characteristics = 64-bit Capable
+CurrentClockSpeed = 2400 MHz
+DeviceDescription = CPU 2
+ExecuteDisabledCapable = Yes
+ExecuteDisabledEnabled = Yes
+ExternalBusClockSpeed = 10400 MHz
+FQDD = CPU.Socket.2
+HyperThreadingCapable = Yes
+HyperThreadingEnabled = No
+InstanceID = CPU.Socket.2
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-05-14T09:11:38
+Manufacturer = Intel
+MaxClockSpeed = 4000 MHz
+Model = Intel(R) Xeon(R) Gold 6148 CPU @ 2.40GHz
+NumberOfEnabledCores = 20
+NumberOfEnabledThreads = 20
+NumberOfProcessorCores = 20
+PPIN = 7631D89A94EDB5E9
+PackageMemoryErrorCorrection = 0
+PackageMemoryInstalledSize = 0 GiB
+PackageMemoryLocation = 0
+PackageMemoryMaximumSize = 0 GiB
+PackageMemorySpeed = 0 MT/s
+PackageMemoryType = 0
+PrimaryStatus = Unknown
+TurboModeCapable = Yes
+TurboModeEnabled = Yes
+VirtualizationTechnologyCapable = Yes
+VirtualizationTechnologyEnabled = No
+Voltage = 1.8 V
+-------------------------------------------------------------------
+
+[InstanceID: CPU.Socket.1]
+Device Type = CPU
+CPUFamily = Intel(R) Xeon(TM)
+CPUStatus = CPU Enabled
+Cache1Associativity = 8-way Set-Associative
+Cache1ErrorMethodology = Parity
+Cache1InstalledSize = 1280 KB
+Cache1Level = L1
+Cache1Location = Internal
+Cache1PrimaryStatus = OK
+Cache1SRAMType = Unknown
+Cache1Size = 1280 KB
+Cache1Type = Unified
+Cache1WritePolicy = Write Back
+Cache2Associativity = 16-way Set-Associative
+Cache2ErrorMethodology = Single-bit ECC
+Cache2InstalledSize = 20480 KB
+Cache2Level = L2
+Cache2Location = Internal
+Cache2PrimaryStatus = OK
+Cache2SRAMType = Unknown
+Cache2Size = 20480 KB
+Cache2Type = Unified
+Cache2WritePolicy = Write Back
+Cache3Associativity = Fully Associative
+Cache3ErrorMethodology = Single-bit ECC
+Cache3InstalledSize = 28160 KB
+Cache3Level = L3
+Cache3Location = Internal
+Cache3PrimaryStatus = OK
+Cache3SRAMType = Unknown
+Cache3Size = 28160 KB
+Cache3Type = Unified
+Cache3WritePolicy = Write Back
+Characteristics = 64-bit Capable
+CurrentClockSpeed = 2400 MHz
+DeviceDescription = CPU 1
+ExecuteDisabledCapable = Yes
+ExecuteDisabledEnabled = Yes
+ExternalBusClockSpeed = 10400 MHz
+FQDD = CPU.Socket.1
+HyperThreadingCapable = Yes
+HyperThreadingEnabled = No
+InstanceID = CPU.Socket.1
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-05-14T09:11:38
+Manufacturer = Intel
+MaxClockSpeed = 4000 MHz
+Model = Intel(R) Xeon(R) Gold 6148 CPU @ 2.40GHz
+NumberOfEnabledCores = 20
+NumberOfEnabledThreads = 20
+NumberOfProcessorCores = 20
+PPIN = 6B3AE69A5F2195AE
+PackageMemoryErrorCorrection = 0
+PackageMemoryInstalledSize = 0 GiB
+PackageMemoryLocation = 0
+PackageMemoryMaximumSize = 0 GiB
+PackageMemorySpeed = 0 MT/s
+PackageMemoryType = 0
+PrimaryStatus = Unknown
+TurboModeCapable = Yes
+TurboModeEnabled = Yes
+VirtualizationTechnologyCapable = Yes
+VirtualizationTechnologyEnabled = No
+Voltage = 1.8 V
+-------------------------------------------------------------------
+
+[InstanceID: iDRAC.Embedded.1-1#IDRACinfo]
+Device Type = iDRACCard
+DNSDomainName = 
+DNSRacName = idrac-38WP8N2
+DeviceDescription = iDRAC
+FQDD = iDRAC.Embedded.1-1
+FirmwareVersion = 7.00.00.181
+GUID = 44454c4c-3800-1057-8050-b3c04f384e32
+IPMIVersion = 2.0
+InstanceID = iDRAC.Embedded.1-1#IDRACinfo
+LANEnabledState = Disabled
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-06-15T22:31:19
+Model = Enterprise
+PermanentMACAddress = d0:94:66:3c:7d:be
+ProductDescription = This system component provides a complete set of remote management functions for PowerEdge servers
+SOLEnabledState = Enabled
+URLString = https://192.168.20.21:443
+-------------------------------------------------------------------
+
+[InstanceID: DIMM.Socket.B4]
+Device Type = Memory
+BankLabel = B
+CPUAffinity = 2
+CurrentOperatingSpeed = 2666 MT/s
+DeviceDescription = DIMM B4
+FQDD = DIMM.Socket.B4
+InstanceID = DIMM.Socket.B4
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-02-28T22:48:58
+ManufactureDate = Mon Apr 29 07:00:00 2019 UTC
+Manufacturer = Hynix Semiconductor
+MemoryTechnology = DRAM
+MemoryType = DDR-4
+MemoryTypeExtended = LR-DIMM
+Model = DDR4 DIMM
+PartNumber = HMAA8GL7CPR4N-WM
+PrimaryStatus = Unknown
+Rank = Quad Rank
+SerialNumber = 9310FBE1
+Size = 65536 MB
+Speed = 2933 MHz
+SystemEraseCapability = Not Supported
+VolatileSize = 65536 MB
+-------------------------------------------------------------------
+
+[InstanceID: DIMM.Socket.B8]
+Device Type = Memory
+BankLabel = B
+CPUAffinity = 2
+CurrentOperatingSpeed = 2666 MT/s
+DeviceDescription = DIMM B8
+FQDD = DIMM.Socket.B8
+InstanceID = DIMM.Socket.B8
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-02-28T22:48:58
+ManufactureDate = Mon Apr 08 07:00:00 2019 UTC
+Manufacturer = Hynix Semiconductor
+MemoryTechnology = DRAM
+MemoryType = DDR-4
+MemoryTypeExtended = LR-DIMM
+Model = DDR4 DIMM
+PartNumber = HMAA8GL7CPR4N-WM
+PrimaryStatus = Unknown
+Rank = Quad Rank
+SerialNumber = 9305791E
+Size = 65536 MB
+Speed = 2933 MHz
+SystemEraseCapability = Not Supported
+VolatileSize = 65536 MB
+-------------------------------------------------------------------
+
+[InstanceID: DIMM.Socket.A12]
+Device Type = Memory
+BankLabel = A
+CPUAffinity = 1
+CurrentOperatingSpeed = 2666 MT/s
+DeviceDescription = DIMM A12
+FQDD = DIMM.Socket.A12
+InstanceID = DIMM.Socket.A12
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-02-28T22:48:58
+ManufactureDate = Mon Apr 29 07:00:00 2019 UTC
+Manufacturer = Hynix Semiconductor
+MemoryTechnology = DRAM
+MemoryType = DDR-4
+MemoryTypeExtended = LR-DIMM
+Model = DDR4 DIMM
+PartNumber = HMAA8GL7CPR4N-WM
+PrimaryStatus = Unknown
+Rank = Quad Rank
+SerialNumber = 9310FB9F
+Size = 65536 MB
+Speed = 2933 MHz
+SystemEraseCapability = Not Supported
+VolatileSize = 65536 MB
+-------------------------------------------------------------------
+
+[InstanceID: DIMM.Socket.B1]
+Device Type = Memory
+BankLabel = B
+CPUAffinity = 2
+CurrentOperatingSpeed = 2666 MT/s
+DeviceDescription = DIMM B1
+FQDD = DIMM.Socket.B1
+InstanceID = DIMM.Socket.B1
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-02-28T22:48:58
+ManufactureDate = Mon Apr 29 07:00:00 2019 UTC
+Manufacturer = Hynix Semiconductor
+MemoryTechnology = DRAM
+MemoryType = DDR-4
+MemoryTypeExtended = LR-DIMM
+Model = DDR4 DIMM
+PartNumber = HMAA8GL7CPR4N-WM
+PrimaryStatus = Unknown
+Rank = Quad Rank
+SerialNumber = 9310FBDE
+Size = 65536 MB
+Speed = 2933 MHz
+SystemEraseCapability = Not Supported
+VolatileSize = 65536 MB
+-------------------------------------------------------------------
+
+[InstanceID: DIMM.Socket.A1]
+Device Type = Memory
+BankLabel = A
+CPUAffinity = 1
+CurrentOperatingSpeed = 2666 MT/s
+DeviceDescription = DIMM A1
+FQDD = DIMM.Socket.A1
+InstanceID = DIMM.Socket.A1
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-02-28T22:48:58
+ManufactureDate = Mon Apr 29 07:00:00 2019 UTC
+Manufacturer = Hynix Semiconductor
+MemoryTechnology = DRAM
+MemoryType = DDR-4
+MemoryTypeExtended = LR-DIMM
+Model = DDR4 DIMM
+PartNumber = HMAA8GL7CPR4N-WM
+PrimaryStatus = Unknown
+Rank = Quad Rank
+SerialNumber = 9310FC12
+Size = 65536 MB
+Speed = 2933 MHz
+SystemEraseCapability = Not Supported
+VolatileSize = 65536 MB
+-------------------------------------------------------------------
+
+[InstanceID: DIMM.Socket.A8]
+Device Type = Memory
+BankLabel = A
+CPUAffinity = 1
+CurrentOperatingSpeed = 2666 MT/s
+DeviceDescription = DIMM A8
+FQDD = DIMM.Socket.A8
+InstanceID = DIMM.Socket.A8
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-02-28T22:48:58
+ManufactureDate = Mon Apr 29 07:00:00 2019 UTC
+Manufacturer = Hynix Semiconductor
+MemoryTechnology = DRAM
+MemoryType = DDR-4
+MemoryTypeExtended = LR-DIMM
+Model = DDR4 DIMM
+PartNumber = HMAA8GL7CPR4N-WM
+PrimaryStatus = Unknown
+Rank = Quad Rank
+SerialNumber = 9310FBBA
+Size = 65536 MB
+Speed = 2933 MHz
+SystemEraseCapability = Not Supported
+VolatileSize = 65536 MB
+-------------------------------------------------------------------
+
+[InstanceID: DIMM.Socket.B6]
+Device Type = Memory
+BankLabel = B
+CPUAffinity = 2
+CurrentOperatingSpeed = 2666 MT/s
+DeviceDescription = DIMM B6
+FQDD = DIMM.Socket.B6
+InstanceID = DIMM.Socket.B6
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-02-28T22:48:58
+ManufactureDate = Mon Apr 29 07:00:00 2019 UTC
+Manufacturer = Hynix Semiconductor
+MemoryTechnology = DRAM
+MemoryType = DDR-4
+MemoryTypeExtended = LR-DIMM
+Model = DDR4 DIMM
+PartNumber = HMAA8GL7CPR4N-WM
+PrimaryStatus = Unknown
+Rank = Quad Rank
+SerialNumber = 9310FBB0
+Size = 65536 MB
+Speed = 2933 MHz
+SystemEraseCapability = Not Supported
+VolatileSize = 65536 MB
+-------------------------------------------------------------------
+
+[InstanceID: DIMM.Socket.A6]
+Device Type = Memory
+BankLabel = A
+CPUAffinity = 1
+CurrentOperatingSpeed = 2666 MT/s
+DeviceDescription = DIMM A6
+FQDD = DIMM.Socket.A6
+InstanceID = DIMM.Socket.A6
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-02-28T22:48:58
+ManufactureDate = Mon Apr 29 07:00:00 2019 UTC
+Manufacturer = Hynix Semiconductor
+MemoryTechnology = DRAM
+MemoryType = DDR-4
+MemoryTypeExtended = LR-DIMM
+Model = DDR4 DIMM
+PartNumber = HMAA8GL7CPR4N-WM
+PrimaryStatus = Unknown
+Rank = Quad Rank
+SerialNumber = 9310FB35
+Size = 65536 MB
+Speed = 2933 MHz
+SystemEraseCapability = Not Supported
+VolatileSize = 65536 MB
+-------------------------------------------------------------------
+
+[InstanceID: DIMM.Socket.A9]
+Device Type = Memory
+BankLabel = A
+CPUAffinity = 1
+CurrentOperatingSpeed = 2666 MT/s
+DeviceDescription = DIMM A9
+FQDD = DIMM.Socket.A9
+InstanceID = DIMM.Socket.A9
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-02-28T22:48:58
+ManufactureDate = Mon Apr 29 07:00:00 2019 UTC
+Manufacturer = Hynix Semiconductor
+MemoryTechnology = DRAM
+MemoryType = DDR-4
+MemoryTypeExtended = LR-DIMM
+Model = DDR4 DIMM
+PartNumber = HMAA8GL7CPR4N-WM
+PrimaryStatus = Unknown
+Rank = Quad Rank
+SerialNumber = 9310FBFA
+Size = 65536 MB
+Speed = 2933 MHz
+SystemEraseCapability = Not Supported
+VolatileSize = 65536 MB
+-------------------------------------------------------------------
+
+[InstanceID: DIMM.Socket.A10]
+Device Type = Memory
+BankLabel = A
+CPUAffinity = 1
+CurrentOperatingSpeed = 2666 MT/s
+DeviceDescription = DIMM A10
+FQDD = DIMM.Socket.A10
+InstanceID = DIMM.Socket.A10
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-02-28T22:48:58
+ManufactureDate = Mon Apr 29 07:00:00 2019 UTC
+Manufacturer = Hynix Semiconductor
+MemoryTechnology = DRAM
+MemoryType = DDR-4
+MemoryTypeExtended = LR-DIMM
+Model = DDR4 DIMM
+PartNumber = HMAA8GL7CPR4N-WM
+PrimaryStatus = Unknown
+Rank = Quad Rank
+SerialNumber = 9310FB4E
+Size = 65536 MB
+Speed = 2933 MHz
+SystemEraseCapability = Not Supported
+VolatileSize = 65536 MB
+-------------------------------------------------------------------
+
+[InstanceID: DIMM.Socket.A11]
+Device Type = Memory
+BankLabel = A
+CPUAffinity = 1
+CurrentOperatingSpeed = 2666 MT/s
+DeviceDescription = DIMM A11
+FQDD = DIMM.Socket.A11
+InstanceID = DIMM.Socket.A11
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-02-28T22:48:58
+ManufactureDate = Mon Apr 29 07:00:00 2019 UTC
+Manufacturer = Hynix Semiconductor
+MemoryTechnology = DRAM
+MemoryType = DDR-4
+MemoryTypeExtended = LR-DIMM
+Model = DDR4 DIMM
+PartNumber = HMAA8GL7CPR4N-WM
+PrimaryStatus = Unknown
+Rank = Quad Rank
+SerialNumber = 9310FBD1
+Size = 65536 MB
+Speed = 2933 MHz
+SystemEraseCapability = Not Supported
+VolatileSize = 65536 MB
+-------------------------------------------------------------------
+
+[InstanceID: DIMM.Socket.B3]
+Device Type = Memory
+BankLabel = B
+CPUAffinity = 2
+CurrentOperatingSpeed = 2666 MT/s
+DeviceDescription = DIMM B3
+FQDD = DIMM.Socket.B3
+InstanceID = DIMM.Socket.B3
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-02-28T22:48:58
+ManufactureDate = Mon Apr 29 07:00:00 2019 UTC
+Manufacturer = Hynix Semiconductor
+MemoryTechnology = DRAM
+MemoryType = DDR-4
+MemoryTypeExtended = LR-DIMM
+Model = DDR4 DIMM
+PartNumber = HMAA8GL7CPR4N-WM
+PrimaryStatus = Unknown
+Rank = Quad Rank
+SerialNumber = 9310FB4F
+Size = 65536 MB
+Speed = 2933 MHz
+SystemEraseCapability = Not Supported
+VolatileSize = 65536 MB
+-------------------------------------------------------------------
+
+[InstanceID: DIMM.Socket.A5]
+Device Type = Memory
+BankLabel = A
+CPUAffinity = 1
+CurrentOperatingSpeed = 2666 MT/s
+DeviceDescription = DIMM A5
+FQDD = DIMM.Socket.A5
+InstanceID = DIMM.Socket.A5
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-02-28T22:48:58
+ManufactureDate = Mon Apr 29 07:00:00 2019 UTC
+Manufacturer = Hynix Semiconductor
+MemoryTechnology = DRAM
+MemoryType = DDR-4
+MemoryTypeExtended = LR-DIMM
+Model = DDR4 DIMM
+PartNumber = HMAA8GL7CPR4N-WM
+PrimaryStatus = Unknown
+Rank = Quad Rank
+SerialNumber = 9310FB7E
+Size = 65536 MB
+Speed = 2933 MHz
+SystemEraseCapability = Not Supported
+VolatileSize = 65536 MB
+-------------------------------------------------------------------
+
+[InstanceID: DIMM.Socket.B2]
+Device Type = Memory
+BankLabel = B
+CPUAffinity = 2
+CurrentOperatingSpeed = 2666 MT/s
+DeviceDescription = DIMM B2
+FQDD = DIMM.Socket.B2
+InstanceID = DIMM.Socket.B2
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-02-28T22:48:58
+ManufactureDate = Mon Apr 08 07:00:00 2019 UTC
+Manufacturer = Hynix Semiconductor
+MemoryTechnology = DRAM
+MemoryType = DDR-4
+MemoryTypeExtended = LR-DIMM
+Model = DDR4 DIMM
+PartNumber = HMAA8GL7CPR4N-WM
+PrimaryStatus = Unknown
+Rank = Quad Rank
+SerialNumber = 93056D38
+Size = 65536 MB
+Speed = 2933 MHz
+SystemEraseCapability = Not Supported
+VolatileSize = 65536 MB
+-------------------------------------------------------------------
+
+[InstanceID: DIMM.Socket.A2]
+Device Type = Memory
+BankLabel = A
+CPUAffinity = 1
+CurrentOperatingSpeed = 2666 MT/s
+DeviceDescription = DIMM A2
+FQDD = DIMM.Socket.A2
+InstanceID = DIMM.Socket.A2
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-02-28T22:48:58
+ManufactureDate = Mon Apr 29 07:00:00 2019 UTC
+Manufacturer = Hynix Semiconductor
+MemoryTechnology = DRAM
+MemoryType = DDR-4
+MemoryTypeExtended = LR-DIMM
+Model = DDR4 DIMM
+PartNumber = HMAA8GL7CPR4N-WM
+PrimaryStatus = Unknown
+Rank = Quad Rank
+SerialNumber = 9310FBD7
+Size = 65536 MB
+Speed = 2933 MHz
+SystemEraseCapability = Not Supported
+VolatileSize = 65536 MB
+-------------------------------------------------------------------
+
+[InstanceID: DIMM.Socket.A4]
+Device Type = Memory
+BankLabel = A
+CPUAffinity = 1
+CurrentOperatingSpeed = 2666 MT/s
+DeviceDescription = DIMM A4
+FQDD = DIMM.Socket.A4
+InstanceID = DIMM.Socket.A4
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-02-28T22:48:58
+ManufactureDate = Mon Apr 29 07:00:00 2019 UTC
+Manufacturer = Hynix Semiconductor
+MemoryTechnology = DRAM
+MemoryType = DDR-4
+MemoryTypeExtended = LR-DIMM
+Model = DDR4 DIMM
+PartNumber = HMAA8GL7CPR4N-WM
+PrimaryStatus = Unknown
+Rank = Quad Rank
+SerialNumber = 9310FBE3
+Size = 65536 MB
+Speed = 2933 MHz
+SystemEraseCapability = Not Supported
+VolatileSize = 65536 MB
+-------------------------------------------------------------------
+
+[InstanceID: DIMM.Socket.B7]
+Device Type = Memory
+BankLabel = B
+CPUAffinity = 2
+CurrentOperatingSpeed = 2666 MT/s
+DeviceDescription = DIMM B7
+FQDD = DIMM.Socket.B7
+InstanceID = DIMM.Socket.B7
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-02-28T22:48:58
+ManufactureDate = Mon Apr 08 07:00:00 2019 UTC
+Manufacturer = Hynix Semiconductor
+MemoryTechnology = DRAM
+MemoryType = DDR-4
+MemoryTypeExtended = LR-DIMM
+Model = DDR4 DIMM
+PartNumber = HMAA8GL7CPR4N-WM
+PrimaryStatus = Unknown
+Rank = Quad Rank
+SerialNumber = 9305777D
+Size = 65536 MB
+Speed = 2933 MHz
+SystemEraseCapability = Not Supported
+VolatileSize = 65536 MB
+-------------------------------------------------------------------
+
+[InstanceID: DIMM.Socket.B12]
+Device Type = Memory
+BankLabel = B
+CPUAffinity = 2
+CurrentOperatingSpeed = 2666 MT/s
+DeviceDescription = DIMM B12
+FQDD = DIMM.Socket.B12
+InstanceID = DIMM.Socket.B12
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-02-28T22:48:58
+ManufactureDate = Mon Apr 29 07:00:00 2019 UTC
+Manufacturer = Hynix Semiconductor
+MemoryTechnology = DRAM
+MemoryType = DDR-4
+MemoryTypeExtended = LR-DIMM
+Model = DDR4 DIMM
+PartNumber = HMAA8GL7CPR4N-WM
+PrimaryStatus = Unknown
+Rank = Quad Rank
+SerialNumber = 9310FB40
+Size = 65536 MB
+Speed = 2933 MHz
+SystemEraseCapability = Not Supported
+VolatileSize = 65536 MB
+-------------------------------------------------------------------
+
+[InstanceID: DIMM.Socket.B5]
+Device Type = Memory
+BankLabel = B
+CPUAffinity = 2
+CurrentOperatingSpeed = 2666 MT/s
+DeviceDescription = DIMM B5
+FQDD = DIMM.Socket.B5
+InstanceID = DIMM.Socket.B5
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-02-28T22:48:58
+ManufactureDate = Mon Apr 29 07:00:00 2019 UTC
+Manufacturer = Hynix Semiconductor
+MemoryTechnology = DRAM
+MemoryType = DDR-4
+MemoryTypeExtended = LR-DIMM
+Model = DDR4 DIMM
+PartNumber = HMAA8GL7CPR4N-WM
+PrimaryStatus = Unknown
+Rank = Quad Rank
+SerialNumber = 9310FBBB
+Size = 65536 MB
+Speed = 2933 MHz
+SystemEraseCapability = Not Supported
+VolatileSize = 65536 MB
+-------------------------------------------------------------------
+
+[InstanceID: DIMM.Socket.A7]
+Device Type = Memory
+BankLabel = A
+CPUAffinity = 1
+CurrentOperatingSpeed = 2666 MT/s
+DeviceDescription = DIMM A7
+FQDD = DIMM.Socket.A7
+InstanceID = DIMM.Socket.A7
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-02-28T22:48:58
+ManufactureDate = Mon Apr 29 07:00:00 2019 UTC
+Manufacturer = Hynix Semiconductor
+MemoryTechnology = DRAM
+MemoryType = DDR-4
+MemoryTypeExtended = LR-DIMM
+Model = DDR4 DIMM
+PartNumber = HMAA8GL7CPR4N-WM
+PrimaryStatus = Unknown
+Rank = Quad Rank
+SerialNumber = 9310FC1B
+Size = 65536 MB
+Speed = 2933 MHz
+SystemEraseCapability = Not Supported
+VolatileSize = 65536 MB
+-------------------------------------------------------------------
+
+[InstanceID: DIMM.Socket.B11]
+Device Type = Memory
+BankLabel = B
+CPUAffinity = 2
+CurrentOperatingSpeed = 2666 MT/s
+DeviceDescription = DIMM B11
+FQDD = DIMM.Socket.B11
+InstanceID = DIMM.Socket.B11
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-02-28T22:48:58
+ManufactureDate = Mon Apr 08 07:00:00 2019 UTC
+Manufacturer = Hynix Semiconductor
+MemoryTechnology = DRAM
+MemoryType = DDR-4
+MemoryTypeExtended = LR-DIMM
+Model = DDR4 DIMM
+PartNumber = HMAA8GL7CPR4N-WM
+PrimaryStatus = Unknown
+Rank = Quad Rank
+SerialNumber = 93057767
+Size = 65536 MB
+Speed = 2933 MHz
+SystemEraseCapability = Not Supported
+VolatileSize = 65536 MB
+-------------------------------------------------------------------
+
+[InstanceID: DIMM.Socket.A3]
+Device Type = Memory
+BankLabel = A
+CPUAffinity = 1
+CurrentOperatingSpeed = 2666 MT/s
+DeviceDescription = DIMM A3
+FQDD = DIMM.Socket.A3
+InstanceID = DIMM.Socket.A3
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-02-28T22:48:58
+ManufactureDate = Mon Apr 29 07:00:00 2019 UTC
+Manufacturer = Hynix Semiconductor
+MemoryTechnology = DRAM
+MemoryType = DDR-4
+MemoryTypeExtended = LR-DIMM
+Model = DDR4 DIMM
+PartNumber = HMAA8GL7CPR4N-WM
+PrimaryStatus = Unknown
+Rank = Quad Rank
+SerialNumber = 9310FBD6
+Size = 65536 MB
+Speed = 2933 MHz
+SystemEraseCapability = Not Supported
+VolatileSize = 65536 MB
+-------------------------------------------------------------------
+
+[InstanceID: DIMM.Socket.B9]
+Device Type = Memory
+BankLabel = B
+CPUAffinity = 2
+CurrentOperatingSpeed = 2666 MT/s
+DeviceDescription = DIMM B9
+FQDD = DIMM.Socket.B9
+InstanceID = DIMM.Socket.B9
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-02-28T22:48:58
+ManufactureDate = Mon Apr 08 07:00:00 2019 UTC
+Manufacturer = Hynix Semiconductor
+MemoryTechnology = DRAM
+MemoryType = DDR-4
+MemoryTypeExtended = LR-DIMM
+Model = DDR4 DIMM
+PartNumber = HMAA8GL7CPR4N-WM
+PrimaryStatus = Unknown
+Rank = Quad Rank
+SerialNumber = 9305772F
+Size = 65536 MB
+Speed = 2933 MHz
+SystemEraseCapability = Not Supported
+VolatileSize = 65536 MB
+-------------------------------------------------------------------
+
+[InstanceID: DIMM.Socket.B10]
+Device Type = Memory
+BankLabel = B
+CPUAffinity = 2
+CurrentOperatingSpeed = 2666 MT/s
+DeviceDescription = DIMM B10
+FQDD = DIMM.Socket.B10
+InstanceID = DIMM.Socket.B10
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-02-28T22:48:58
+ManufactureDate = Mon Apr 08 07:00:00 2019 UTC
+Manufacturer = Hynix Semiconductor
+MemoryTechnology = DRAM
+MemoryType = DDR-4
+MemoryTypeExtended = LR-DIMM
+Model = DDR4 DIMM
+PartNumber = HMAA8GL7CPR4N-WM
+PrimaryStatus = Unknown
+Rank = Quad Rank
+SerialNumber = 9305777B
+Size = 65536 MB
+Speed = 2933 MHz
+SystemEraseCapability = Not Supported
+VolatileSize = 65536 MB
+-------------------------------------------------------------------
+
+[InstanceID: NIC.Integrated.1-4-1]
+Device Type = NIC
+AutoNegotiation = Enabled
+BusNumber = 1
+CPUAffinity = Not Applicable
+CurrentMACAddress = 24:6E:96:73:0F:3D
+DataBusWidth = Unknown
+DeviceDescription = Integrated NIC 1 Port 4 Partition 1
+DeviceNumber = 0
+EFIVersion = 9.8.62
+FCoEOffloadMode = Unknown
+FQDD = NIC.Integrated.1-4-1
+FamilyVersion = 23.0.8
+FunctionNumber = 1
+InstanceID = NIC.Integrated.1-4-1
+LastSystemInventoryTime = 2025-06-14T22:30:38
+LastUpdateTime = 2025-05-06T16:43:04
+LinkDuplex = Unknown
+MaxBandwidth = 0
+MediaType = Base T
+MinBandwidth = 0
+NicMode = Unknown
+PCIDeviceID = 1521
+PCISubDeviceID = 1f62
+PCISubVendorID = 1028
+PCIVendorID = 8086
+PartNumber = 099GTM
+PermanentMACAddress = 24:6E:96:73:0F:3D
+PrimaryStatus = OK
+ProductName = Intel(R) Gigabit 4P X540/I350 rNDC - 24:6E:96:73:0F:3D
+Protocol = NIC
+ReceiveFlowControl = Off
+SNAPIState = Disabled
+SNAPISupport = Not Available
+SerialNumber = MY1240277C00US
+SlotLength = Unknown
+SlotType = Unknown
+TransmitFlowControl = Off
+UpdateLockdownCapable = False
+UpdateLockdownState = Disabled
+VPISupport = Not Available
+VendorName = Intel Corp
+iScsiOffloadMode = Unknown
+-------------------------------------------------------------------
+
+[InstanceID: NIC.Integrated.1-3-1]
+Device Type = NIC
+AutoNegotiation = Enabled
+BusNumber = 1
+CPUAffinity = Not Applicable
+CurrentMACAddress = 24:6E:96:73:0F:3C
+DataBusWidth = Unknown
+DeviceDescription = Integrated NIC 1 Port 3 Partition 1
+DeviceNumber = 0
+EFIVersion = 9.8.62
+FCoEOffloadMode = Unknown
+FQDD = NIC.Integrated.1-3-1
+FamilyVersion = 23.0.8
+FunctionNumber = 0
+InstanceID = NIC.Integrated.1-3-1
+LastSystemInventoryTime = 2025-06-14T22:30:38
+LastUpdateTime = 2025-05-06T16:43:04
+LinkDuplex = Unknown
+MaxBandwidth = 0
+MediaType = Base T
+MinBandwidth = 0
+NicMode = Unknown
+PCIDeviceID = 1521
+PCISubDeviceID = 1f62
+PCISubVendorID = 1028
+PCIVendorID = 8086
+PartNumber = 099GTM
+PermanentMACAddress = 24:6E:96:73:0F:3C
+PrimaryStatus = OK
+ProductName = Intel(R) Gigabit 4P X540/I350 rNDC - 24:6E:96:73:0F:3C
+Protocol = NIC
+ReceiveFlowControl = Off
+SNAPIState = Disabled
+SNAPISupport = Not Available
+SerialNumber = MY1240277C00US
+SlotLength = Unknown
+SlotType = Unknown
+TransmitFlowControl = Off
+UpdateLockdownCapable = False
+UpdateLockdownState = Disabled
+VPISupport = Not Available
+VendorName = Intel Corp
+iScsiOffloadMode = Unknown
+-------------------------------------------------------------------
+
+[InstanceID: NIC.Integrated.1-2-1]
+Device Type = NIC
+AutoNegotiation = Enabled
+BusNumber = 24
+CPUAffinity = Not Applicable
+CurrentMACAddress = 24:6E:96:73:0F:3A
+DataBusWidth = Unknown
+DeviceDescription = Integrated NIC 1 Port 2 Partition 1
+DeviceNumber = 0
+EFIVersion = 8.2.47
+FCoEOffloadMode = Unknown
+FCoEWWNN = 24:6e:96:73:0f:3b
+FQDD = NIC.Integrated.1-2-1
+FamilyVersion = 23.0.8
+FunctionNumber = 1
+InstanceID = NIC.Integrated.1-2-1
+LastSystemInventoryTime = 2025-06-14T22:30:38
+LastUpdateTime = 2025-06-14T11:26:52
+LinkDuplex = Full Duplex
+LinkSpeed = 10 Gbps
+MaxBandwidth = 0
+MediaType = Base T
+MinBandwidth = 0
+NicMode = Unknown
+PCIDeviceID = 1528
+PCISubDeviceID = 1f61
+PCISubVendorID = 1028
+PCIVendorID = 8086
+PartNumber = 099GTM
+PermanentMACAddress = 24:6E:96:73:0F:3A
+PrimaryStatus = OK
+ProductName = Intel(R) Ethernet 10G 4P X540/I350 rNDC - 24:6E:96:73:0F:3A
+Protocol = NIC
+ReceiveFlowControl = Off
+SNAPIState = Disabled
+SNAPISupport = Not Available
+SerialNumber = MY1240277C00US
+SlotLength = Unknown
+SlotType = Unknown
+TransmitFlowControl = Off
+UpdateLockdownCapable = False
+UpdateLockdownState = Disabled
+VPISupport = Not Available
+VendorName = Intel Corp
+iScsiOffloadMode = Unknown
+-------------------------------------------------------------------
+
+[InstanceID: NIC.Integrated.1-1-1]
+Device Type = NIC
+AutoNegotiation = Enabled
+BusNumber = 24
+CPUAffinity = Not Applicable
+CurrentMACAddress = 24:6E:96:73:0F:38
+DataBusWidth = Unknown
+DeviceDescription = Integrated NIC 1 Port 1 Partition 1
+DeviceNumber = 0
+EFIVersion = 8.2.47
+FCoEOffloadMode = Unknown
+FCoEWWNN = 24:6e:96:73:0f:39
+FQDD = NIC.Integrated.1-1-1
+FamilyVersion = 23.0.8
+FunctionNumber = 0
+InstanceID = NIC.Integrated.1-1-1
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-06-15T06:32:31
+LinkDuplex = Full Duplex
+LinkSpeed = 10 Gbps
+MaxBandwidth = 0
+MediaType = Base T
+MinBandwidth = 0
+NicMode = Unknown
+PCIDeviceID = 1528
+PCISubDeviceID = 1f61
+PCISubVendorID = 1028
+PCIVendorID = 8086
+PartNumber = 099GTM
+PermanentMACAddress = 24:6E:96:73:0F:38
+PrimaryStatus = OK
+ProductName = Intel(R) Ethernet 10G 4P X540/I350 rNDC - 24:6E:96:73:0F:38
+Protocol = NIC
+ReceiveFlowControl = Off
+SNAPIState = Disabled
+SNAPISupport = Not Available
+SerialNumber = MY1240277C00US
+SlotLength = Unknown
+SlotType = Unknown
+TransmitFlowControl = Off
+UpdateLockdownCapable = False
+UpdateLockdownState = Disabled
+VPISupport = Not Available
+VendorName = Intel Corp
+iScsiOffloadMode = Unknown
+-------------------------------------------------------------------
+
+[InstanceID: Disk.Bay.22:Enclosure.Internal.0-1:PCIeExtender.Slot.1]
+Device Type = PCIDevice
+BusNumber = 61
+CPUAffinity = Not Applicable
+DataBusWidth = 4x or x4
+Description = NVMe Datacenter SSD [3DNAND] ME 2.5" U.2 (P4610)
+DeviceDescription = PCIe SSD in Slot 22 in Bay 1
+DeviceNumber = 0
+FQDD = Disk.Bay.22:Enclosure.Internal.0-1:PCIeExtender.Slot.1
+FunctionNumber = 0
+InstanceID = Disk.Bay.22:Enclosure.Internal.0-1:PCIeExtender.Slot.1
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-06-14T00:48:29
+Manufacturer = Intel Corporation
+PCIDeviceID = 0A54
+PCISubDeviceID = 4812
+PCISubVendorID = 8086
+PCIVendorID = 8086
+SlotLength = 2.5 Inch Drive Form Factor
+SlotType = PCI Express Gen 3 SFF-8639
+-------------------------------------------------------------------
+
+[InstanceID: Video.Slot.8-1]
+Device Type = PCIDevice
+BusNumber = 216
+CPUAffinity = Not Applicable
+DataBusWidth = 16x or x16
+Description = AD102GL [L40]
+DeviceDescription = GPU Controller in Slot 8 of Instance 1
+DeviceNumber = 0
+FQDD = Video.Slot.8-1
+FunctionNumber = 0
+InstanceID = Video.Slot.8-1
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-06-15T00:50:09
+Manufacturer = NVIDIA Corporation
+PCIDeviceID = 26B5
+PCISubDeviceID = 169D
+PCISubVendorID = 10DE
+PCIVendorID = 10DE
+SlotLength = Long Length
+SlotType = PCI Express Gen 3
+-------------------------------------------------------------------
+
+[InstanceID: AHCI.Slot.3-1]
+Device Type = PCIDevice
+BusNumber = 94
+CPUAffinity = Not Applicable
+DataBusWidth = 8x or x8
+Description = BOSS-S1 Adapter
+DeviceDescription = AHCI controller in slot 3
+DeviceNumber = 0
+FQDD = AHCI.Slot.3-1
+FunctionNumber = 0
+InstanceID = AHCI.Slot.3-1
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-06-14T23:30:38
+Manufacturer = Marvell Technology Group Ltd.
+PCIDeviceID = 9230
+PCISubDeviceID = 1FE2
+PCISubVendorID = 1028
+PCIVendorID = 1B4B
+SlotLength = Long Length
+SlotType = PCI Express Gen 3 x16
+-------------------------------------------------------------------
+
+[InstanceID: PCIeExtender.Slot.1]
+Device Type = PCIDevice
+BusNumber = 60
+CPUAffinity = Not Applicable
+DataBusWidth = 4x or x4
+Description = PEX 9733 33-lane, 9-port PCI Express Gen 3 (8.0 GT/s) Switch
+DeviceDescription = PCIe Extender in PCIe Slot 1
+DeviceNumber = 4
+FQDD = PCIeExtender.Slot.1
+FunctionNumber = 0
+InstanceID = PCIeExtender.Slot.1
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-06-14T00:48:29
+Manufacturer = PLX Technology, Inc.
+PCIDeviceID = 9733
+PCISubDeviceID = 1FC7
+PCISubVendorID = 1028
+PCIVendorID = 10B5
+SlotLength = Long Length
+SlotType = PCI Express Gen 3 x16
+-------------------------------------------------------------------
+
+[InstanceID: Disk.Bay.23:Enclosure.Internal.0-1:PCIeExtender.Slot.1]
+Device Type = PCIDevice
+BusNumber = 62
+CPUAffinity = Not Applicable
+DataBusWidth = 4x or x4
+Description = NVMe Datacenter SSD [3DNAND] ME 2.5" U.2 (P4610)
+DeviceDescription = PCIe SSD in Slot 23 in Bay 1
+DeviceNumber = 0
+FQDD = Disk.Bay.23:Enclosure.Internal.0-1:PCIeExtender.Slot.1
+FunctionNumber = 0
+InstanceID = Disk.Bay.23:Enclosure.Internal.0-1:PCIeExtender.Slot.1
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-06-15T06:32:31
+Manufacturer = Intel Corporation
+PCIDeviceID = 0A54
+PCISubDeviceID = 4812
+PCISubVendorID = 8086
+PCIVendorID = 8086
+SlotLength = 2.5 Inch Drive Form Factor
+SlotType = PCI Express Gen 3 SFF-8639
+-------------------------------------------------------------------
+
+[InstanceID: SMBus.Embedded.3-1]
+Device Type = PCIDevice
+BusNumber = 0
+CPUAffinity = Not Applicable
+DataBusWidth = Unknown
+Description = C620 Series Chipset Family SMBus
+DeviceDescription = Embedded SM Bus 3
+DeviceNumber = 31
+FQDD = SMBus.Embedded.3-1
+FunctionNumber = 4
+InstanceID = SMBus.Embedded.3-1
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-06-12T16:55:35
+Manufacturer = Intel Corporation
+PCIDeviceID = A1A3
+PCISubDeviceID = 0737
+PCISubVendorID = 1028
+PCIVendorID = 8086
+SlotLength = Unknown
+SlotType = Unknown
+-------------------------------------------------------------------
+
+[InstanceID: Video.Slot.4-1]
+Device Type = PCIDevice
+BusNumber = 175
+CPUAffinity = Not Applicable
+DataBusWidth = 16x or x16
+Description = AD102GL [L40]
+DeviceDescription = GPU Controller in Slot 4 of Instance 1
+DeviceNumber = 0
+FQDD = Video.Slot.4-1
+FunctionNumber = 0
+InstanceID = Video.Slot.4-1
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-06-14T22:35:12
+Manufacturer = NVIDIA Corporation
+PCIDeviceID = 26B5
+PCISubDeviceID = 169D
+PCISubVendorID = 10DE
+PCIVendorID = 10DE
+SlotLength = Long Length
+SlotType = PCI Express Gen 3
+-------------------------------------------------------------------
+
+[InstanceID: AHCI.Embedded.2-1]
+Device Type = PCIDevice
+BusNumber = 0
+CPUAffinity = Not Applicable
+DataBusWidth = Unknown
+Description = C620 Series Chipset Family SATA Controller [AHCI mode]
+DeviceDescription = Embedded AHCI 2
+DeviceNumber = 23
+FQDD = AHCI.Embedded.2-1
+FunctionNumber = 0
+InstanceID = AHCI.Embedded.2-1
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-06-12T16:55:35
+Manufacturer = Intel Corporation
+PCIDeviceID = A182
+PCISubDeviceID = 0737
+PCISubVendorID = 1028
+PCIVendorID = 8086
+SlotLength = Unknown
+SlotType = Unknown
+-------------------------------------------------------------------
+
+[InstanceID: P2PBridge.Embedded.2-1]
+Device Type = PCIDevice
+BusNumber = 0
+CPUAffinity = Not Applicable
+DataBusWidth = Unknown
+Description = C620 Series Chipset Family PCI Express Root Port #5
+DeviceDescription = Embedded P2P Bridge 2-1
+DeviceNumber = 28
+FQDD = P2PBridge.Embedded.2-1
+FunctionNumber = 4
+InstanceID = P2PBridge.Embedded.2-1
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-06-12T16:55:35
+Manufacturer = Intel Corporation
+PCIDeviceID = A194
+PCISubDeviceID = 0737
+PCISubVendorID = 1028
+PCIVendorID = 8086
+SlotLength = Unknown
+SlotType = Unknown
+-------------------------------------------------------------------
+
+[InstanceID: Disk.Bay.21:Enclosure.Internal.0-1:PCIeExtender.Slot.1]
+Device Type = PCIDevice
+BusNumber = 64
+CPUAffinity = Not Applicable
+DataBusWidth = 4x or x4
+Description = NVMe Datacenter SSD [3DNAND] ME 2.5" U.2 (P4610)
+DeviceDescription = PCIe SSD in Slot 21 in Bay 1
+DeviceNumber = 0
+FQDD = Disk.Bay.21:Enclosure.Internal.0-1:PCIeExtender.Slot.1
+FunctionNumber = 0
+InstanceID = Disk.Bay.21:Enclosure.Internal.0-1:PCIeExtender.Slot.1
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-06-14T00:48:29
+Manufacturer = Intel Corporation
+PCIDeviceID = 0A54
+PCISubDeviceID = 4812
+PCISubVendorID = 8086
+PCIVendorID = 8086
+SlotLength = 2.5 Inch Drive Form Factor
+SlotType = PCI Express Gen 3 SFF-8639
+-------------------------------------------------------------------
+
+[InstanceID: Disk.Bay.20:Enclosure.Internal.0-1:PCIeExtender.Slot.1]
+Device Type = PCIDevice
+BusNumber = 63
+CPUAffinity = Not Applicable
+DataBusWidth = 4x or x4
+Description = NVMe Datacenter SSD [3DNAND] ME 2.5" U.2 (P4610)
+DeviceDescription = PCIe SSD in Slot 20 in Bay 1
+DeviceNumber = 0
+FQDD = Disk.Bay.20:Enclosure.Internal.0-1:PCIeExtender.Slot.1
+FunctionNumber = 0
+InstanceID = Disk.Bay.20:Enclosure.Internal.0-1:PCIeExtender.Slot.1
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-06-14T00:48:29
+Manufacturer = Intel Corporation
+PCIDeviceID = 0A54
+PCISubDeviceID = 4812
+PCISubVendorID = 8086
+PCIVendorID = 8086
+SlotLength = 2.5 Inch Drive Form Factor
+SlotType = PCI Express Gen 3 SFF-8639
+-------------------------------------------------------------------
+
+[InstanceID: AHCI.Embedded.1-1]
+Device Type = PCIDevice
+BusNumber = 0
+CPUAffinity = Not Applicable
+DataBusWidth = Unknown
+Description = C620 Series Chipset Family SSATA Controller [AHCI mode]
+DeviceDescription = Embedded AHCI 1
+DeviceNumber = 17
+FQDD = AHCI.Embedded.1-1
+FunctionNumber = 5
+InstanceID = AHCI.Embedded.1-1
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-06-12T16:55:35
+Manufacturer = Intel Corporation
+PCIDeviceID = A1D2
+PCISubDeviceID = 0737
+PCISubVendorID = 1028
+PCIVendorID = 8086
+SlotLength = Unknown
+SlotType = Unknown
+-------------------------------------------------------------------
+
+[InstanceID: P2PBridge.Embedded.1-1]
+Device Type = PCIDevice
+BusNumber = 0
+CPUAffinity = Not Applicable
+DataBusWidth = Unknown
+Description = C620 Series Chipset Family PCI Express Root Port #1
+DeviceDescription = Embedded P2P Bridge 1-1
+DeviceNumber = 28
+FQDD = P2PBridge.Embedded.1-1
+FunctionNumber = 0
+InstanceID = P2PBridge.Embedded.1-1
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-06-12T16:55:35
+Manufacturer = Intel Corporation
+PCIDeviceID = A190
+PCISubDeviceID = 0737
+PCISubVendorID = 1028
+PCIVendorID = 8086
+SlotLength = Unknown
+SlotType = Unknown
+-------------------------------------------------------------------
+
+[InstanceID: HostBridge.Embedded.1-1]
+Device Type = PCIDevice
+BusNumber = 0
+CPUAffinity = Not Applicable
+DataBusWidth = Unknown
+Description = Sky Lake-E DMI3 Registers
+DeviceDescription = Embedded Host Bridge 1-1
+DeviceNumber = 0
+FQDD = HostBridge.Embedded.1-1
+FunctionNumber = 0
+InstanceID = HostBridge.Embedded.1-1
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-02-12T20:43:47
+Manufacturer = Intel Corporation
+PCIDeviceID = 2020
+PCISubDeviceID = 0000
+PCISubVendorID = 8086
+PCIVendorID = 8086
+SlotLength = Unknown
+SlotType = Unknown
+-------------------------------------------------------------------
+
+[InstanceID: Video.Embedded.1-1]
+Device Type = PCIDevice
+BusNumber = 3
+CPUAffinity = Not Applicable
+DataBusWidth = Unknown
+Description = Integrated Matrox G200eW3 Graphics Controller
+DeviceDescription = Embedded Video Controller 1
+DeviceNumber = 0
+FQDD = Video.Embedded.1-1
+FunctionNumber = 0
+InstanceID = Video.Embedded.1-1
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-06-12T16:55:35
+Manufacturer = Matrox Electronics Systems Ltd.
+PCIDeviceID = 0536
+PCISubDeviceID = 0737
+PCISubVendorID = 1028
+PCIVendorID = 102B
+SlotLength = Unknown
+SlotType = Unknown
+-------------------------------------------------------------------
+
+[InstanceID: ISABridge.Embedded.1-1]
+Device Type = PCIDevice
+BusNumber = 0
+CPUAffinity = Not Applicable
+DataBusWidth = Unknown
+Description = C621 Series Chipset LPC/eSPI Controller
+DeviceDescription = Embedded ISA Bridge 1
+DeviceNumber = 31
+FQDD = ISABridge.Embedded.1-1
+FunctionNumber = 0
+InstanceID = ISABridge.Embedded.1-1
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-06-12T16:55:35
+Manufacturer = Intel Corporation
+PCIDeviceID = A1C1
+PCISubDeviceID = 0737
+PCISubVendorID = 1028
+PCIVendorID = 8086
+SlotLength = Unknown
+SlotType = Unknown
+-------------------------------------------------------------------
+
+[InstanceID: NIC.Integrated.1-4-1]
+Device Type = PCIDevice
+BusNumber = 1
+CPUAffinity = Not Applicable
+DataBusWidth = Unknown
+Description = Gigabit 4P X540/I350 rNDC
+DeviceDescription = Integrated NIC 1 Port 4 Partition 1
+DeviceNumber = 0
+FQDD = NIC.Integrated.1-4-1
+FunctionNumber = 1
+InstanceID = NIC.Integrated.1-4-1
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-05-06T16:43:04
+Manufacturer = Intel Corporation
+PCIDeviceID = 1521
+PCISubDeviceID = 1F62
+PCISubVendorID = 1028
+PCIVendorID = 8086
+SlotLength = Unknown
+SlotType = Unknown
+-------------------------------------------------------------------
+
+[InstanceID: NIC.Integrated.1-3-1]
+Device Type = PCIDevice
+BusNumber = 1
+CPUAffinity = Not Applicable
+DataBusWidth = Unknown
+Description = Gigabit 4P X540/I350 rNDC
+DeviceDescription = Integrated NIC 1 Port 3 Partition 1
+DeviceNumber = 0
+FQDD = NIC.Integrated.1-3-1
+FunctionNumber = 0
+InstanceID = NIC.Integrated.1-3-1
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-05-06T16:43:04
+Manufacturer = Intel Corporation
+PCIDeviceID = 1521
+PCISubDeviceID = 1F62
+PCISubVendorID = 1028
+PCIVendorID = 8086
+SlotLength = Unknown
+SlotType = Unknown
+-------------------------------------------------------------------
+
+[InstanceID: NIC.Integrated.1-2-1]
+Device Type = PCIDevice
+BusNumber = 24
+CPUAffinity = Not Applicable
+DataBusWidth = Unknown
+Description = Ethernet 10G 4P X540/I350 rNDC
+DeviceDescription = Integrated NIC 1 Port 2 Partition 1
+DeviceNumber = 0
+FQDD = NIC.Integrated.1-2-1
+FunctionNumber = 1
+InstanceID = NIC.Integrated.1-2-1
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-06-14T11:26:52
+Manufacturer = Intel Corporation
+PCIDeviceID = 1528
+PCISubDeviceID = 1F61
+PCISubVendorID = 1028
+PCIVendorID = 8086
+SlotLength = Unknown
+SlotType = Unknown
+-------------------------------------------------------------------
+
+[InstanceID: NIC.Integrated.1-1-1]
+Device Type = PCIDevice
+BusNumber = 24
+CPUAffinity = Not Applicable
+DataBusWidth = Unknown
+Description = Ethernet 10G 4P X540/I350 rNDC
+DeviceDescription = Integrated NIC 1 Port 1 Partition 1
+DeviceNumber = 0
+FQDD = NIC.Integrated.1-1-1
+FunctionNumber = 0
+InstanceID = NIC.Integrated.1-1-1
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-06-15T06:32:31
+Manufacturer = Intel Corporation
+PCIDeviceID = 1528
+PCISubDeviceID = 1F61
+PCISubVendorID = 1028
+PCIVendorID = 8086
+SlotLength = Unknown
+SlotType = Unknown
+-------------------------------------------------------------------
+
+[InstanceID: Enclosure.Internal.0-1:PCIeExtender.Slot.1]
+Device Type = PCIeSSDBackPlane
+DeviceDescription = Backplane 1 of PCIe Extender in PCIe Slot 1
+FQDD = Enclosure.Internal.0-1:PCIeExtender.Slot.1
+FirmwareVersion = 2.25
+InstanceID = Enclosure.Internal.0-1:PCIeExtender.Slot.1
+MediaType = Solid State Drive
+PCIExpressGeneration = Gen 3
+ProductName = Backplane 1 of PCIe Extender in PCIe Slot 1
+RollupStatus = Unknown
+SlotCount = 24
+WiredOrder = 1
+-------------------------------------------------------------------
+
+[InstanceID: PCIeExtender.Slot.1]
+Device Type = PCIeSSDExtender
+DeviceDescription = PCIe Extender in PCIe Slot 1
+FQDD = PCIeExtender.Slot.1
+InstanceID = PCIeExtender.Slot.1
+PrimaryStatus = Unknown
+RollupStatus = Unknown
+-------------------------------------------------------------------
+
+[InstanceID: Disk.Bay.22:Enclosure.Internal.0-1:PCIeExtender.Slot.1]
+Device Type = PCIeSSD
+AvailableSpare = 100 %
+Bus = 3D
+BusProtocol = PCIE
+CPUAffinity = Not Applicable
+CryptographicEraseCapable = Capable
+Device = 0
+DeviceDescription = PCIe SSD in Slot 22 in Bay 1
+DeviceProtocol = NVMe 1.2
+DeviceSidebandProtocol = NVMe-MI1.0
+DriveFormFactor = 2.5 inch
+EncryptionProtocol = None
+ErrorRecoverable = NotApplicable
+FQDD = Disk.Bay.22:Enclosure.Internal.0-1:PCIeExtender.Slot.1
+FailurePredicted = NO
+Function = 0
+InstanceID = Disk.Bay.22:Enclosure.Internal.0-1:PCIeExtender.Slot.1
+Manufacturer = Intel Corporation 
+MaximumCapableSpeed = 8 GT/s
+MediaType = Solid State Drive
+Model = INTEL SSDPE2KE016T8                    
+NegotiatedSpeed = 8 GT/s
+PCIeCapableLinkWidth = x4
+PCIeNegotiatedLinkWidth = x4
+PrimaryStatus = Unknown
+ProductID = a54
+RAIDType = Unknown
+RemainingRatedWriteEndurance = 100 %
+Revision = VDV10152
+SerialNumber = PHLN017400P11P6AGN
+SizeInBytes = 1600321314816
+Slot = 22
+State = Ready
+SystemEraseCapability = CryptographicErasePD
+UsedSizeInBytes = 0 Bytes
+-------------------------------------------------------------------
+
+[InstanceID: Disk.Bay.23:Enclosure.Internal.0-1:PCIeExtender.Slot.1]
+Device Type = PCIeSSD
+AvailableSpare = 100 %
+Bus = 3E
+BusProtocol = PCIE
+CPUAffinity = Not Applicable
+CryptographicEraseCapable = Capable
+Device = 0
+DeviceDescription = PCIe SSD in Slot 23 in Bay 1
+DeviceProtocol = NVMe 1.2
+DeviceSidebandProtocol = NVMe-MI1.0
+DriveFormFactor = 2.5 inch
+EncryptionProtocol = None
+ErrorRecoverable = NotApplicable
+FQDD = Disk.Bay.23:Enclosure.Internal.0-1:PCIeExtender.Slot.1
+FailurePredicted = NO
+Function = 0
+InstanceID = Disk.Bay.23:Enclosure.Internal.0-1:PCIeExtender.Slot.1
+Manufacturer = Intel Corporation 
+MaximumCapableSpeed = 8 GT/s
+MediaType = Solid State Drive
+Model = INTEL SSDPE2KE016T8                    
+NegotiatedSpeed = 8 GT/s
+PCIeCapableLinkWidth = x4
+PCIeNegotiatedLinkWidth = x4
+PrimaryStatus = Unknown
+ProductID = a54
+RAIDType = Unknown
+RemainingRatedWriteEndurance = 100 %
+Revision = VDV10152
+SerialNumber = PHLN929101521P6AGN
+SizeInBytes = 1600321314816
+Slot = 23
+State = Ready
+SystemEraseCapability = CryptographicErasePD
+UsedSizeInBytes = 0 Bytes
+-------------------------------------------------------------------
+
+[InstanceID: Disk.Bay.20:Enclosure.Internal.0-1:PCIeExtender.Slot.1]
+Device Type = PCIeSSD
+AvailableSpare = 100 %
+Bus = 3F
+BusProtocol = PCIE
+CPUAffinity = Not Applicable
+CryptographicEraseCapable = Capable
+Device = 0
+DeviceDescription = PCIe SSD in Slot 20 in Bay 1
+DeviceProtocol = NVMe 1.2
+DeviceSidebandProtocol = NVMe-MI1.0
+DriveFormFactor = 2.5 inch
+EncryptionProtocol = None
+ErrorRecoverable = NotApplicable
+FQDD = Disk.Bay.20:Enclosure.Internal.0-1:PCIeExtender.Slot.1
+FailurePredicted = NO
+Function = 0
+InstanceID = Disk.Bay.20:Enclosure.Internal.0-1:PCIeExtender.Slot.1
+Manufacturer = Intel Corporation 
+MaximumCapableSpeed = 8 GT/s
+MediaType = Solid State Drive
+Model = INTEL SSDPE2KE016T8                    
+NegotiatedSpeed = 8 GT/s
+PCIeCapableLinkWidth = x4
+PCIeNegotiatedLinkWidth = x4
+PrimaryStatus = Unknown
+ProductID = a54
+RAIDType = Unknown
+RemainingRatedWriteEndurance = 100 %
+Revision = VDV10152
+SerialNumber = PHLN015600AW1P6AGN
+SizeInBytes = 1600321314816
+Slot = 20
+State = Ready
+SystemEraseCapability = CryptographicErasePD
+UsedSizeInBytes = 0 Bytes
+-------------------------------------------------------------------
+
+[InstanceID: Disk.Bay.21:Enclosure.Internal.0-1:PCIeExtender.Slot.1]
+Device Type = PCIeSSD
+AvailableSpare = 100 %
+Bus = 40
+BusProtocol = PCIE
+CPUAffinity = Not Applicable
+CryptographicEraseCapable = Capable
+Device = 0
+DeviceDescription = PCIe SSD in Slot 21 in Bay 1
+DeviceProtocol = NVMe 1.2
+DeviceSidebandProtocol = NVMe-MI1.0
+DriveFormFactor = 2.5 inch
+EncryptionProtocol = None
+ErrorRecoverable = NotApplicable
+FQDD = Disk.Bay.21:Enclosure.Internal.0-1:PCIeExtender.Slot.1
+FailurePredicted = NO
+Function = 0
+InstanceID = Disk.Bay.21:Enclosure.Internal.0-1:PCIeExtender.Slot.1
+Manufacturer = Intel Corporation 
+MaximumCapableSpeed = 8 GT/s
+MediaType = Solid State Drive
+Model = INTEL SSDPE2KE016T8                    
+NegotiatedSpeed = 8 GT/s
+PCIeCapableLinkWidth = x4
+PCIeNegotiatedLinkWidth = x4
+PrimaryStatus = Unknown
+ProductID = a54
+RAIDType = Unknown
+RemainingRatedWriteEndurance = 100 %
+Revision = VDV10152
+SerialNumber = PHLN016602ZK1P6AGN
+SizeInBytes = 1600321314816
+Slot = 21
+State = Ready
+SystemEraseCapability = CryptographicErasePD
+UsedSizeInBytes = 0 Bytes
+-------------------------------------------------------------------
+
+[InstanceID: Disk.Direct.0-0:AHCI.Slot.3-1]
+Device Type = PhysicalDisk
+BlockSizeInBytes = 512 Bytes
+BusProtocol = SATA
+CPUAffinity = Not Applicable
+Certified = NotApplicable
+ConfigLockdownCapable = False
+ConfigLockdownState = Disabled
+Connector = 0
+CryptographicEraseCapable = Capable
+DeviceDescription = Disk 0 on AHCI Controller in slot 3
+DriveFormFactor = M.2
+EncryptionProtocol = None
+ErrorRecoverable = NotApplicable
+FQDD = Disk.Direct.0-0:AHCI.Slot.3-1
+FreeSizeInBytes = 0 Bytes
+HotSpareStatus = No
+InstanceID = Disk.Direct.0-0:AHCI.Slot.3-1
+LastSystemInventoryTime = 2025-06-14T22:30:38
+LastUpdateTime = 2025-06-14T23:30:38
+Manufacturer = INTEL
+ManufacturingDay = 0
+ManufacturingWeek = 0
+ManufacturingYear = 0
+MaxCapableSpeed = 6 Gbps
+MediaType = Solid State Drive
+Model = SSDSCKJB240G7R
+NonRAIDDiskCachePolicy = Unknown
+OperationName = None
+OperationPercentComplete = 0 %
+PCIeCapableLinkWidth = None
+PCIeNegotiatedLinkWidth = None
+PPID = TW-0919J9-PIHIT-8B2-02E8-A00
+PowerStatus = On
+PredictiveFailureState = Smart Alert Absent
+PrimaryStatus = Unknown
+RAIDType = Unknown
+RaidStatus = Online
+RemainingRatedWriteEndurance = 100 %
+Revision = N201DL43
+RollupStatus = Unknown
+SASAddress = Not Applicable
+SecurityState = Not Capable
+SerialNumber = PHDW842503WA240E
+SizeInBytes = 240057409536 Bytes
+Slot = 0
+SupportedEncryptionTypes = Cryptographic Erase Capable
+SystemEraseCapability = CryptographicErasePD
+T10PICapability = Not supported
+UpdateLockdownCapable = False
+UpdateLockdownState = Disabled
+UsedSizeInBytes = 239990276096 Bytes
+WWN = Not Applicable
+-------------------------------------------------------------------
+
+[InstanceID: Disk.Direct.1-1:AHCI.Slot.3-1]
+Device Type = PhysicalDisk
+BlockSizeInBytes = 512 Bytes
+BusProtocol = SATA
+CPUAffinity = Not Applicable
+Certified = NotApplicable
+ConfigLockdownCapable = False
+ConfigLockdownState = Disabled
+Connector = 0
+CryptographicEraseCapable = Capable
+DeviceDescription = Disk 1 on AHCI Controller in slot 3
+DriveFormFactor = M.2
+EncryptionProtocol = None
+ErrorRecoverable = NotApplicable
+FQDD = Disk.Direct.1-1:AHCI.Slot.3-1
+FreeSizeInBytes = 0 Bytes
+HotSpareStatus = No
+InstanceID = Disk.Direct.1-1:AHCI.Slot.3-1
+LastSystemInventoryTime = 2025-06-14T22:30:38
+LastUpdateTime = 2025-06-14T23:30:38
+Manufacturer = INTEL
+ManufacturingDay = 0
+ManufacturingWeek = 0
+ManufacturingYear = 0
+MaxCapableSpeed = 6 Gbps
+MediaType = Solid State Drive
+Model = SSDSCKJB240G7R
+NonRAIDDiskCachePolicy = Unknown
+OperationName = None
+OperationPercentComplete = 0 %
+PCIeCapableLinkWidth = None
+PCIeNegotiatedLinkWidth = None
+PPID = TW-0919J9-PIHIT-8B3-011D-A00
+PowerStatus = On
+PredictiveFailureState = Smart Alert Absent
+PrimaryStatus = Unknown
+RAIDType = Unknown
+RaidStatus = Online
+RemainingRatedWriteEndurance = 100 %
+Revision = N201DL43
+RollupStatus = Unknown
+SASAddress = Not Applicable
+SecurityState = Not Capable
+SerialNumber = PHDW843601U8240E
+SizeInBytes = 240057409536 Bytes
+Slot = 1
+SupportedEncryptionTypes = Cryptographic Erase Capable
+SystemEraseCapability = CryptographicErasePD
+T10PICapability = Not supported
+UpdateLockdownCapable = False
+UpdateLockdownState = Disabled
+UsedSizeInBytes = 239990276096 Bytes
+WWN = Not Applicable
+-------------------------------------------------------------------
+
+[InstanceID: PSU.Slot.1]
+Device Type = PowerSupply
+DetailedState = Presence Detected
+DeviceDescription = Power Supply 1
+EffectiveCapacity = 2000
+FQDD = PSU.Slot.1
+FirmwareVersion = 00.11.1A
+InputVoltage = 0 Volts
+InstanceID = PSU.Slot.1
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-06-15T22:31:19
+LineStatus = High line
+Manufacturer = DELL
+Model = PWR SPLY,2000W,RDNT,DELTA
+PMBusMonitoring = Capable
+PartNumber = 0J5WMGA02
+PrimaryStatus = Unknown
+Range1MaxInputPower = 2260 Watts
+RedMinNumberNeeded = 1
+RedTypeOfSet = N+1,Sparing
+RedundancyStatus = NA
+SerialNumber = CNDED0089A0ESN
+TotalOutputPower = 2000 Watts
+Type = AC
+-------------------------------------------------------------------
+
+[InstanceID: PSU.Slot.2]
+Device Type = PowerSupply
+DetailedState = Presence Detected
+DeviceDescription = Power Supply 2
+EffectiveCapacity = 2000
+FQDD = PSU.Slot.2
+FirmwareVersion = 00.32.75
+InputVoltage = 0 Volts
+InstanceID = PSU.Slot.2
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-06-15T22:31:19
+LineStatus = High line
+Manufacturer = DELL
+Model = PWR SPLY,2000W,RDNT,ARTESYN
+PMBusMonitoring = Capable
+PartNumber = 0T8MTCA00
+PrimaryStatus = Unknown
+Range1MaxInputPower = 2260 Watts
+RedMinNumberNeeded = 1
+RedTypeOfSet = N+1,Sparing
+RedundancyStatus = NA
+SerialNumber = PHARP009CS006M
+TotalOutputPower = 2000 Watts
+Type = AC
+-------------------------------------------------------------------
+
+[InstanceID: QuickSync.Integrated.1]
+Device Type = SystemQuickSync
+DeviceDescription = Integrated Quick Sync 1
+FQDD = QuickSync.Integrated.1
+FWVersion = 2.0
+HWStatus = OK
+InstanceID = QuickSync.Integrated.1
+Manufacturer = Dell
+ProductName = iDRAC Quick Sync
+Version = 0
+-------------------------------------------------------------------
+
+[InstanceID: System.Embedded.1]
+Device Type = System
+AssetTag = 
+BIOSReleaseDate = 03/27/2025
+BIOSVersionString = 2.24.0
+BaseBoardChassisSlot = NA
+BladeGeometry = Not Applicable
+BoardPartNumber = 00WGD1A00
+BoardSerialNumber = CNFCP0081601SU
+CPLDVersion = 1.0.1
+CPURollupStatus = Unknown
+ChassisName = Main System Chassis
+ChassisServiceTag = 38WP8N2
+ChassisSystemHeight = 2 U
+CoolingRollupStatus = OK
+CurrentRollupStatus = OK
+DeviceDescription = System
+EstimatedExhaustTemperature = 0 Degree C
+EstimatedSystemAirflow = 0 CFM
+ExpressServiceCode = 7069001726
+FQDD = System.Embedded.1
+HostName = dev20
+InstanceID = System.Embedded.1
+IntrusionRollupStatus = OK
+IsOEMBranded = False
+LastSystemInventoryTime = 2025-06-15T05:32:32
+LastUpdateTime = 2025-06-15T00:50:09
+LicensingRollupStatus = OK
+LifecycleControllerVersion = 7.00.00.181
+ManagedSystemSize = 2 U
+Manufacturer = Dell Inc.
+MaxCPUSockets = 2
+MaxDIMMSlots = 24
+MaxPCIeSlots = 8
+MemoryOperationMode = OptimizerMode
+MemoryRollupStatus = Unknown
+Model = PowerEdge R740xd
+NodeID = 38WP8N2
+PSRollupStatus = Unknown
+PlatformGUID = 324e384f-c0b3-5080-5710-00384c4c4544
+PopulatedCPUSockets = 2
+PopulatedDIMMSlots = 24
+PopulatedPCIeSlots = 4
+PowerCap = 564 Watts
+PowerCapEnabledState = Disabled
+PowerState = Off - Soft
+PrimaryStatus = Degraded
+RollupStatus = Degraded
+SELRollupStatus = Degraded
+ServiceTag = 38WP8N2
+StorageRollupStatus = OK
+SysMemErrorMethodology = Multi-bit ECC
+SysMemFailOverState = NotInUse
+SysMemLocation = System board or motherboard
+SysMemMaxCapacitySize = 7864320 MB
+SysMemPrimaryStatus = OK
+SysMemTotalSize = 1572864 MB
+SystemGeneration = 14G Monolithic
+SystemHealthRollupStatus = Degraded
+SystemID = 1847
+SystemRevision = I
+TempRollupStatus = OK
+TempStatisticsRollupStatus = OK
+UUID = 4c4c4544-0038-5710-8050-b3c04f384e32
+VoltRollupStatus = OK
+smbiosGUID = 44454c4c-3800-1057-8050-b3c04f384e32
+-------------------------------------------------------------------
+
+[InstanceID: Disk.Virtual.0:AHCI.Slot.3-1]
+Device Type = VirtualDisk
+BlockSizeInBytes = Include 512 bytes block size disks only
+BusProtocol = SATA
+Cachecade = Not a Cachecade Virtual Disk
+DeviceDescription = Virtual Disk 0 on AHCI Controller in slot 3
+DiskCachePolicy = Default
+FQDD = Disk.Virtual.0:AHCI.Slot.3-1
+InstanceID = Disk.Virtual.0:AHCI.Slot.3-1
+LastSystemInventoryTime = 2025-06-14T22:30:38
+LastUpdateTime = 2025-06-14T23:30:38
+LockStatus = Unlocked
+MediaType = Solid State Drive
+Name = New_VD
+ObjectStatus = Current
+OperationName = None
+OperationPercentComplete = 0
+PendingOperations = None
+PhysicalDiskIDs = Disk.Direct.0-0:AHCI.Slot.3-1,Disk.Direct.1-1:AHCI.Slot.3-1
+PrimaryStatus = Unknown
+RAIDStatus = Online
+RAIDTypes = RAID1
+ReadCachePolicy = No Read Ahead
+RemainingRedundancy = 1
+RollupStatus = Unknown
+SizeInBytes = 239990276096
+SpanDepth = 1
+SpanLength = 2
+StartingLBAinBlocks = 0
+StripeSize = 64KB
+T10PIStatus = Disabled
+VirtualDiskTargetID = 0
+WriteCachePolicy = Write Through
+-------------------------------------------------------------------
+
+

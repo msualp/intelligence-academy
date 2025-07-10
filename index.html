@@ -73,14 +73,19 @@
         }
 
         /* Header */
+        :root {
+            --header-height: 80px;
+            --header-height-scrolled: 60px;
+        }
+
         header {
             position: fixed;
             top: 38px;
             left: 0;
             right: 0;
             z-index: 1000;
-            padding: 15px 40px;
-            background: rgba(0, 0, 0, 0.9);
+            padding: 20px 40px;
+            background: rgba(0, 0, 0, 0.85);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -88,9 +93,12 @@
             justify-content: space-between;
             align-items: center;
             transition: all 0.3s ease;
+            height: var(--header-height);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         }
 
         header.scrolled {
+            height: var(--header-height-scrolled);
             padding: 10px 40px;
             background: rgba(0, 0, 0, 0.95);
         }
@@ -98,81 +106,180 @@
         .header-left {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 16px;
         }
 
         .header-logo {
-            font-size: 20px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 8px 14px;
+            border-radius: 10px;
+            font-size: 18px;
             font-weight: 700;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+        }
+
+        .header-title-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .header-name {
+            font-weight: 600;
+            color: #fff;
+            font-size: 20px;
+        }
+        
+        .header-rowan {
+            font-weight: 700;
+            background: linear-gradient(135deg, #FF8C00, #FF5E62);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-        }
-
-        .header-title {
+            margin-left: 4px;
             font-size: 20px;
-            font-weight: 600;
-            color: white;
         }
 
-        .header-title span {
-            font-weight: 300;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 16px;
-        }
-
-        /* Navigation */
-        nav {
+        .header-subtitle {
+            font-size: 13px;
+            margin-top: 2px;
             display: flex;
-            gap: 30px;
             align-items: center;
         }
 
-        nav a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 500;
+        .header-subtitle-ai {
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .header-subtitle-unicorn {
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-left: 6px;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            width: 30px;
+            height: 24px;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .hamburger span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background: white;
+            border-radius: 2px;
             transition: all 0.3s ease;
             position: relative;
         }
 
-        nav a:hover {
-            color: white;
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
         }
 
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: width 0.3s ease;
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
         }
 
-        nav a:hover::after {
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Navigation Menu */
+        .nav-overlay {
+            position: fixed;
+            top: 0;
+            right: -100%;
             width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            transition: right 0.4s ease;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .apply-btn {
+        .nav-overlay.active {
+            right: 0;
+        }
+
+        nav {
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav li {
+            margin: 30px 0;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.4s ease;
+        }
+
+        .nav-overlay.active nav li {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .nav-overlay.active nav li:nth-child(1) { transition-delay: 0.1s; }
+        .nav-overlay.active nav li:nth-child(2) { transition-delay: 0.2s; }
+        .nav-overlay.active nav li:nth-child(3) { transition-delay: 0.3s; }
+        .nav-overlay.active nav li:nth-child(4) { transition-delay: 0.4s; }
+        .nav-overlay.active nav li:nth-child(5) { transition-delay: 0.5s; }
+        .nav-overlay.active nav li:nth-child(6) { transition-delay: 0.6s; }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 28px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+            transform: scale(1.1);
+        }
+
+        nav .nav-subtitle {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 5px;
+            font-weight: 400;
+        }
+
+        .apply-btn-nav {
+            display: inline-block;
+            margin-top: 40px;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 8px 20px;
-            border-radius: 25px;
+            padding: 15px 40px;
+            border-radius: 50px;
             font-weight: 600;
+            font-size: 20px;
             transition: all 0.3s ease;
         }
 
-        .apply-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 122, 255, 0.3);
-        }
-
-        .apply-btn::after {
-            display: none;
+        .apply-btn-nav:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 122, 255, 0.4);
         }
 
         /* Hero Section */
@@ -183,7 +290,7 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            padding-top: 118px;
+            padding-top: calc(var(--header-height) + 38px);
         }
 
         /* 3D Neural Network Background */
@@ -739,6 +846,122 @@
             font-size: 20px;
         }
 
+        /* Quick Info Section */
+        .quick-info {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            text-align: center;
+        }
+
+        .info-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .quick-info h2 {
+            font-size: 48px;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .quick-info p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .info-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .info-btn {
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            background: transparent;
+        }
+
+        .info-btn:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+        }
+
+        .info-btn.primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none;
+        }
+
+        .info-btn.primary:hover {
+            box-shadow: 0 10px 30px rgba(0, 122, 255, 0.4);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 20px;
+            background: #0a0a0a;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-section h2 {
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 60px;
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-info {
+            background: var(--card-bg);
+            backdrop-filter: blur(var(--blur));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .contact-info p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .contact-info strong {
+            color: white;
+        }
+
         /* Stats Section */
         .stats-section {
             padding: 100px 20px;
@@ -800,6 +1023,133 @@
         .stat-label {
             font-size: 18px;
             color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Quick Info Section */
+        .quick-info {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, rgba(0, 122, 255, 0.1) 0%, rgba(88, 86, 214, 0.1) 100%);
+            position: relative;
+        }
+
+        .info-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .info-container h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .info-container p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .info-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .info-btn {
+            padding: 14px 32px;
+            background: transparent;
+            color: white;
+            text-decoration: none;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .info-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .info-btn.primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none;
+            box-shadow: 0 10px 30px rgba(0, 122, 255, 0.3);
+        }
+
+        .info-btn.primary:hover {
+            box-shadow: 0 15px 40px rgba(0, 122, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 20px;
+            background: #0a0a0a;
+            position: relative;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-container h2 {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 60px;
+            background: linear-gradient(135deg, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-info {
+            background: var(--card-bg);
+            backdrop-filter: blur(var(--blur));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .contact-info h3 {
+            font-size: 24px;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .contact-info strong {
+            color: white;
         }
 
         /* Corporate Partners Section */
@@ -1570,6 +1920,30 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+
+            header.scrolled {
+                padding: 10px 20px;
+            }
+
+            .header-name {
+                font-size: 16px;
+            }
+
+            .header-rowan {
+                font-size: 16px;
+            }
+
+            .header-subtitle {
+                font-size: 12px;
+            }
+
+            .header-logo {
+                font-size: 16px;
+                padding: 6px 12px;
+            }
             .timeline::before {
                 left: 30px;
             }
@@ -1593,6 +1967,56 @@
     <!-- Disclaimer Banner -->
     <div class="disclaimer-banner">
         ⚠️ DRAFT WEBSITE - This is a conceptual proposal and does not represent an official Rowan University program. <a href="mailto:msualp@rowan.edu">Contact for more info</a>
+    </div>
+
+    <!-- Header with Navigation -->
+    <header id="header">
+        <div class="header-left">
+            <div class="header-logo">IA</div>
+            <div class="header-title-text">
+                <div>
+                    <span class="header-name">Intelligence Academy</span>
+                    <span class="header-rowan">@ Rowan</span>
+                </div>
+                <div class="header-subtitle">
+                    <span class="header-subtitle-ai">AI Startup Accelerator &</span>
+                    <span class="header-subtitle-unicorn">Unicorn Factory</span>
+                </div>
+            </div>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Navigation Overlay -->
+    <div class="nav-overlay" id="navOverlay">
+        <nav>
+            <ul>
+                <li>
+                    <a href="#hero">Home</a>
+                    <div class="nav-subtitle">Back to top</div>
+                </li>
+                <li>
+                    <a href="about.html">About the Program</a>
+                    <div class="nav-subtitle">Learn about our methodology</div>
+                </li>
+                <li>
+                    <a href="partners.html">Corporate Partners</a>
+                    <div class="nav-subtitle">Fortune 500 collaborations</div>
+                </li>
+                <li>
+                    <a href="apply.html">Application</a>
+                    <div class="nav-subtitle">Start your journey</div>
+                </li>
+                <li>
+                    <a href="#contact">Contact</a>
+                    <div class="nav-subtitle">Get in touch</div>
+                </li>
+            </ul>
+        </nav>
     </div>
 
     <!-- Hero Section -->
@@ -1644,8 +2068,8 @@
                 </div>
             </div>
             <div class="cta-container">
-                <a href="#apply" class="cta-primary">Submit 2-Min Application</a>
-                <a href="#ai-advantage" class="cta-secondary">Learn More ↓</a>
+                <a href="apply.html" class="cta-primary">Submit 2-Min Application</a>
+                <a href="#stats" class="cta-secondary">Learn More ↓</a>
             </div>
             <p class="hero-disclaimer">
                 *Aspiring unicorn catalyst based on AI sector performance data. While unicorn outcomes remain statistically rare (2% of AI startups vs. 1% traditional), our methodology systematically addresses the factors that give AI companies demonstrable advantages in achieving billion-dollar valuations.
@@ -1657,118 +2081,6 @@
                 <polyline points="7 13 12 18 17 13"></polyline>
                 <polyline points="7 6 12 11 17 6"></polyline>
             </svg>
-        </div>
-    </section>
-
-    <!-- AI Advantage Section -->
-    <section class="ai-advantage-section" id="ai-advantage">
-        <div class="section-header">
-            <h2 class="section-title">Why AI Companies Become Unicorns Differently</h2>
-            <p class="section-subtitle">The statistics that drive our unicorn-focused methodology</p>
-        </div>
-
-        <div class="comparison-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Unicorn Metric</th>
-                        <th>Traditional Startups</th>
-                        <th>AI Startups</th>
-                        <th class="highlight">AI Advantage</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Time to $1B Valuation</td>
-                        <td>25 years average</td>
-                        <td>7 years average</td>
-                        <td class="highlight">Quarter the time</td>
-                    </tr>
-                    <tr>
-                        <td>Team Size at Unicorn Status</td>
-                        <td>1,000+ employees</td>
-                        <td>200-500 employees</td>
-                        <td class="highlight">Half the team size</td>
-                    </tr>
-                    <tr>
-                        <td>Success Rate to Unicorn</td>
-                        <td>1% of startups</td>
-                        <td>2% of AI startups</td>
-                        <td class="highlight">Double the success</td>
-                    </tr>
-                    <tr>
-                        <td>Capital Efficiency</td>
-                        <td>$500M+ raised</td>
-                        <td>$100-200M raised</td>
-                        <td class="highlight">2.5x more efficient</td>
-                    </tr>
-                    <tr>
-                        <td>Market Penetration Speed</td>
-                        <td>10-20 years</td>
-                        <td>3-5 years</td>
-                        <td class="highlight">5x faster adoption</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p class="table-source">Sources: CB Insights State of AI Report 2024, PitchBook Unicorn Analysis, McKinsey AI Index</p>
-        </div>
-
-        <div class="unicorn-examples">
-            <h3>Recent AI Unicorn Examples</h3>
-            <p class="examples-subtitle">Proving the acceleration is real:</p>
-            <div class="examples-grid">
-                <div class="example-card">
-                    <h4>OpenAI</h4>
-                    <p class="valuation">$80B valuation</p>
-                    <p class="timeframe">in 8 years (2015-2023)</p>
-                </div>
-                <div class="example-card">
-                    <h4>Anthropic</h4>
-                    <p class="valuation">$18B valuation</p>
-                    <p class="timeframe">in 3 years (2021-2024)</p>
-                </div>
-                <div class="example-card">
-                    <h4>Character.AI</h4>
-                    <p class="valuation">$5B valuation</p>
-                    <p class="timeframe">in 3 years (2021-2024)</p>
-                </div>
-                <div class="example-card">
-                    <h4>Stability AI</h4>
-                    <p class="valuation">$4B valuation</p>
-                    <p class="timeframe">in 2 years (2020-2022)</p>
-                </div>
-                <div class="example-card">
-                    <h4>Midjourney</h4>
-                    <p class="valuation">$5B+ valuation</p>
-                    <p class="timeframe">in 2 years (2021-2023)</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="differentiators">
-            <h3>What Makes AI Unicorns Different</h3>
-            <div class="differentiators-grid">
-                <div class="differentiator-card">
-                    <div class="icon">🚀</div>
-                    <h4>Technology Scalability</h4>
-                    <p>AI solutions improve automatically with more data and users, creating network effects that traditional businesses can't match. Your product gets better and more valuable without proportional cost increases.</p>
-                </div>
-                <div class="differentiator-card">
-                    <div class="icon">⏰</div>
-                    <h4>Market Timing Advantage</h4>
-                    <p>Post-ChatGPT enterprise adoption reached an inflection point. With $400B+ in projected corporate AI spending through 2030, market timing has never been better for practical AI solutions.</p>
-                </div>
-                <div class="differentiator-card">
-                    <div class="icon">💰</div>
-                    <h4>Capital Efficiency</h4>
-                    <p>Small teams of AI experts can build massive value through automation and intelligent systems. You need fewer people to reach unicorn scale, reducing costs and organizational complexity.</p>
-                </div>
-                <div class="differentiator-card">
-                    <div class="icon">🎯</div>
-                    <h4>Strategic Premium</h4>
-                    <p>Tech giants and Fortune 500 companies pay premium valuations for AI capabilities. Your startup could become a strategic asset worth billions to the right acquirer.</p>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -1794,377 +2106,72 @@
         </div>
     </section>
 
-    <!-- Success Metrics Section -->
-    <section class="success-metrics-section">
-        <div class="section-header">
-            <h2 class="section-title">Building Greater Philadelphia's First AI Unicorn</h2>
-            <p class="section-subtitle">Our program systematically creates the conditions for billion-dollar success</p>
-        </div>
-
-        <div class="projections-grid">
-            <div class="projection-card">
-                <h3>Individual Startup Projections</h3>
-                <div class="projection-stats">
-                    <div class="projection-item">
-                        <div class="projection-value">40%</div>
-                        <div class="projection-label">Survival Rate</div>
-                        <div class="projection-detail">vs. 20% traditional accelerator average</div>
-                    </div>
-                    <div class="projection-item">
-                        <div class="projection-value">$1.25M</div>
-                        <div class="projection-label">Avg Follow-on Funding</div>
-                        <div class="projection-detail">within 18 months of graduation</div>
-                    </div>
-                    <div class="projection-item">
-                        <div class="projection-value">8</div>
-                        <div class="projection-label">Jobs Created</div>
-                        <div class="projection-detail">per startup within 24 months</div>
-                    </div>
-                    <div class="projection-item">
-                        <div class="projection-value">2x</div>
-                        <div class="projection-label">Higher Unicorn Probability</div>
-                        <div class="projection-detail">vs. traditional startups</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="unicorn-timeline">
-            <h3>Your Unicorn Development Timeline</h3>
-            <div class="unicorn-phases">
-                <div class="unicorn-phase">
-                    <div class="phase-header">
-                        <span class="phase-years">Years 1-2</span>
-                        <h4>Foundation & Traction</h4>
-                    </div>
-                    <ul>
-                        <li>Product-Market Fit Achievement</li>
-                        <li>Series A Funding: $2-5M</li>
-                        <li>Fortune 500 Partnerships</li>
-                    </ul>
-                </div>
-                <div class="unicorn-phase">
-                    <div class="phase-header">
-                        <span class="phase-years">Years 3-5</span>
-                        <h4>Acceleration & Market Leadership</h4>
-                    </div>
-                    <ul>
-                        <li>$10M+ Annual Recurring Revenue</li>
-                        <li>Series B/C: $10-50M rounds</li>
-                        <li>Strategic Acquisition Interest</li>
-                    </ul>
-                </div>
-                <div class="unicorn-phase">
-                    <div class="phase-header">
-                        <span class="phase-years">Years 5-7</span>
-                        <h4>Unicorn Trajectory</h4>
-                    </div>
-                    <ul>
-                        <li>Clear Market Leadership</li>
-                        <li>Revenue Supporting $1B+ Valuation</li>
-                        <li>IPO or Strategic Exit Options</li>
-                    </ul>
-                </div>
+    <!-- Quick Info Section -->
+    <section class="quick-info">
+        <div class="info-container">
+            <h2>Transform Your AI Vision Into Reality</h2>
+            <p>Join Greater Philadelphia's premier AI startup accelerator and access the resources, mentorship, and funding you need to build the next billion-dollar AI company.</p>
+            <div class="info-buttons">
+                <a href="#stats" class="info-btn">Learn More</a>
+                <a href="#contact" class="info-btn primary">Get Started</a>
             </div>
         </div>
     </section>
 
-    <!-- Program Timeline -->
-    <section class="program-section" id="learn-more">
-        <div class="section-header">
-            <h2 class="section-title">Your Journey to Unicorn Status</h2>
-            <p class="section-subtitle">A proven 16-week pathway from idea to investment</p>
-        </div>
-
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3 class="phase-title">Phase 1: Discovery & Validation</h3>
-                    <p class="phase-weeks">Weeks 1-4</p>
-                    <p class="phase-description">Complete 50+ customer interviews using NSF I-Corps methodology. Validate $10B+ market opportunity and design revenue model for unicorn scale.</p>
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <h2>Get in Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p><strong>Email:</strong> apply@intelligence-academy.rowan.edu</p>
+                    <p><strong>Phone:</strong> (856) 256-4000</p>
+                    <p><strong>Location:</strong> South Jersey Technology Park<br>Rowan University</p>
                 </div>
-                <div class="timeline-dot"></div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3 class="phase-title">Phase 2: Build & Prototype</h3>
-                    <p class="phase-weeks">Weeks 5-10</p>
-                    <p class="phase-description">Develop MVP with unicorn-scale architecture. Launch pilot programs with Fortune 500 partners and build key technical team.</p>
+                <div class="contact-info">
+                    <h3>Information Sessions</h3>
+                    <p><strong>Jan 25, 2026</strong> - Virtual Overview</p>
+                    <p><strong>Feb 5, 2026</strong> - Campus Tour</p>
+                    <p><strong>Feb 12, 2026</strong> - Partner Showcase</p>
                 </div>
-                <div class="timeline-dot"></div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3 class="phase-title">Phase 3: Scale & Revenue</h3>
-                    <p class="phase-weeks">Weeks 11-14</p>
-                    <p class="phase-description">Generate first revenue from enterprise customers. Build scalable operations and prepare for Series A funding.</p>
-                </div>
-                <div class="timeline-dot"></div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3 class="phase-title">Phase 4: Launch & Growth</h3>
-                    <p class="phase-weeks">Weeks 15-16</p>
-                    <p class="phase-description">Demo Day presentation to investors and corporate partners. Execute 12-month growth plan with clear unicorn milestones.</p>
-                </div>
-                <div class="timeline-dot"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features-section">
-        <div class="section-header">
-            <h2 class="section-title">Unmatched Resources & Support</h2>
-            <p class="section-subtitle">Everything you need to build the next AI unicorn</p>
-        </div>
-
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🧠</div>
-                <h3 class="feature-title">AI Research Lab Access</h3>
-                <p class="feature-description">
-                    Leverage Rowan's state-of-the-art AI Lab with GPU clusters, datasets, and faculty advisors specializing in trustworthy AI.
-                </p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">💰</div>
-                <h3 class="feature-title">$100K SAFE Investment</h3>
-                <p class="feature-description">
-                    Standard accelerator terms with founder-friendly conditions. 4% equity stake, no board control, and follow-on rights for future rounds.
-                </p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🏢</div>
-                <h3 class="feature-title">Dedicated AI Foundry Space</h3>
-                <p class="feature-description">
-                    Work from the South Jersey Technology Park with subsidized labs, meeting rooms, and professional startup environment.
-                </p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">☁️</div>
-                <h3 class="feature-title">$500K Cloud Credits</h3>
-                <p class="feature-description">
-                    Access to NVIDIA Inception, AWS Activate, and Google Cloud programs with substantial compute resources.
-                </p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🤝</div>
-                <h3 class="feature-title">Elite Mentor Network</h3>
-                <p class="feature-description">
-                    Connect with successful entrepreneurs, VCs, and industry leaders in AI and deep tech sectors.
-                </p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🎓</div>
-                <h3 class="feature-title">Talent Pipeline</h3>
-                <p class="feature-description">
-                    Recruit from Rowan's top engineering and business students for internships and full-time positions.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Who Should Apply Section -->
-    <section class="who-should-apply-section" id="who-should-apply">
-        <div class="section-header">
-            <h2 class="section-title">Built for Unicorn-Ambitious AI Entrepreneurs</h2>
-            <p class="section-subtitle">We're looking for founders who think in decades, not quarters</p>
-        </div>
-
-        <div class="candidate-types">
-            <div class="candidate-card">
-                <div class="candidate-icon">🎓</div>
-                <h3>Student Entrepreneurs</h3>
-                <h4>Turn your research into a billion-dollar company</h4>
-                <ul>
-                    <li>Graduate students with breakthrough AI research</li>
-                    <li>Technical teams ready to commercialize discoveries</li>
-                    <li>Entrepreneurial mindset with deep technical expertise</li>
-                    <li>Access to university resources and faculty guidance</li>
-                </ul>
-                <p class="success-profile"><strong>Success Profile:</strong> Teams with novel AI capabilities solving large market problems with clear commercial applications.</p>
-            </div>
-
-            <div class="candidate-card">
-                <div class="candidate-icon">🤖</div>
-                <h3>Faculty Spin-outs</h3>
-                <h4>Commercialize your life's work at unicorn scale</h4>
-                <ul>
-                    <li>Faculty with patentable AI research</li>
-                    <li>University technology transfer opportunities</li>
-                    <li>Sabbatical arrangements for entrepreneurship</li>
-                    <li>Research teams ready to scale commercially</li>
-                </ul>
-                <p class="success-profile"><strong>Success Profile:</strong> Breakthrough technologies with clear competitive advantages and massive market applications.</p>
-            </div>
-
-            <div class="candidate-card">
-                <div class="candidate-icon">🚀</div>
-                <h3>Experienced Entrepreneurs</h3>
-                <h4>Scale your AI startup with unicorn-focused resources</h4>
-                <ul>
-                    <li>Previous startup experience with AI traction</li>
-                    <li>Seeking corporate partnerships for scaling</li>
-                    <li>Teams ready for institutional investment</li>
-                    <li>Proven execution with billion-dollar ambition</li>
-                </ul>
-                <p class="success-profile"><strong>Success Profile:</strong> AI startups with initial traction seeking acceleration to unicorn trajectory.</p>
-            </div>
-
-            <div class="candidate-card">
-                <div class="candidate-icon">🏢</div>
-                <h3>Corporate Innovators</h3>
-                <h4>Launch your breakthrough AI project with full support</h4>
-                <ul>
-                    <li>Corporate employees with AI expertise</li>
-                    <li>Internal innovation projects ready to spin out</li>
-                    <li>Deep industry knowledge with AI capabilities</li>
-                    <li>Corporate connections for competitive advantage</li>
-                </ul>
-                <p class="success-profile"><strong>Success Profile:</strong> Industry experts with AI solutions for massive enterprise markets.</p>
-            </div>
-        </div>
-
-        <div class="selection-criteria">
-            <h3>What Sets Unicorn Winners Apart</h3>
-            <div class="criteria-grid">
-                <div class="criteria-item">
-                    <div class="criteria-icon">★</div>
-                    <h4>Customer Obsession</h4>
-                    <p>Deep understanding of enterprise needs, budgets, and decision-making</p>
-                </div>
-                <div class="criteria-item">
-                    <div class="criteria-icon">★</div>
-                    <h4>Technical Differentiation</h4>
-                    <p>Unique AI capabilities creating defensible competitive advantages</p>
-                </div>
-                <div class="criteria-item">
-                    <div class="criteria-icon">★</div>
-                    <h4>Business Model Clarity</h4>
-                    <p>Clear path to recurring revenue with high margins and scalability</p>
-                </div>
-                <div class="criteria-item">
-                    <div class="criteria-icon">★</div>
-                    <h4>Team Dynamics</h4>
-                    <p>Strong founding team with complementary skills and shared ambitions</p>
+                <div class="contact-info">
+                    <h3>Program Leadership</h3>
+                    <p><strong>Mustafa Sualp</strong><br>Co-Director & Entrepreneur-in-Residence</p>
+                    <p><strong>Dr. [Faculty Co-Director]</strong><br>Co-Director & AI Research Leader</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Application Section -->
-    <section class="application-section" id="apply">
-        <div class="section-header">
-            <h2 class="section-title">Ready to Build Your AI Unicorn?</h2>
-            <p class="section-subtitle">Submit your 2-minute application and take the first step toward billion-dollar impact</p>
-        </div>
-
-        <form class="application-form" id="applicationForm">
-            <div class="form-section">
-                <h3>Founder Information</h3>
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="founderName">Primary Founder Name *</label>
-                        <input type="text" id="founderName" name="founderName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number *</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                    <div class="form-group full-width">
-                        <label for="coFounders">All Co-Founder Names</label>
-                        <textarea id="coFounders" name="coFounders" rows="2"></textarea>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-section">
-                <h3>Startup Information</h3>
-                <div class="form-grid">
-                    <div class="form-group full-width">
-                        <label for="affiliation">Current Affiliation *</label>
-                        <select id="affiliation" name="affiliation" required>
-                            <option value="">Select your affiliation</option>
-                            <option value="rowan-student">Rowan Student</option>
-                            <option value="rowan-faculty">Rowan Faculty</option>
-                            <option value="rowan-alumni">Rowan Alumni</option>
-                            <option value="external-entrepreneur">External Entrepreneur</option>
-                            <option value="corporate-employee">Corporate Employee</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    <div class="form-group full-width">
-                        <label for="aiIdea">AI Startup Idea * <span class="char-count">(500 characters max)</span></label>
-                        <textarea id="aiIdea" name="aiIdea" rows="4" maxlength="500" required placeholder="Describe your AI solution, target market, and the problem you're solving"></textarea>
-                        <div class="char-counter"><span id="aiIdeaCount">0</span>/500</div>
-                    </div>
-                    <div class="form-group full-width">
-                        <label for="marketOpportunity">Market Opportunity * <span class="char-count">(300 characters max)</span></label>
-                        <textarea id="marketOpportunity" name="marketOpportunity" rows="3" maxlength="300" required placeholder="What's the size of the market and why is timing right now?"></textarea>
-                        <div class="char-counter"><span id="marketCount">0</span>/300</div>
-                    </div>
-                    <div class="form-group full-width">
-                        <label for="unicornPotential">Unicorn Potential * <span class="char-count">(300 characters max)</span></label>
-                        <textarea id="unicornPotential" name="unicornPotential" rows="3" maxlength="300" required placeholder="Why do you believe this could become a billion-dollar company?"></textarea>
-                        <div class="char-counter"><span id="unicornCount">0</span>/300</div>
-                    </div>
-                    <div class="form-group full-width">
-                        <label for="whyIA">Why Intelligence Academy * <span class="char-count">(300 characters max)</span></label>
-                        <textarea id="whyIA" name="whyIA" rows="3" maxlength="300" required placeholder="What specifically attracts you to our unicorn-focused program?"></textarea>
-                        <div class="char-counter"><span id="whyIACount">0</span>/300</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-section">
-                <h3>Team Background</h3>
-                <div class="form-grid">
-                    <div class="form-group full-width">
-                        <label for="technicalExpertise">Technical Expertise * <span class="char-count">(200 characters max)</span></label>
-                        <textarea id="technicalExpertise" name="technicalExpertise" rows="2" maxlength="200" required placeholder="Brief summary of your team's AI/technical capabilities"></textarea>
-                        <div class="char-counter"><span id="techCount">0</span>/200</div>
-                    </div>
-                    <div class="form-group full-width">
-                        <label for="businessExperience">Business Experience * <span class="char-count">(200 characters max)</span></label>
-                        <textarea id="businessExperience" name="businessExperience" rows="2" maxlength="200" required placeholder="Relevant business, sales, or entrepreneurship experience"></textarea>
-                        <div class="char-counter"><span id="bizCount">0</span>/200</div>
-                    </div>
-                    <div class="form-group full-width">
-                        <label for="achievements">Previous Achievements * <span class="char-count">(200 characters max)</span></label>
-                        <textarea id="achievements" name="achievements" rows="2" maxlength="200" required placeholder="Notable accomplishments that demonstrate execution capability"></textarea>
-                        <div class="char-counter"><span id="achieveCount">0</span>/200</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-submit">
-                <button type="submit" class="submit-btn">Submit 2-Min Application</button>
-                <p class="form-note">* Required fields</p>
-            </div>
-        </form>
-
-        <div class="after-submit">
-            <h3>What Happens Next</h3>
-            <ol>
-                <li><strong>Application Review:</strong> We'll review your submission within 2 weeks</li>
-                <li><strong>Invitation Decision:</strong> Qualified candidates receive invitation for full application</li>
-                <li><strong>Full Application:</strong> Complete comprehensive application with detailed materials</li>
-                <li><strong>Selection Process:</strong> Final evaluation, interviews, and program acceptance</li>
-                <li><strong>Program Launch:</strong> Begin 16-week unicorn development program in April 2026</li>
-            </ol>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-logo">Intelligence Academy @ Rowan</div>
-        <p class="footer-text">© 2025 Rowan University. Building the AI leaders of tomorrow.</p>
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <h3>Intelligence Academy @ Rowan University</h3>
+                    <p class="footer-tagline">AI Startup Accelerator & Unicorn Factory*</p>
+                    <p class="footer-mission">Transforming AI research into billion-dollar companies that create lasting economic impact in Greater Philadelphia.</p>
+                </div>
+            </div>
+            
+            <div class="footer-disclaimer">
+                <p>*Aspiring unicorn catalyst based on AI sector performance data. While unicorn outcomes remain statistically rare (2% of AI startups vs. 1% traditional), our methodology systematically addresses the factors that give AI companies demonstrable advantages in achieving billion-dollar valuations. Past performance does not guarantee future results. All investments involve risk of loss.</p>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2025 Rowan University. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Non-Discrimination</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <script>
 
     <script>
         // Header scroll effect
@@ -2174,6 +2181,36 @@
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
+            }
+        });
+
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navOverlay = document.getElementById('navOverlay');
+        const body = document.body;
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+            body.style.overflow = navOverlay.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-overlay a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navOverlay.classList.remove('active');
+                body.style.overflow = '';
+            });
+        });
+
+        // Close menu when clicking outside
+        navOverlay.addEventListener('click', (e) => {
+            if (e.target === navOverlay) {
+                hamburger.classList.remove('active');
+                navOverlay.classList.remove('active');
+                body.style.overflow = '';
             }
         });
 
@@ -2319,6 +2356,8 @@
                     if (counter) counter.textContent = '0';
                 });
             });
+        } else {
+            // Remove form-related code if applicationForm doesn't exist
         }
 
         // Animated counters

@@ -1,0 +1,1 @@
+/Users/mustafasualp/dev/projects/wiki/docs.wiki/intelligenceacademy/outreach/ia_website_copy.md

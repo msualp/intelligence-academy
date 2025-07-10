@@ -596,6 +596,149 @@
             line-height: 1.6;
         }
 
+        /* Success Metrics Section */
+        .success-metrics-section {
+            padding: 100px 20px;
+            background: linear-gradient(180deg, #000 0%, #0a0a0a 100%);
+            position: relative;
+        }
+
+        .projections-grid {
+            max-width: 1200px;
+            margin: 60px auto;
+        }
+
+        .projection-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(var(--blur));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 60px;
+            margin-bottom: 60px;
+        }
+
+        .projection-card h3 {
+            font-size: 32px;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--accent);
+        }
+
+        .projection-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .projection-item {
+            text-align: center;
+        }
+
+        .projection-value {
+            font-size: 48px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .projection-label {
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .projection-detail {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.4;
+        }
+
+        .unicorn-timeline {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .unicorn-timeline h3 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 60px;
+            color: white;
+        }
+
+        .unicorn-phases {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .unicorn-phase {
+            background: var(--card-bg);
+            backdrop-filter: blur(var(--blur));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .unicorn-phase::before {
+            content: '🦄';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 80px;
+            opacity: 0.05;
+        }
+
+        .unicorn-phase:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .phase-header {
+            margin-bottom: 25px;
+        }
+
+        .phase-years {
+            font-size: 14px;
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .unicorn-phase h4 {
+            font-size: 24px;
+            margin-top: 10px;
+            color: white;
+        }
+
+        .unicorn-phase ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .unicorn-phase li {
+            padding: 10px 0;
+            padding-left: 25px;
+            position: relative;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        .unicorn-phase li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 20px;
+        }
+
         /* Stats Section */
         .stats-section {
             padding: 100px 20px;
@@ -1423,20 +1566,95 @@
     <section class="stats-section" id="stats">
         <div class="stats-container">
             <div class="stat-card">
-                <div class="stat-number">$55M</div>
+                <div class="stat-number" data-target="55" data-prefix="$" data-suffix="M">$0M</div>
                 <div class="stat-label">Investment Capital Attracted</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">480</div>
+                <div class="stat-number" data-target="480">0</div>
                 <div class="stat-label">Jobs Created</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">44</div>
+                <div class="stat-number" data-target="44">0</div>
                 <div class="stat-label">AI Startups Launched</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">$209M</div>
+                <div class="stat-number" data-target="209" data-prefix="$" data-suffix="M">$0M</div>
                 <div class="stat-label">Economic Impact</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Metrics Section -->
+    <section class="success-metrics-section">
+        <div class="section-header">
+            <h2 class="section-title">Building Greater Philadelphia's First AI Unicorn</h2>
+            <p class="section-subtitle">Our program systematically creates the conditions for billion-dollar success</p>
+        </div>
+
+        <div class="projections-grid">
+            <div class="projection-card">
+                <h3>Individual Startup Projections</h3>
+                <div class="projection-stats">
+                    <div class="projection-item">
+                        <div class="projection-value">40%</div>
+                        <div class="projection-label">Survival Rate</div>
+                        <div class="projection-detail">vs. 20% traditional accelerator average</div>
+                    </div>
+                    <div class="projection-item">
+                        <div class="projection-value">$1.25M</div>
+                        <div class="projection-label">Avg Follow-on Funding</div>
+                        <div class="projection-detail">within 18 months of graduation</div>
+                    </div>
+                    <div class="projection-item">
+                        <div class="projection-value">8</div>
+                        <div class="projection-label">Jobs Created</div>
+                        <div class="projection-detail">per startup within 24 months</div>
+                    </div>
+                    <div class="projection-item">
+                        <div class="projection-value">2x</div>
+                        <div class="projection-label">Higher Unicorn Probability</div>
+                        <div class="projection-detail">vs. traditional startups</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="unicorn-timeline">
+            <h3>Your Unicorn Development Timeline</h3>
+            <div class="unicorn-phases">
+                <div class="unicorn-phase">
+                    <div class="phase-header">
+                        <span class="phase-years">Years 1-2</span>
+                        <h4>Foundation & Traction</h4>
+                    </div>
+                    <ul>
+                        <li>Product-Market Fit Achievement</li>
+                        <li>Series A Funding: $2-5M</li>
+                        <li>Fortune 500 Partnerships</li>
+                    </ul>
+                </div>
+                <div class="unicorn-phase">
+                    <div class="phase-header">
+                        <span class="phase-years">Years 3-5</span>
+                        <h4>Acceleration & Market Leadership</h4>
+                    </div>
+                    <ul>
+                        <li>$10M+ Annual Recurring Revenue</li>
+                        <li>Series B/C: $10-50M rounds</li>
+                        <li>Strategic Acquisition Interest</li>
+                    </ul>
+                </div>
+                <div class="unicorn-phase">
+                    <div class="phase-header">
+                        <span class="phase-years">Years 5-7</span>
+                        <h4>Unicorn Trajectory</h4>
+                    </div>
+                    <ul>
+                        <li>Clear Market Leadership</li>
+                        <li>Revenue Supporting $1B+ Valuation</li>
+                        <li>IPO or Strategic Exit Options</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -1804,6 +2022,43 @@
                 });
             });
         }
+
+        // Animated counters
+        function animateCounter(element) {
+            const target = parseInt(element.dataset.target);
+            const prefix = element.dataset.prefix || '';
+            const suffix = element.dataset.suffix || '';
+            const duration = 2000; // 2 seconds
+            const step = target / (duration / 16); // 60fps
+            let current = 0;
+            
+            const updateCounter = () => {
+                current += step;
+                if (current < target) {
+                    element.textContent = prefix + Math.floor(current) + suffix;
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = prefix + target + suffix;
+                }
+            };
+            
+            updateCounter();
+        }
+
+        // Observe stats for animation
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                    entry.target.classList.add('animated');
+                    animateCounter(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        // Observe all stat numbers
+        document.querySelectorAll('.stat-number').forEach(stat => {
+            statsObserver.observe(stat);
+        });
 
         // Intersection Observer for timeline animations
         const timelineObserver = new IntersectionObserver((entries) => {

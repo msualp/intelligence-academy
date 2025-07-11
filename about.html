@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About the Program - Intelligence Academy @ Rowan University</title>
+    <meta name="description" content="Learn about Intelligence Academy's unicorn-focused methodology, NSF I-Corps process, and how we maximize your AI startup's potential.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #007AFF;
+            --secondary: #5856D6;
+            --accent: #00FFF0;
+            --dark: #000000;
+            --light: #FFFFFF;
+            --gray: #8E8E93;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --blur: 20px;
+            --success: #00C851;
+            --gradient-1: linear-gradient(135deg, #007AFF, #5856D6);
+            --gradient-2: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 20px 40px;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .header-logo {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 8px 14px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .header-title-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .header-name {
+            font-weight: 600;
+            color: #fff;
+            font-size: 20px;
+        }
+        
+        .header-rowan {
+            font-weight: 700;
+            background: linear-gradient(135deg, #FF8C00, #FF5E62);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-left: 4px;
+            font-size: 20px;
+        }
+
+        .header-subtitle {
+            font-size: 13px;
+            margin-top: 2px;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-subtitle-ai {
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .header-subtitle-unicorn {
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-left: 6px;
+        }
+
+        /* Back Button */
+        .back-button {
+            position: fixed;
+            top: 90px;
+            left: 40px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .back-button:hover {
+            transform: translateX(-5px);
+        }
+
+        /* Main Content */
+        main {
+            padding-top: 120px;
+            padding-bottom: 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .page-title {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-subtitle {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 50px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 80px;
+        }
+
+        .content-section h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: var(--accent);
+        }
+
+        .content-section h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            margin-top: 40px;
+            color: var(--primary);
+        }
+
+        .content-section p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Methodology Cards */
+        .methodology-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .methodology-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(var(--blur));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .methodology-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 123, 255, 0.2);
+        }
+
+        .methodology-number {
+            font-size: 48px;
+            font-weight: 700;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+
+        .methodology-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .methodology-description {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+
+        /* Stats Table */
+        .stats-table {
+            width: 100%;
+            margin: 30px 0;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .stats-table th,
+        .stats-table td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stats-table th {
+            background: rgba(0, 123, 255, 0.1);
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .stats-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .stats-table tr:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        /* Timeline */
+        .timeline {
+            margin: 40px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 50px;
+            bottom: -40px;
+            width: 2px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .timeline-item:last-child:before {
+            display: none;
+        }
+
+        .timeline-marker {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-right: 30px;
+            flex-shrink: 0;
+        }
+
+        .timeline-content {
+            flex: 1;
+        }
+
+        .timeline-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+
+            .back-button {
+                left: 20px;
+                font-size: 14px;
+            }
+
+            main {
+                padding-top: 100px;
+            }
+
+            .methodology-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+            }
+
+            .timeline-item:before {
+                display: none;
+            }
+
+            .timeline-marker {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-left">
+            <a href="index.html" class="header-logo">IA</a>
+            <div class="header-title-text">
+                <div>
+                    <span class="header-name">Intelligence Academy</span>
+                    <span class="header-rowan">@ Rowan</span>
+                </div>
+                <div class="header-subtitle">
+                    <span class="header-subtitle-ai">AI Startup Accelerator &</span>
+                    <span class="header-subtitle-unicorn">Unicorn Factory*</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Back Button -->
+    <a href="index.html" class="back-button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Back to Home
+    </a>
+
+    <!-- Main Content -->
+    <main>
+        <h1 class="page-title">About the Program</h1>
+        <p class="page-subtitle">How we maximize your AI startup's unicorn potential</p>
+
+        <!-- Why AI Unicorns Section -->
+        <section class="content-section">
+            <h2>Why AI Companies Become Unicorns Differently</h2>
+            <p>The statistics that drive our unicorn-focused methodology show clear advantages for AI startups:</p>
+            
+            <table class="stats-table">
+                <thead>
+                    <tr>
+                        <th>Unicorn Metric</th>
+                        <th>Traditional Startups</th>
+                        <th>AI Startups</th>
+                        <th>AI Advantage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Time to $1B Valuation</td>
+                        <td>25 years average</td>
+                        <td>7 years average</td>
+                        <td><strong>Quarter the time</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Team Size at Unicorn Status</td>
+                        <td>1,000+ employees</td>
+                        <td>200-500 employees</td>
+                        <td><strong>Half the team size</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Success Rate to Unicorn</td>
+                        <td>1% of startups</td>
+                        <td>2% of AI startups</td>
+                        <td><strong>Double the success</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Capital Efficiency</td>
+                        <td>$500M+ raised</td>
+                        <td>$100-200M raised</td>
+                        <td><strong>2.5x more efficient</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Market Penetration Speed</td>
+                        <td>10-20 years</td>
+                        <td>3-5 years</td>
+                        <td><strong>5x faster adoption</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <p style="font-size: 14px; color: rgba(255, 255, 255, 0.6); margin-top: 10px;">
+                Sources: CB Insights State of AI Report 2024, PitchBook Unicorn Analysis, McKinsey AI Index
+            </p>
+        </section>
+
+        <!-- Methodology Section -->
+        <section class="content-section">
+            <h2>Our Unicorn-Focused Methodology</h2>
+            <p>Every program element is designed for exponential growth through four key pillars:</p>
+            
+            <div class="methodology-grid">
+                <div class="methodology-card">
+                    <div class="methodology-number">1</div>
+                    <h3 class="methodology-title">Fortune 500 Corporate Partnerships</h3>
+                    <p class="methodology-description">
+                        Skip generic advice and get direct access to Fortune 500 pilot customers who become your first revenue source and potential strategic acquirers. Our partners include Jefferson Health, Campbell Soup, Boeing, TD Bank, and Subaru.
+                    </p>
+                </div>
+                
+                <div class="methodology-card">
+                    <div class="methodology-number">2</div>
+                    <h3 class="methodology-title">NSF I-Corps Customer Discovery</h3>
+                    <p class="methodology-description">
+                        We use the National Science Foundation's battle-tested methodology with 40% survival rate vs. 20% industry average. You'll complete 50+ customer interviews before building anything, dramatically reducing market risk.
+                    </p>
+                </div>
+                
+                <div class="methodology-card">
+                    <div class="methodology-number">3</div>
+                    <h3 class="methodology-title">Regional Cost Advantage</h3>
+                    <p class="methodology-description">
+                        Build your unicorn in Greater Philadelphia with 30-40% lower costs that extend your runway 18+ months. Capital efficiency is crucial for unicorn success - less dilution, faster profitability, more resources for growth.
+                    </p>
+                </div>
+                
+                <div class="methodology-card">
+                    <div class="methodology-number">4</div>
+                    <h3 class="methodology-title">University Research Pipeline</h3>
+                    <p class="methodology-description">
+                        Leverage Rowan University's AI labs for exclusive technology access, top engineering talent pipeline, faculty expertise, and research partnerships that create defensible competitive moats.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Program Timeline Section -->
+        <section class="content-section">
+            <h2>16-Week Unicorn Development Timeline</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">1-4</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Discovery & Validation</h3>
+                        <p>Build the foundation for exponential growth through customer discovery, market sizing, business model design, and corporate introductions. Complete 50+ customer interviews using proven NSF I-Corps methodology.</p>
+                        <p><strong>Unicorn Milestone:</strong> Validated market opportunity with proven customer demand and clear path to massive scale.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">5-10</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Build & Prototype</h3>
+                        <p>Develop MVP with unicorn-scale architecture. Launch corporate pilot programs, add key technical and business hires, and develop IP strategy with provisional patents.</p>
+                        <p><strong>Unicorn Milestone:</strong> Working product with active corporate customers and defensible technical advantages.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">11-14</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Scale & Revenue</h3>
+                        <p>Generate revenue and prepare for exponential growth. Launch sales process, build scalable systems, prepare for Series A funding, and expand strategic partnerships.</p>
+                        <p><strong>Unicorn Milestone:</strong> Recurring revenue with clear path to $100M+ annual revenue within 5 years.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">15-16</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Launch & Growth</h3>
+                        <p>Demo Day presentation to investors and corporate partners. Direct introductions to top-tier VCs, implementation of 12-month growth plan, and integration into alumni network.</p>
+                        <p><strong>Unicorn Milestone:</strong> Investment-ready company with clear trajectory toward billion-dollar valuation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Investment Details Section -->
+        <section class="content-section">
+            <h2>Investment & Resources</h2>
+            
+            <h3>$100,000 Investment per Team</h3>
+            <p>We provide founder-friendly terms designed for exponential growth:</p>
+            <ul style="margin-left: 30px; color: rgba(255, 255, 255, 0.8);">
+                <li><strong>SAFE Agreement:</strong> Standard accelerator terms with founder-friendly conditions</li>
+                <li><strong>4% Equity Stake:</strong> Lower than most accelerators, higher founder ownership retention</li>
+                <li><strong>No Board Control:</strong> You maintain complete control of your company direction</li>
+                <li><strong>Follow-on Rights:</strong> We earn the right to participate in future funding rounds</li>
+            </ul>
+            
+            <h3>What Your Investment Includes</h3>
+            <ul style="margin-left: 30px; color: rgba(255, 255, 255, 0.8);">
+                <li>Dedicated workspace at South Jersey Technology Park</li>
+                <li>Direct corporate pilot access with Fortune 500 partners</li>
+                <li>Expert mentor network with 25+ mentors (4:1 mentor-to-startup ratio)</li>
+                <li>AI development tools, cloud credits, and research lab access</li>
+                <li>Legal & IP support for formation, patents, and contracts</li>
+                <li>Investor network connections to seed and Series A investors</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

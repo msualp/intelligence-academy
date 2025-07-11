@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor Network - Intelligence Academy @ Rowan University</title>
+    <meta name="description" content="Expert mentors with 4:1 mentor-to-startup ratio. Successful entrepreneurs, AI experts, and industry leaders guiding your unicorn journey.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #007AFF;
+            --secondary: #5856D6;
+            --accent: #00FFF0;
+            --dark: #000000;
+            --light: #FFFFFF;
+            --gray: #8E8E93;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --blur: 20px;
+            --success: #00C851;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 20px 40px;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .header-logo {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 8px 14px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .header-title-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .header-name {
+            font-weight: 600;
+            color: #fff;
+            font-size: 20px;
+        }
+        
+        .header-rowan {
+            font-weight: 700;
+            background: linear-gradient(135deg, #FF8C00, #FF5E62);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-left: 4px;
+            font-size: 20px;
+        }
+
+        .header-subtitle {
+            font-size: 13px;
+            margin-top: 2px;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-subtitle-ai {
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .header-subtitle-unicorn {
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-left: 6px;
+        }
+
+        /* Back Button */
+        .back-button {
+            position: fixed;
+            top: 90px;
+            left: 40px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .back-button:hover {
+            transform: translateX(-5px);
+        }
+
+        /* Main Content */
+        main {
+            padding-top: 120px;
+            padding-bottom: 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .page-title {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-subtitle {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 50px;
+        }
+
+        /* Intro Section */
+        .intro-section {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .mentor-ratio {
+            font-size: 72px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+
+        .intro-section p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Leadership Section */
+        .leadership-section {
+            margin-bottom: 80px;
+        }
+
+        .leadership-section h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: var(--accent);
+            text-align: center;
+        }
+
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+        }
+
+        .leader-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(var(--blur));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .leader-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 123, 255, 0.2);
+        }
+
+        .leader-avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .leader-name {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .leader-title {
+            font-size: 18px;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .leader-bio {
+            font-size: 16px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Mentor Categories */
+        .mentor-categories {
+            margin-bottom: 60px;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(var(--blur));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .category-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .category-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .category-description {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+        }
+
+        .mentor-list {
+            list-style: none;
+        }
+
+        .mentor-list li {
+            padding: 8px 0;
+            color: rgba(255, 255, 255, 0.8);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            background: var(--card-bg);
+            backdrop-filter: blur(var(--blur));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 60px;
+            margin-bottom: 60px;
+        }
+
+        .benefits-section h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--accent);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .benefit-item {
+            text-align: center;
+        }
+
+        .benefit-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .benefit-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .benefit-description {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 16px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 123, 255, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+
+            .back-button {
+                left: 20px;
+                font-size: 14px;
+            }
+
+            main {
+                padding-top: 100px;
+            }
+
+            .leadership-grid,
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-section {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-left">
+            <a href="index.html" class="header-logo">IA</a>
+            <div class="header-title-text">
+                <div>
+                    <span class="header-name">Intelligence Academy</span>
+                    <span class="header-rowan">@ Rowan</span>
+                </div>
+                <div class="header-subtitle">
+                    <span class="header-subtitle-ai">AI Startup Accelerator &</span>
+                    <span class="header-subtitle-unicorn">Unicorn Factory*</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Back Button -->
+    <a href="index.html" class="back-button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Back to Home
+    </a>
+
+    <!-- Main Content -->
+    <main>
+        <h1 class="page-title">Mentor Network</h1>
+        <p class="page-subtitle">Experienced entrepreneurs and industry experts guiding your unicorn journey</p>
+
+        <!-- Intro Section -->
+        <section class="intro-section">
+            <div class="mentor-ratio">4:1</div>
+            <p>
+                Mentor-to-startup ratio ensuring personalized guidance and support. Our mentors are successful entrepreneurs, AI experts, corporate executives, and investors who have built and scaled billion-dollar companies.
+            </p>
+        </section>
+
+        <!-- Leadership Section -->
+        <section class="leadership-section">
+            <h2>Program Leadership</h2>
+            <div class="leadership-grid">
+                <div class="leader-card">
+                    <div class="leader-avatar">MS</div>
+                    <h3 class="leader-name">Mustafa Sualp</h3>
+                    <p class="leader-title">Co-Director & Entrepreneur-in-Residence</p>
+                    <p class="leader-bio">
+                        Serial entrepreneur with two successful exits. Expert in AI commercialization and startup scaling. Former founder of tech companies in enterprise software and AI analytics. Passionate about building the next generation of unicorn founders.
+                    </p>
+                </div>
+                <div class="leader-card">
+                    <div class="leader-avatar">TBD</div>
+                    <h3 class="leader-name">Dr. [Faculty Co-Director]</h3>
+                    <p class="leader-title">Co-Director & AI Research Leader</p>
+                    <p class="leader-bio">
+                        Leading AI researcher with 20+ patents and extensive industry collaboration. Professor of Computer Science specializing in machine learning and autonomous systems. Bridging cutting-edge research with commercial applications.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mentor Categories -->
+        <section class="mentor-categories">
+            <h2 style="font-size: 36px; text-align: center; margin-bottom: 40px; color: var(--accent);">Mentor Expertise Areas</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-icon">💼</div>
+                    <h3 class="category-title">Successful Entrepreneurs</h3>
+                    <p class="category-description">Founders who have built and exited successful companies</p>
+                    <ul class="mentor-list">
+                        <li>Serial entrepreneurs with multiple exits</li>
+                        <li>AI startup founders</li>
+                        <li>Unicorn company executives</li>
+                        <li>Scale-up specialists</li>
+                    </ul>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">🤖</div>
+                    <h3 class="category-title">AI/Technical Experts</h3>
+                    <p class="category-description">Deep technical expertise in cutting-edge AI technologies</p>
+                    <ul class="mentor-list">
+                        <li>Machine learning researchers</li>
+                        <li>AI product architects</li>
+                        <li>Data science leaders</li>
+                        <li>Technical CTOs</li>
+                    </ul>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">🏢</div>
+                    <h3 class="category-title">Corporate Executives</h3>
+                    <p class="category-description">Fortune 500 leaders driving enterprise AI adoption</p>
+                    <ul class="mentor-list">
+                        <li>Chief Innovation Officers</li>
+                        <li>Digital transformation leaders</li>
+                        <li>Strategic partnership executives</li>
+                        <li>Corporate venture partners</li>
+                    </ul>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">💰</div>
+                    <h3 class="category-title">Investors & VCs</h3>
+                    <p class="category-description">Active investors focused on AI and deep tech</p>
+                    <ul class="mentor-list">
+                        <li>Seed stage investors</li>
+                        <li>Series A/B partners</li>
+                        <li>Angel investors</li>
+                        <li>Strategic investors</li>
+                    </ul>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">📈</div>
+                    <h3 class="category-title">Growth Specialists</h3>
+                    <p class="category-description">Experts in scaling startups to unicorn status</p>
+                    <ul class="mentor-list">
+                        <li>Growth marketing experts</li>
+                        <li>Sales leaders</li>
+                        <li>Operations specialists</li>
+                        <li>International expansion experts</li>
+                    </ul>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">⚖️</div>
+                    <h3 class="category-title">Legal & IP Advisors</h3>
+                    <p class="category-description">Protecting and maximizing your intellectual property</p>
+                    <ul class="mentor-list">
+                        <li>Patent attorneys</li>
+                        <li>Startup legal experts</li>
+                        <li>M&A specialists</li>
+                        <li>Regulatory advisors</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits-section">
+            <h2>What You Get From Our Mentors</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎯</div>
+                    <h3 class="benefit-title">1-on-1 Sessions</h3>
+                    <p class="benefit-description">Weekly personalized mentoring sessions tailored to your specific challenges</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🤝</div>
+                    <h3 class="benefit-title">Warm Introductions</h3>
+                    <p class="benefit-description">Direct connections to customers, investors, and strategic partners</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">📊</div>
+                    <h3 class="benefit-title">Board Preparation</h3>
+                    <p class="benefit-description">Guidance on building advisory boards and preparing for investor meetings</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🚀</div>
+                    <h3 class="benefit-title">Scaling Strategies</h3>
+                    <p class="benefit-description">Proven playbooks for scaling from startup to unicorn status</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <h2 style="font-size: 36px; margin-bottom: 20px;">Ready to Learn from the Best?</h2>
+            <p style="font-size: 20px; margin-bottom: 30px; color: rgba(255, 255, 255, 0.8);">
+                Join Intelligence Academy and get access to our exclusive mentor network
+            </p>
+            <a href="apply.html" class="cta-button">Apply Now</a>
+        </section>
+    </main>
+</body>
+</html>

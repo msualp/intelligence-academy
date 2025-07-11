@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply - Intelligence Academy @ Rowan University</title>
+    <meta name="description" content="Submit your 2-minute application to Intelligence Academy's AI Startup Accelerator. Get invited to apply for Spring 2026 cohort.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #007AFF;
+            --secondary: #5856D6;
+            --accent: #00FFF0;
+            --dark: #000000;
+            --light: #FFFFFF;
+            --gray: #8E8E93;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --blur: 20px;
+            --success: #00C851;
+            --warning: #FFBB33;
+            --danger: #FF4444;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 20px 40px;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .header-logo {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 8px 14px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .header-title-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .header-name {
+            font-weight: 600;
+            color: #fff;
+            font-size: 20px;
+        }
+        
+        .header-rowan {
+            font-weight: 700;
+            background: linear-gradient(135deg, #FF8C00, #FF5E62);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-left: 4px;
+            font-size: 20px;
+        }
+
+        .header-subtitle {
+            font-size: 13px;
+            margin-top: 2px;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-subtitle-ai {
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .header-subtitle-unicorn {
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-left: 6px;
+        }
+
+        /* Back Button */
+        .back-button {
+            position: fixed;
+            top: 90px;
+            left: 40px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .back-button:hover {
+            transform: translateX(-5px);
+        }
+
+        /* Main Content */
+        main {
+            padding-top: 120px;
+            padding-bottom: 80px;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .page-title {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-subtitle {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 50px;
+        }
+
+        /* Form Styles */
+        .form-section {
+            margin-bottom: 40px;
+        }
+
+        .form-section h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .required {
+            color: var(--danger);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: white;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .char-count {
+            text-align: right;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 5px;
+        }
+
+        .char-count.warning {
+            color: var(--warning);
+        }
+
+        .char-count.danger {
+            color: var(--danger);
+        }
+
+        /* Submit Button */
+        .submit-button {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 123, 255, 0.4);
+        }
+
+        .submit-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 40px;
+            background: rgba(0, 200, 81, 0.1);
+            border: 1px solid var(--success);
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+
+        .success-message h3 {
+            color: var(--success);
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+
+            .header-name,
+            .header-rowan {
+                font-size: 16px;
+            }
+
+            .header-subtitle {
+                font-size: 11px;
+            }
+
+            .back-button {
+                left: 20px;
+                font-size: 14px;
+            }
+
+            main {
+                padding-top: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-left">
+            <a href="index.html" class="header-logo">IA</a>
+            <div class="header-title-text">
+                <div>
+                    <span class="header-name">Intelligence Academy</span>
+                    <span class="header-rowan">@ Rowan</span>
+                </div>
+                <div class="header-subtitle">
+                    <span class="header-subtitle-ai">AI Startup Accelerator &</span>
+                    <span class="header-subtitle-unicorn">Unicorn Factory*</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Back Button -->
+    <a href="index.html" class="back-button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Back to Home
+    </a>
+
+    <!-- Main Content -->
+    <main>
+        <h1 class="page-title">Submit Your 2-Minute Application</h1>
+        <p class="page-subtitle">Get invited to apply for Spring 2026 cohort</p>
+
+        <form id="applicationForm">
+            <!-- Founder Information -->
+            <div class="form-section">
+                <h3>Founder Information</h3>
+                
+                <div class="form-group">
+                    <label for="primaryFounder">Primary Founder Name <span class="required">*</span></label>
+                    <input type="text" id="primaryFounder" name="primaryFounder" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number <span class="required">*</span></label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="coFounders">All Co-Founder Names</label>
+                    <textarea id="coFounders" name="coFounders" placeholder="List all co-founder names (if any)"></textarea>
+                </div>
+            </div>
+
+            <!-- Startup Information -->
+            <div class="form-section">
+                <h3>Startup Information</h3>
+                
+                <div class="form-group">
+                    <label for="affiliation">Current Affiliation <span class="required">*</span></label>
+                    <select id="affiliation" name="affiliation" required>
+                        <option value="">Select your affiliation</option>
+                        <option value="rowan-student">Rowan Student</option>
+                        <option value="rowan-faculty">Rowan Faculty</option>
+                        <option value="rowan-alumni">Rowan Alumni</option>
+                        <option value="external-entrepreneur">External Entrepreneur</option>
+                        <option value="corporate-employee">Corporate Employee</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="startupIdea">AI Startup Idea <span class="required">*</span> (500 characters max)</label>
+                    <textarea id="startupIdea" name="startupIdea" maxlength="500" required 
+                        placeholder="Describe your AI solution, target market, and the problem you're solving"></textarea>
+                    <div class="char-count" id="startupIdeaCount">0 / 500</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="marketOpportunity">Market Opportunity <span class="required">*</span> (300 characters max)</label>
+                    <textarea id="marketOpportunity" name="marketOpportunity" maxlength="300" required 
+                        placeholder="What's the size of the market and why is timing right now?"></textarea>
+                    <div class="char-count" id="marketOpportunityCount">0 / 300</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="unicornPotential">Unicorn Potential <span class="required">*</span> (300 characters max)</label>
+                    <textarea id="unicornPotential" name="unicornPotential" maxlength="300" required 
+                        placeholder="Why do you believe this could become a billion-dollar company?"></textarea>
+                    <div class="char-count" id="unicornPotentialCount">0 / 300</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="whyIA">Why Intelligence Academy <span class="required">*</span> (300 characters max)</label>
+                    <textarea id="whyIA" name="whyIA" maxlength="300" required 
+                        placeholder="What specifically attracts you to our unicorn-focused program?"></textarea>
+                    <div class="char-count" id="whyIACount">0 / 300</div>
+                </div>
+            </div>
+
+            <!-- Team Background -->
+            <div class="form-section">
+                <h3>Team Background</h3>
+                
+                <div class="form-group">
+                    <label for="technicalExpertise">Technical Expertise (200 characters max)</label>
+                    <textarea id="technicalExpertise" name="technicalExpertise" maxlength="200" 
+                        placeholder="Brief summary of your team's AI/technical capabilities"></textarea>
+                    <div class="char-count" id="technicalExpertiseCount">0 / 200</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="businessExperience">Business Experience (200 characters max)</label>
+                    <textarea id="businessExperience" name="businessExperience" maxlength="200" 
+                        placeholder="Relevant business, sales, or entrepreneurship experience"></textarea>
+                    <div class="char-count" id="businessExperienceCount">0 / 200</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="previousAchievements">Previous Achievements (200 characters max)</label>
+                    <textarea id="previousAchievements" name="previousAchievements" maxlength="200" 
+                        placeholder="Notable accomplishments that demonstrate execution capability"></textarea>
+                    <div class="char-count" id="previousAchievementsCount">0 / 200</div>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-button">Submit 2-Min Application</button>
+        </form>
+
+        <!-- Success Message -->
+        <div class="success-message" id="successMessage">
+            <h3>Application Submitted Successfully!</h3>
+            <p>Thank you for applying to Intelligence Academy. We'll review your submission within 2 weeks and contact qualified candidates for the next phase.</p>
+            <p style="margin-top: 20px;">
+                <a href="index.html" style="color: var(--success); text-decoration: underline;">Return to Home</a>
+            </p>
+        </div>
+    </main>
+
+    <script>
+        // Character counting
+        const textareas = document.querySelectorAll('textarea[maxlength]');
+        textareas.forEach(textarea => {
+            const countElement = document.getElementById(textarea.id + 'Count');
+            
+            textarea.addEventListener('input', () => {
+                const count = textarea.value.length;
+                const max = parseInt(textarea.getAttribute('maxlength'));
+                countElement.textContent = `${count} / ${max}`;
+                
+                if (count > max * 0.9) {
+                    countElement.classList.add('danger');
+                    countElement.classList.remove('warning');
+                } else if (count > max * 0.7) {
+                    countElement.classList.add('warning');
+                    countElement.classList.remove('danger');
+                } else {
+                    countElement.classList.remove('warning', 'danger');
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('applicationForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Here you would normally send the form data to a server
+            // For now, we'll just show a success message
+            
+            document.getElementById('applicationForm').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

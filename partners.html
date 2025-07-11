@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate Partners - Intelligence Academy @ Rowan University</title>
+    <meta name="description" content="Fortune 500 partnerships that provide immediate validation, recurring revenue, and strategic exit pathways for AI startups.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #007AFF;
+            --secondary: #5856D6;
+            --accent: #00FFF0;
+            --dark: #000000;
+            --light: #FFFFFF;
+            --gray: #8E8E93;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --blur: 20px;
+            --success: #00C851;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 20px 40px;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .header-logo {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 8px 14px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .header-title-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .header-name {
+            font-weight: 600;
+            color: #fff;
+            font-size: 20px;
+        }
+        
+        .header-rowan {
+            font-weight: 700;
+            background: linear-gradient(135deg, #FF8C00, #FF5E62);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-left: 4px;
+            font-size: 20px;
+        }
+
+        .header-subtitle {
+            font-size: 13px;
+            margin-top: 2px;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-subtitle-ai {
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .header-subtitle-unicorn {
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-left: 6px;
+        }
+
+        /* Back Button */
+        .back-button {
+            position: fixed;
+            top: 90px;
+            left: 40px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .back-button:hover {
+            transform: translateX(-5px);
+        }
+
+        /* Main Content */
+        main {
+            padding-top: 120px;
+            padding-bottom: 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .page-title {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-subtitle {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 50px;
+        }
+
+        /* Intro Section */
+        .intro-section {
+            margin-bottom: 60px;
+            padding: 40px;
+            background: var(--card-bg);
+            backdrop-filter: blur(var(--blur));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+        }
+
+        .intro-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .intro-section p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Partners Grid */
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .partner-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(var(--blur));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .partner-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 123, 255, 0.2);
+        }
+
+        .partner-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        .partner-name {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .partner-industry {
+            font-size: 16px;
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .partner-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+        }
+
+        .partner-opportunities {
+            margin-top: 20px;
+        }
+
+        .partner-opportunities h4 {
+            font-size: 14px;
+            color: var(--primary);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .partner-opportunities ul {
+            list-style: none;
+        }
+
+        .partner-opportunities li {
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 8px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+        }
+
+        .partner-opportunities li:before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: var(--card-bg);
+            backdrop-filter: blur(var(--blur));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .stat-item h3 {
+            font-size: 48px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .stat-item p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, rgba(0, 123, 255, 0.1), rgba(88, 86, 214, 0.1));
+            border-radius: 20px;
+            margin-top: 60px;
+        }
+
+        .cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .cta-section p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 16px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 123, 255, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+
+            .back-button {
+                left: 20px;
+                font-size: 14px;
+            }
+
+            main {
+                padding-top: 100px;
+            }
+
+            .partners-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-left">
+            <a href="index.html" class="header-logo">IA</a>
+            <div class="header-title-text">
+                <div>
+                    <span class="header-name">Intelligence Academy</span>
+                    <span class="header-rowan">@ Rowan</span>
+                </div>
+                <div class="header-subtitle">
+                    <span class="header-subtitle-ai">AI Startup Accelerator &</span>
+                    <span class="header-subtitle-unicorn">Unicorn Factory*</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Back Button -->
+    <a href="index.html" class="back-button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Back to Home
+    </a>
+
+    <!-- Main Content -->
+    <main>
+        <h1 class="page-title">Corporate Partners</h1>
+        <p class="page-subtitle">Real customers from day one, not just mentors</p>
+
+        <!-- Intro Section -->
+        <section class="intro-section">
+            <h2>Why Corporate Partnerships Create Unicorns</h2>
+            <p>
+                Skip the typical accelerator experience of generic advice. Get direct access to Fortune 500 pilot customers who become your first revenue source and potential strategic acquirers. Corporate partnerships provide immediate validation, recurring revenue, and strategic exit pathways that dramatically accelerate your path to billion-dollar valuations.
+            </p>
+        </section>
+
+        <!-- Partners Grid -->
+        <div class="partners-grid">
+            <div class="partner-card">
+                <h3 class="partner-name">Jefferson Health</h3>
+                <p class="partner-industry">Healthcare & Digital Transformation</p>
+                <p class="partner-description">
+                    One of the region's largest health systems with 14 hospitals and over 40,000 employees, actively seeking AI solutions for patient care and operational efficiency.
+                </p>
+                <div class="partner-opportunities">
+                    <h4>AI Opportunities</h4>
+                    <ul>
+                        <li>Clinical decision support systems</li>
+                        <li>Patient flow optimization</li>
+                        <li>Medical imaging analysis</li>
+                        <li>Predictive health analytics</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="partner-card">
+                <h3 class="partner-name">Campbell Soup Company</h3>
+                <p class="partner-industry">Consumer Goods & Supply Chain</p>
+                <p class="partner-description">
+                    Global food company with $8B+ in annual revenue, transforming operations through AI-driven supply chain optimization and consumer insights.
+                </p>
+                <div class="partner-opportunities">
+                    <h4>AI Opportunities</h4>
+                    <ul>
+                        <li>Supply chain optimization</li>
+                        <li>Consumer behavior analytics</li>
+                        <li>Quality control automation</li>
+                        <li>Demand forecasting</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="partner-card">
+                <h3 class="partner-name">Boeing</h3>
+                <p class="partner-industry">Aerospace & Manufacturing</p>
+                <p class="partner-description">
+                    Leading aerospace manufacturer investing heavily in AI for manufacturing efficiency, predictive maintenance, and autonomous systems.
+                </p>
+                <div class="partner-opportunities">
+                    <h4>AI Opportunities</h4>
+                    <ul>
+                        <li>Predictive maintenance systems</li>
+                        <li>Manufacturing quality control</li>
+                        <li>Supply chain optimization</li>
+                        <li>Autonomous flight systems</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="partner-card">
+                <h3 class="partner-name">TD Bank</h3>
+                <p class="partner-industry">Financial Services</p>
+                <p class="partner-description">
+                    Top 10 North American bank with $1.9T in assets, implementing AI across fraud detection, customer service, and risk management.
+                </p>
+                <div class="partner-opportunities">
+                    <h4>AI Opportunities</h4>
+                    <ul>
+                        <li>Fraud detection systems</li>
+                        <li>Customer service automation</li>
+                        <li>Risk assessment models</li>
+                        <li>Trading algorithms</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="partner-card">
+                <h3 class="partner-name">Subaru</h3>
+                <p class="partner-industry">Automotive Manufacturing</p>
+                <p class="partner-description">
+                    Major automotive manufacturer with US headquarters in Camden, focusing on AI for smart manufacturing and vehicle technology.
+                </p>
+                <div class="partner-opportunities">
+                    <h4>AI Opportunities</h4>
+                    <ul>
+                        <li>Smart manufacturing systems</li>
+                        <li>Quality assurance automation</li>
+                        <li>Supply chain management</li>
+                        <li>Connected vehicle analytics</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="partner-card">
+                <h3 class="partner-name">More Partners Coming</h3>
+                <p class="partner-industry">Expanding Network</p>
+                <p class="partner-description">
+                    We're continuously adding Fortune 500 partners across industries including pharmaceuticals, logistics, energy, and telecommunications.
+                </p>
+                <div class="partner-opportunities">
+                    <h4>Future Sectors</h4>
+                    <ul>
+                        <li>Pharmaceutical R&D</li>
+                        <li>Logistics optimization</li>
+                        <li>Energy management</li>
+                        <li>Telecommunications</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <h2 style="font-size: 32px; margin-bottom: 10px; color: var(--accent);">Regional Advantage</h2>
+            <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 30px;">Greater Philadelphia's corporate density creates unique opportunities</p>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>12</h3>
+                    <p>Fortune 500 HQs within 50 miles</p>
+                </div>
+                <div class="stat-item">
+                    <h3>$400B+</h3>
+                    <p>Regional economy size</p>
+                </div>
+                <div class="stat-item">
+                    <h3>$2T+</h3>
+                    <p>Combined market cap</p>
+                </div>
+                <div class="stat-item">
+                    <h3>5M+</h3>
+                    <p>Employees in region</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <h2>Ready to Partner with Fortune 500 Companies?</h2>
+            <p>Join Intelligence Academy and get immediate access to corporate pilot opportunities</p>
+            <a href="apply.html" class="cta-button">Apply Now</a>
+        </section>
+    </main>
+</body>
+</html>

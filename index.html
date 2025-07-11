@@ -427,11 +427,12 @@
         }
 
         .hero-description {
-            font-size: 18px;
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.8;
-            max-width: 800px;
-            margin: 0 auto 30px;
+            font-size: clamp(24px, 3vw, 32px);
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.5;
+            max-width: 900px;
+            margin: 0 auto 40px;
+            font-weight: 300;
             animation: fadeInUp 1s ease-out 0.6s both;
         }
 
@@ -880,7 +881,7 @@
         }
 
         .info-container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
@@ -2079,22 +2080,8 @@
             <div class="hero-badge">🚀 Now Accepting Applications for Spring 2026 Cohort</div>
             <h1 class="hero-title">Transform Your AI Vision Into Reality</h1>
             <p class="hero-description">
-                Join Greater Philadelphia's premier AI startup accelerator and access the resources, mentorship, and funding you need to build the next billion-dollar AI company.
+                More AI startups are reaching billion-dollar valuations in quarter the time with half the team and double the success rate vs. traditional unicorns. Our program focuses on the specific methodology and partnerships that maximize your AI startup's unicorn potential.
             </p>
-            <div class="hero-stats">
-                <div class="hero-stat">
-                    <div class="stat-value">1/4</div>
-                    <div class="stat-label">Time to $1B</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="stat-value">1/2</div>
-                    <div class="stat-label">Team Size</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="stat-value">2x</div>
-                    <div class="stat-label">Success Rate</div>
-                </div>
-            </div>
             <div class="cta-container">
                 <a href="apply.html" class="cta-primary">Submit Early 2-Min Application</a>
                 <a href="#stats" class="cta-secondary">Learn More ↓</a>
@@ -2118,25 +2105,18 @@
     <!-- Stats Section -->
     <section class="stats-section" id="stats">
         <div class="stats-container">
-            <h2 style="font-size: clamp(36px, 5vw, 48px); text-align: center; margin-bottom: 20px; color: white;">The AI Unicorn Advantage is Real</h2>
-            <p style="font-size: 20px; text-align: center; margin-bottom: 40px; color: rgba(255, 255, 255, 0.8); max-width: 900px; margin-left: auto; margin-right: auto;">
-                More AI startups are reaching billion-dollar valuations in quarter the time with half the team and double the success rate vs. traditional unicorns. Our program focuses on the specific methodology and partnerships that maximize your AI startup's unicorn potential.
-            </p>
+            <h2 style="font-size: clamp(36px, 5vw, 48px); text-align: center; margin-bottom: 40px; color: white;">The AI Unicorn Advantage is Real</h2>
             <div class="stat-card">
-                <div class="stat-number" data-target="55" data-prefix="$" data-suffix="M">$0M</div>
-                <div class="stat-label">Investment Capital Attracted</div>
+                <div class="stat-number">1/4</div>
+                <div class="stat-label">Time to $1B Valuation</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number" data-target="480">0</div>
-                <div class="stat-label">Jobs Created</div>
+                <div class="stat-number">1/2</div>
+                <div class="stat-label">Team Size Required</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number" data-target="44">0</div>
-                <div class="stat-label">AI Startups Launched</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" data-target="209" data-prefix="$" data-suffix="M">$0M</div>
-                <div class="stat-label">Economic Impact</div>
+                <div class="stat-number">2x</div>
+                <div class="stat-label">Success Rate</div>
             </div>
         </div>
     </section>
@@ -2145,10 +2125,54 @@
     <section class="quick-info">
         <div class="info-container">
             <h2>Transform Your AI Vision Into Reality</h2>
-            <p>Join Greater Philadelphia's premier AI startup accelerator and access the resources, mentorship, and funding you need to build the next billion-dollar AI company.</p>
-            <div class="info-buttons">
-                <a href="#stats" class="info-btn">Learn More</a>
-                <a href="#contact" class="info-btn primary">Get Started</a>
+            <p>Join Greater Philadelphia's premier AI startup accelerator creating measurable impact:</p>
+            <div class="stats-container" style="margin-top: 40px;">
+                <div class="stat-card">
+                    <div class="stat-number" data-target="55" data-prefix="$" data-suffix="M">$0M</div>
+                    <div class="stat-label">Investment Capital Attracted</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="480">0</div>
+                    <div class="stat-label">Jobs Created</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="44">0</div>
+                    <div class="stat-label">AI Startups Launched</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="209" data-prefix="$" data-suffix="M">$0M</div>
+                    <div class="stat-label">Economic Impact</div>
+                </div>
+            </div>
+            <div class="info-buttons" style="margin-top: 40px;">
+                <a href="about.html" class="info-btn">Learn More</a>
+                <a href="apply.html" class="info-btn primary">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Highlights Section -->
+    <section class="stats-section" style="background: #0a0a0a;">
+        <div class="stats-container" style="max-width: 1200px;">
+            <h2 style="font-size: clamp(36px, 5vw, 48px); text-align: center; margin-bottom: 20px; color: white;">What Makes Us Different</h2>
+            <p style="font-size: 20px; text-align: center; margin-bottom: 40px; color: rgba(255, 255, 255, 0.8); max-width: 900px; margin-left: auto; margin-right: auto;">
+                Our unicorn-focused methodology combines the best of university research, corporate partnerships, and entrepreneurial excellence.
+            </p>
+            <div class="stat-card" style="border: 2px solid var(--primary);">
+                <div class="stat-number">$100K</div>
+                <div class="stat-label">Investment per Team</div>
+            </div>
+            <div class="stat-card" style="border: 2px solid var(--secondary);">
+                <div class="stat-number">4:1</div>
+                <div class="stat-label">Mentor to Startup Ratio</div>
+            </div>
+            <div class="stat-card" style="border: 2px solid var(--accent);">
+                <div class="stat-number">16</div>
+                <div class="stat-label">Week Intensive Program</div>
+            </div>
+            <div class="stat-card" style="border: 2px solid var(--success);">
+                <div class="stat-number">40%</div>
+                <div class="stat-label">Survival Rate</div>
             </div>
         </div>
     </section>

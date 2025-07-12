@@ -4,26 +4,28 @@
 
 /* CSS Variables - Preserved for compatibility */
 :root {
-    --primary-blue: #003366;
+    --primary-blue: #007AFF;
     --secondary-blue: #0051A2;
     --light-blue: #E6F2FF;
-    --accent-orange: #FF6B35;
-    --primary-gray: #1A1A1A;
-    --secondary-gray: #666666;
-    --light-gray: #F5F5F5;
+    --accent-orange: #FF9500;
+    --accent-green: #30D158;
+    --primary-gray: #1D1D1F;
+    --secondary-gray: #86868B;
+    --light-gray: #F5F5F7;
     --white: #FFFFFF;
-    --gradient-start: #1E3A8A;
-    --gradient-mid: #6B46C1;
-    --gradient-end: #DC2626;
-    --text-primary: #1A1A1A;
-    --text-secondary: #666666;
+    --gradient-start: #007AFF;
+    --gradient-mid: #0056D6;
+    --gradient-end: #4A90E2;
+    --text-primary: #1D1D1F;
+    --text-secondary: #86868B;
     --bg-primary: #FFFFFF;
-    --bg-secondary: #F5F5F5;
+    --bg-secondary: #F5F5F7;
     --border-radius: 12px;
     --border-radius-large: 20px;
-    --shadow-small: 0 2px 8px rgba(0, 0, 0, 0.08);
-    --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.15);
+    --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
     --shadow-large: 0 15px 50px rgba(0, 0, 0, 0.25);
+    --border-light: rgba(0, 0, 0, 0.1);
     --container-padding: clamp(1rem, 4vw, 3rem);
     --section-spacing: clamp(4rem, 8vw, 8rem);
 }
@@ -65,7 +67,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: radial-gradient(ellipse at center, #1a1a2e 0%, #0a0a0f 100%);
+    background: linear-gradient(135deg, #F5F5F7 0%, #E8E8ED 100%);
     transition: opacity 0.3s ease;
 }
 
@@ -76,7 +78,7 @@ body {
 /* Global Button Styles */
 .btn-primary {
     display: inline-block;
-    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid));
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #0056D6 50%, #4A90E2 100%);
     color: var(--white);
     padding: 1rem 2.5rem;
     font-size: 1.1rem;
@@ -84,14 +86,15 @@ body {
     border-radius: 50px;
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(107, 70, 193, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 122, 255, 0.3);
     border: none;
     cursor: pointer;
 }
 
 .btn-primary:hover {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #0056D6 25%, #4A90E2 50%, #6BA6FF 75%, var(--accent-orange) 100%);
     transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(107, 70, 193, 0.4);
+    box-shadow: 0 15px 40px rgba(0, 122, 255, 0.4);
 }
 
 /* Loading Animation */

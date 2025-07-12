@@ -1,0 +1,93 @@
+/* Particle Background - Matching Original Design */
+.particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #F5F5F7 0%, #E8E8ED 100%);
+    z-index: -1;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    background: linear-gradient(45deg, rgba(0, 122, 255, 0.4), rgba(255, 149, 0, 0.3));
+    border-radius: 50%;
+    animation: float infinite ease-in-out;
+    filter: blur(40px);
+    opacity: 0.3;
+}
+
+.particle:nth-child(1) {
+    width: 80px;
+    height: 80px;
+    top: 20%;
+    left: 10%;
+    animation-duration: 20s;
+    animation-delay: 0s;
+}
+
+.particle:nth-child(2) {
+    width: 60px;
+    height: 60px;
+    top: 60%;
+    left: 80%;
+    animation-duration: 25s;
+    animation-delay: -5s;
+}
+
+.particle:nth-child(3) {
+    width: 40px;
+    height: 40px;
+    top: 80%;
+    left: 20%;
+    animation-duration: 18s;
+    animation-delay: -10s;
+}
+
+.particle:nth-child(4) {
+    width: 100px;
+    height: 100px;
+    top: 10%;
+    left: 70%;
+    animation-duration: 22s;
+    animation-delay: -8s;
+}
+
+.particle:nth-child(5) {
+    width: 50px;
+    height: 50px;
+    top: 40%;
+    left: 5%;
+    animation-duration: 24s;
+    animation-delay: -12s;
+}
+
+.particle:nth-child(6) {
+    width: 70px;
+    height: 70px;
+    top: 70%;
+    left: 60%;
+    animation-duration: 19s;
+    animation-delay: -3s;
+}
+
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(0px) translateX(0px) scale(1);
+        opacity: 0.3;
+    }
+    25% { 
+        transform: translateY(-30px) translateX(20px) scale(1.1);
+        opacity: 0.6;
+    }
+    50% { 
+        transform: translateY(-60px) translateX(-15px) scale(0.9);
+        opacity: 0.4;
+    }
+    75% { 
+        transform: translateY(-20px) translateX(25px) scale(1.05);
+        opacity: 0.5;
+    }
+}

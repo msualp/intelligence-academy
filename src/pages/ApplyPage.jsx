@@ -73,12 +73,12 @@ function ApplyPage() {
           <section className="success-section">
             <div className="success-content">
               <div className="success-icon">✅</div>
-              <h1 className="success-title">Application Received!</h1>
+              <h1 className="success-title">Application Submitted Successfully!</h1>
               <p className="success-description">
                 Thank you for applying to Intelligence Academy. We'll review your submission within 2 weeks 
                 and contact qualified candidates for the next phase.
               </p>
-              <a href="/" className="btn-primary">Return Home</a>
+              <a href="/" className="btn-primary">Return to Home</a>
             </div>
           </section>
         </main>
@@ -101,6 +101,9 @@ function ApplyPage() {
               <span className="deadline-label">Application Deadline:</span>
               <span className="deadline-date">December 15, 2025</span>
             </div>
+            <p className="hero-note">
+              Our unicorn-focused program has limited spots. Submit your 2-minute application to be considered.
+            </p>
           </div>
         </section>
 
@@ -166,6 +169,9 @@ function ApplyPage() {
               {/* Startup Information */}
               <div className="form-section">
                 <h2 className="form-section-title">Startup Information</h2>
+                <p className="form-section-note">
+                  Focus on your AI startup's unicorn potential - what makes it a billion-dollar opportunity?
+                </p>
 
                 <div className="form-group">
                   <label htmlFor="affiliation">Current Affiliation <span className="required">*</span></label>
@@ -319,6 +325,11 @@ function ApplyPage() {
                 <button type="submit" className="btn-submit">
                   Submit 2-Min Application
                 </button>
+                <p className="form-disclaimer">
+                  <span className="asterisk">*</span>While we focus on unicorn potential, we recognize that unicorn outcomes remain 
+                  statistically rare. Our methodology systematically addresses the factors that give AI companies 
+                  demonstrable advantages in achieving billion-dollar valuations.
+                </p>
               </div>
             </form>
           </div>

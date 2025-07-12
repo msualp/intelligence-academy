@@ -8,32 +8,31 @@ function AboutPage() {
   }, [])
 
   const unicornStats = [
-    { metric: 'Time to $1B Valuation', ai: '7 years', traditional: '25 years' },
-    { metric: 'Team Size at Unicorn', ai: '200-500', traditional: '1,000+' },
-    { metric: 'Success Rate', ai: '2%', traditional: '1%' },
-    { metric: 'Capital Efficiency', ai: '2.5x', traditional: '1x' },
-    { metric: 'Market Penetration', ai: '5x faster', traditional: 'Baseline' }
+    { metric: 'Time to $1B Valuation', ai: '7 years average', traditional: '25 years average', advantage: 'Quarter the time' },
+    { metric: 'Team Size at Unicorn Status', ai: '200-500 employees', traditional: '1,000+ employees', advantage: 'Half the team size' },
+    { metric: 'Success Rate to Unicorn', ai: '2% of AI startups', traditional: '1% of startups', advantage: 'Double the success' },
+    { metric: 'Capital Efficiency', ai: '$100-200M raised', traditional: '$500M+ raised', advantage: '2.5x more efficient' }
   ]
 
   const methodology = [
     {
       title: 'Fortune 500 Corporate Partnerships',
-      description: 'Direct access to enterprise clients who need AI solutions now. Our partners provide pilot opportunities, validation, and pathways to million-dollar contracts.',
+      description: 'Direct access to enterprise clients who need AI solutions now. Our partners provide pilot opportunities, validation, and pathways to strategic exits.',
       icon: '🏢'
     },
     {
       title: 'NSF I-Corps Customer Discovery',
-      description: 'Proven methodology that has launched 1,000+ startups. We combine Silicon Valley best practices with academic rigor to validate billion-dollar opportunities.',
+      description: 'Proven methodology with 40% survival rates. We combine Silicon Valley best practices with academic rigor to validate billion-dollar opportunities.',
       icon: '🔬'
     },
     {
       title: 'Regional Cost Advantage',
-      description: 'Build 2x faster with 40% lower costs. Access world-class talent while maintaining runway to reach product-market fit and scale efficiently.',
+      description: '30% cost savings vs. coastal alternatives in Greater Philadelphia. Build 2x faster while maintaining runway to reach product-market fit.',
       icon: '💰'
     },
     {
       title: 'University Research Pipeline',
-      description: 'Exclusive access to cutting-edge AI research, PhD talent, and computational resources. Partner with faculty on breakthrough technologies.',
+      description: 'Exclusive access to cutting-edge AI research, PhD talent, and high-performance GPU clusters. Partner with faculty on breakthrough technologies.',
       icon: '🎓'
     }
   ]
@@ -90,8 +89,9 @@ function AboutPage() {
           <div className="hero-content">
             <h1 className="hero-title">Building AI Unicorns Since Day One</h1>
             <p className="hero-description">
-              Intelligence Academy is the only accelerator designed exclusively for creating billion-dollar AI companies. 
-              Our methodology, network, and resources are optimized for one outcome: unicorn status.
+              More AI startups are reaching billion-dollar valuations in <strong>quarter the time</strong> with <strong>half the team</strong> 
+              and <strong>double the success rate</strong>¹ vs. traditional unicorns. Our program focuses on the specific methodology 
+              and partnerships that maximize your AI startup's unicorn potential.
             </p>
           </div>
         </section>
@@ -100,17 +100,20 @@ function AboutPage() {
         <section className="unicorn-stats-section loading">
           <div className="container">
             <h2 className="section-title">Why AI Companies Become Unicorns Differently</h2>
+            <p className="section-subtitle">The statistics that drive our unicorn-focused methodology</p>
             <div className="stats-table">
               <div className="table-header">
-                <div className="header-cell">Metric</div>
-                <div className="header-cell highlight">AI Startups</div>
+                <div className="header-cell">Unicorn Metric</div>
                 <div className="header-cell">Traditional Startups</div>
+                <div className="header-cell highlight">AI Startups</div>
+                <div className="header-cell advantage">AI Advantage</div>
               </div>
               {unicornStats.map((stat, index) => (
                 <div key={index} className="table-row">
                   <div className="table-cell metric">{stat.metric}</div>
-                  <div className="table-cell ai-value">{stat.ai}</div>
                   <div className="table-cell traditional-value">{stat.traditional}</div>
+                  <div className="table-cell ai-value">{stat.ai}</div>
+                  <div className="table-cell advantage-value">{stat.advantage}</div>
                 </div>
               ))}
             </div>
@@ -120,7 +123,8 @@ function AboutPage() {
         {/* Methodology Section */}
         <section className="methodology-section loading">
           <div className="container">
-            <h2 className="section-title">Our Unicorn-Focused Methodology</h2>
+            <h2 className="section-title">How We Maximize Your Unicorn Potential</h2>
+            <p className="section-subtitle">Every program element designed for exponential growth</p>
             <div className="methodology-grid">
               {methodology.map((method, index) => (
                 <div key={index} className="methodology-card">
@@ -185,6 +189,11 @@ function AboutPage() {
               <p className="investment-note">
                 Our investment is structured to maximize your runway while preserving founder equity for future rounds.
               </p>
+              <p className="investment-disclaimer">
+                <span className="asterisk">*</span>Aspiring unicorn catalyst based on AI sector performance data. While unicorn outcomes remain 
+                statistically rare (2% of AI startups vs. 1% traditional), our methodology systematically addresses the factors 
+                that give AI companies demonstrable advantages in achieving billion-dollar valuations.
+              </p>
             </div>
           </div>
         </section>
@@ -196,7 +205,11 @@ function AboutPage() {
             <p className="cta-description">
               Join the next cohort of AI entrepreneurs building billion-dollar companies.
             </p>
-            <a href="/apply" className="btn-primary">Apply Now</a>
+            <a href="/apply" className="btn-primary">Submit 2-Min Application</a>
+            <p className="cta-subtext">Get invited to apply for Spring 2026 cohort</p>
+            <p className="footnote">
+              <sup>1</sup> Source: CB Insights State of AI Report 2024, PitchBook Unicorn Analysis
+            </p>
           </div>
         </section>
       </main>

@@ -56,8 +56,8 @@ function PartnersPage() {
   const regionalStats = [
     { number: '12', label: 'Fortune 500 HQs within 50 miles' },
     { number: '$400B+', label: 'Regional Economy' },
-    { number: '$2T+', label: 'Combined Market Cap' },
-    { number: '5M+', label: 'Employees in Region' }
+    { number: '30%', label: 'Cost Savings vs. Coastal Alternatives' },
+    { number: '40%', label: 'NSF I-Corps Survival Rate' }
   ]
 
   return (
@@ -70,7 +70,8 @@ function PartnersPage() {
             <h1 className="hero-title">Fortune 500 Partners Ready to Deploy AI</h1>
             <p className="hero-description">
               Our corporate partners aren't just logos on a website. They're actively seeking AI solutions, 
-              providing pilot opportunities, and fast-tracking procurement for our startups.
+              providing pilot opportunities, and fast-tracking procurement for strategic exits. Fortune 500 partnerships 
+              are essential for pilot customers and the strategic exits that create unicorns.
             </p>
           </div>
         </section>
@@ -79,14 +80,17 @@ function PartnersPage() {
         <section className="partners-intro loading">
           <div className="container">
             <h2 className="section-title">Why Corporate Partnerships Create Unicorns</h2>
+            <p className="section-subtitle">
+              Fortune 500 partnerships provide the pilot customers and strategic exits essential for unicorn valuations
+            </p>
             <div className="intro-grid">
               <div className="intro-card">
                 <div className="card-number">85%</div>
-                <p className="card-text">Of AI unicorns have Fortune 500 customers before Series A</p>
+                <p className="card-text">Of AI unicorns have Fortune 500 customers before Series A¹</p>
               </div>
               <div className="intro-card">
                 <div className="card-number">$15M</div>
-                <p className="card-text">Average first enterprise contract value for our alumni</p>
+                <p className="card-text">Average first enterprise contract value for successful AI startups</p>
               </div>
               <div className="intro-card">
                 <div className="card-number">6 months</div>
@@ -140,8 +144,13 @@ function PartnersPage() {
             <div className="regional-content">
               <p className="regional-description">
                 Greater Philadelphia offers the perfect launching pad for AI unicorns: world-class universities, 
-                dense corporate headquarters, lower costs than Silicon Valley, and access to the entire East Coast market. 
-                Our location provides strategic advantages that accelerate growth and reduce burn rate.
+                dense corporate headquarters, <strong>30% cost savings vs. coastal alternatives</strong>, and access to the entire East Coast market. 
+                Our regional connection, combined with proven NSF I-Corps methodology, provides strategic advantages 
+                that accelerate growth and reduce burn rate.
+              </p>
+              <p className="regional-note">
+                <span className="asterisk">*</span>Regional advantages based on cost of living indices, talent availability, 
+                and proximity to Fortune 500 headquarters compared to San Francisco Bay Area and NYC markets.
               </p>
             </div>
           </div>
@@ -190,11 +199,21 @@ function PartnersPage() {
         {/* CTA Section */}
         <section className="partners-cta loading">
           <div className="container">
-            <h2 className="cta-title">Turn Corporate Partnerships Into Unicorn Valuations</h2>
+            <h2 className="cta-title">Turn Corporate Partnerships Into Unicorn Valuations<span className="asterisk">*</span></h2>
             <p className="cta-description">
               Join our program and get direct access to Fortune 500 decision-makers ready to pilot your AI solution.
             </p>
-            <a href="/apply" className="btn-primary">Apply Now</a>
+            <a href="/apply" className="btn-primary">Submit 2-Min Application</a>
+            <p className="cta-subtext">Get invited to apply for Spring 2026 cohort</p>
+          </div>
+        </section>
+
+        {/* Footnotes Section */}
+        <section className="footnotes-section">
+          <div className="container">
+            <p className="footnote">
+              <sup>1</sup> Source: CB Insights State of AI Report 2024, Analysis of AI Unicorn Customer Base
+            </p>
           </div>
         </section>
       </main>

@@ -58,6 +58,17 @@
   font-size: clamp(1rem, 2vw, 1.1rem);
 }
 
+.hero-note {
+  margin-top: 1.5rem;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
 /* Application Section */
 .application-section {
   padding: var(--section-spacing) var(--container-padding);
@@ -94,9 +105,17 @@
   font-size: clamp(1.3rem, 3vw, 1.6rem);
   font-weight: 700;
   color: var(--accent-orange);
-  margin-bottom: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
   padding-bottom: 0.75rem;
   border-bottom: 2px solid rgba(255, 107, 53, 0.2);
+}
+
+.form-section-note {
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.5;
 }
 
 .form-group {
@@ -221,6 +240,25 @@ select {
   opacity: 0.5;
   cursor: not-allowed;
   transform: none;
+}
+
+.form-disclaimer {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 107, 53, 0.05);
+  border: 1px solid rgba(255, 107, 53, 0.1);
+  border-radius: var(--border-radius);
+  font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+  color: var(--text-secondary);
+  font-style: italic;
+  line-height: 1.6;
+  text-align: left;
+}
+
+[data-theme="dark"] .form-disclaimer {
+  background: rgba(255, 107, 53, 0.08);
+  border-color: rgba(255, 107, 53, 0.2);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* Success Section */

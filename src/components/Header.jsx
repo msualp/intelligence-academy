@@ -37,9 +37,12 @@ function Header() {
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <nav className={`nav ${isScrolled ? 'shrink' : ''}`}>
         <Link to="/" className={`logo ${isScrolled ? 'shrink' : ''}`}>
-          <div>Intelligence Academy <span className="rowan">@ Rowan</span></div>
-          <div className={`logo-subtitle ${isScrolled ? 'shrink' : ''}`}>
-            AI Startup Accelerator & <span className="unicorn-factory">Unicorn Factory</span><span className="asterisk">*</span>
+          <span className={`logo-icon ${isScrolled ? 'shrink' : ''}`}>🦄</span>
+          <div className="logo-text">
+            <div>Intelligence Academy <span className="rowan">@ Rowan</span></div>
+            <div className={`logo-subtitle ${isScrolled ? 'shrink' : ''}`}>
+              AI Startup Accelerator & <span className="unicorn-factory">Unicorn Factory</span><span className="asterisk">*</span>
+            </div>
           </div>
         </Link>
         

@@ -10,18 +10,18 @@ function ContactPage() {
   const contactInfo = [
     {
       type: 'General Inquiries',
-      email: 'info@intelligence-academy.rowan.edu',
+      email: 'apply@intelligence-academy.rowan.edu',
       description: 'Questions about the program, partnerships, or general information'
     },
     {
       type: 'Applications',
       email: 'apply@intelligence-academy.rowan.edu',
-      description: 'Application status, requirements, and cohort information'
+      description: 'Application status, requirements, and Spring 2026 cohort information'
     },
     {
       type: 'Corporate Partnerships',
       email: 'partners@intelligence-academy.rowan.edu',
-      description: 'Fortune 500 companies interested in AI innovation partnerships'
+      description: 'Fortune 500 companies interested in AI innovation partnerships and pilot programs'
     },
     {
       type: 'Media & Press',
@@ -35,7 +35,7 @@ function ContactPage() {
       name: 'Main Office',
       building: 'South Jersey Technology Park',
       address: '107 Gilbreth Parkway',
-      city: 'Mullica Hill, NJ 08062',
+      city: 'Glassboro, NJ 08028',
       phone: '(856) 256-4000',
       isPrimary: true
     },
@@ -165,11 +165,12 @@ function ContactPage() {
         {/* CTA Section */}
         <section className="contact-cta loading">
           <div className="container">
-            <h2 className="cta-title">Ready to Build Your AI Unicorn?</h2>
+            <h2 className="cta-title">Ready to Build Your AI Unicorn<span className="asterisk">*</span>?</h2>
             <p className="cta-description">
               Don't wait - applications are reviewed on a rolling basis and spots fill quickly.
             </p>
-            <a href="/apply" className="btn-primary">Apply Now</a>
+            <a href="/apply" className="btn-primary">Submit 2-Min Application</a>
+            <p className="cta-subtext">Get invited to apply for Spring 2026 cohort</p>
           </div>
         </section>
       </main>

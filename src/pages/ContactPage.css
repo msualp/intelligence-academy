@@ -316,6 +316,12 @@
   margin-right: auto;
 }
 
+.contact-cta .cta-subtext {
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 1rem;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .contact-grid,

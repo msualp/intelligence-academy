@@ -119,7 +119,7 @@ function MentorsPage() {
         {/* Hero Section */}
         <section className="mentors-hero">
           <div className="hero-content">
-            <h1 className="hero-title">Learn From Those Who've Built Unicorns</h1>
+            <h1 className="hero-title">Learn From Those Who've Built Unicorns<span className="asterisk">*</span></h1>
             <p className="hero-description">
               Our 4:1 mentor-to-startup ratio ensures you get personalized guidance from entrepreneurs, 
               executives, and investors who've created billion-dollar companies.
@@ -188,7 +188,7 @@ function MentorsPage() {
             </div>
             <div className="mentor-quote">
               <blockquote>
-                "The difference between a startup and a unicorn is the quality of advice at critical moments. 
+                "The difference between a startup and a unicorn<span className="asterisk">*</span> is the quality of advice at critical moments. 
                 Our mentors have been there, scaled that, and know exactly what it takes to build a billion-dollar company."
               </blockquote>
               <cite>- Mustafa Sualp, Program Co-Director</cite>
@@ -229,11 +229,12 @@ function MentorsPage() {
         {/* CTA Section */}
         <section className="mentors-cta loading">
           <div className="container">
-            <h2 className="cta-title">Get Mentored by Unicorn Builders</h2>
+            <h2 className="cta-title">Get Mentored by Unicorn Builders<span className="asterisk">*</span></h2>
             <p className="cta-description">
               Join our program and learn directly from those who've created billion-dollar AI companies.
             </p>
-            <a href="/apply" className="btn-primary">Apply Now</a>
+            <a href="/apply" className="btn-primary">Submit 2-Min Application</a>
+            <p className="cta-subtext">Get invited to apply for Spring 2026 cohort</p>
           </div>
         </section>
       </main>

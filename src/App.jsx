@@ -12,19 +12,23 @@ import Footer from './components/Footer'
 
 function App() {
   return (
-    <>
-      <DraftBanner />
-      <Header />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/partners" element={<PartnersPage />} />
-        <Route path="/mentors" element={<MentorsPage />} />
-        <Route path="/apply" element={<ApplyPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-      </Routes>
-      <Footer />
-    </>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/*" element={
+        <>
+          <DraftBanner />
+          <Header />
+          <Routes>
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/partners" element={<PartnersPage />} />
+            <Route path="/mentors" element={<MentorsPage />} />
+            <Route path="/apply" element={<ApplyPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
+          <Footer />
+        </>
+      } />
+    </Routes>
   )
 }
 

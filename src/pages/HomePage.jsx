@@ -89,10 +89,13 @@ const HomePage = () => {
       <header className={`header ${isBannerHidden ? 'banner-hidden' : ''}`}>
         <nav className={`nav ${isHeaderShrunk ? 'shrink' : ''}`}>
           <Link to="/" className={`logo ${isHeaderShrunk ? 'shrink' : ''}`}>
-            <div>Intelligence Academy <span className="rowan">@ Rowan</span> 🦄</div>
-            <div className={`logo-subtitle ${isHeaderShrunk ? 'shrink' : ''}`}>
-              AI Startup Accelerator & <span className="unicorn-factory">Unicorn Factory</span>
-              <span className="asterisk">*</span>
+            <span className="logo-icon">🦄</span>
+            <div className="logo-text">
+              <div>Intelligence Academy <span className="rowan">@ Rowan</span></div>
+              <div className={`logo-subtitle ${isHeaderShrunk ? 'shrink' : ''}`}>
+                AI Startup Accelerator & <span className="unicorn-factory">Unicorn Factory</span>
+                <span className="asterisk">*</span>
+              </div>
             </div>
           </Link>
           

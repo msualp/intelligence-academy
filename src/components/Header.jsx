@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import DarkModeToggle from './DarkModeToggle'
 import './Header.css'
 
 function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [showDarkModeToggle, setShowDarkModeToggle] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,22 +45,34 @@ function Header() {
         
         <div className="header-actions">
           <div className="cta-container">
-            <a href="#apply" className={`cta-button ${isScrolled ? 'shrink' : ''}`}>Apply Now</a>
+            <Link to="/apply" className={`cta-button ${isScrolled ? 'shrink' : ''}`}>Apply Now</Link>
             <div className={`cohort-pill ${isScrolled ? 'shrink' : ''}`}>Spring 2026 Cohort</div>
           </div>
-          <button 
-            className={`hamburger-menu ${isScrolled ? 'shrink' : ''}`} 
-            onClick={toggleDropdown}
-          >
-            ☰
-          </button>
+          <div className="menu-container">
+            <DarkModeToggle 
+              show={showDarkModeToggle} 
+              className={`dark-mode-toggle ${isScrolled ? 'shrink' : ''}`}
+            />
+            <button 
+              className={`hamburger-menu ${isScrolled ? 'shrink' : ''}`} 
+              onClick={toggleDropdown}
+              onMouseEnter={() => setShowDarkModeToggle(true)}
+              onMouseLeave={() => setShowDarkModeToggle(false)}
+            >
+              <div className="hamburger-lines">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </button>
+          </div>
           <div className={`nav-dropdown ${isDropdownOpen ? 'show' : ''}`}>
-            <a href="#home" onClick={() => setIsDropdownOpen(false)}>Home</a>
-            <a href="#program" onClick={() => setIsDropdownOpen(false)}>Program</a>
-            <a href="#vision" onClick={() => setIsDropdownOpen(false)}>Our Vision</a>
-            <a href="#partners" onClick={() => setIsDropdownOpen(false)}>Partners</a>
-            <a href="#about" onClick={() => setIsDropdownOpen(false)}>About</a>
-            <a href="#contact" onClick={() => setIsDropdownOpen(false)}>Contact</a>
+            <Link to="/" onClick={() => setIsDropdownOpen(false)}>Home</Link>
+            <Link to="/about" onClick={() => setIsDropdownOpen(false)}>About</Link>
+            <Link to="/partners" onClick={() => setIsDropdownOpen(false)}>Partners</Link>
+            <Link to="/mentors" onClick={() => setIsDropdownOpen(false)}>Mentors</Link>
+            <Link to="/apply" onClick={() => setIsDropdownOpen(false)}>Apply</Link>
+            <Link to="/contact" onClick={() => setIsDropdownOpen(false)}>Contact</Link>
           </div>
         </div>
       </nav>

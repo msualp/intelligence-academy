@@ -1,0 +1,86 @@
+/* Program Section */
+.program {
+    padding: 6rem 2rem;
+    background: var(--light-gray);
+}
+
+.program-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0 4rem;
+}
+
+.program-phase {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.program-phase:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.phase-header {
+    margin-bottom: 1.5rem;
+}
+
+.phase-week {
+    display: inline-block;
+    background: var(--secondary-blue);
+    color: var(--white);
+    padding: 0.25rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.phase-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-gray);
+    margin-top: 0.5rem;
+}
+
+.phase-items {
+    list-style: none;
+}
+
+.phase-items li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--secondary-gray);
+    line-height: 1.6;
+}
+
+.phase-items li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent-orange);
+    font-weight: 700;
+}
+
+.program-cta {
+    text-align: center;
+    padding: 3rem;
+    background: rgba(0, 51, 162, 0.05);
+    border-radius: 20px;
+}
+
+.cta-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-gray);
+    margin-bottom: 1.5rem;
+}

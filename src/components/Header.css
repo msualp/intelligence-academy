@@ -85,33 +85,80 @@
     justify-content: center;
     background: var(--light-gray);
     border: none;
-    color: var(--text-primary);
-    font-size: 2.2rem;
     cursor: pointer;
     width: 56px;
     height: 56px;
     border-radius: 28px;
-    transition: all 0.3s ease;
-    font-weight: 300;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    line-height: 0.8;
+    position: relative;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .hamburger-menu:hover {
     background: rgba(0, 122, 255, 0.9);
-    color: var(--white);
-    transform: scale(1.08);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 4px 20px rgba(0, 122, 255, 0.3);
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(0, 122, 255, 0.25);
+}
+
+.hamburger-menu:hover .hamburger-lines span {
+    background: white;
 }
 
 .hamburger-menu.shrink {
     width: 48px;
     height: 48px;
     border-radius: 24px;
-    font-size: 1.9rem;
+}
+
+/* Hamburger Lines */
+.hamburger-lines {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 16px;
+    gap: 3px;
+}
+
+.hamburger-lines span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--text-primary);
+    border-radius: 1px;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hamburger-lines span:first-child {
+    width: 16px;
+}
+
+.hamburger-lines span:last-child {
+    width: 12px;
+    align-self: flex-end;
+}
+
+.hamburger-menu.shrink .hamburger-lines {
+    width: 18px;
+    height: 14px;
+    gap: 2.5px;
+}
+
+.hamburger-menu.shrink .hamburger-lines span {
+    width: 18px;
+    height: 1.8px;
+}
+
+.hamburger-menu.shrink .hamburger-lines span:first-child {
+    width: 14px;
+}
+
+.hamburger-menu.shrink .hamburger-lines span:last-child {
+    width: 10px;
 }
 
 .nav-dropdown {
@@ -290,14 +337,31 @@
         width: 50px;
         height: 50px;
         border-radius: 25px;
-        font-size: 2rem;
     }
     
     .hamburger-menu.shrink {
         width: 44px;
         height: 44px;
         border-radius: 22px;
-        font-size: 1.7rem;
+    }
+    
+    .hamburger-lines {
+        width: 18px;
+        height: 14px;
+        gap: 2.5px;
+    }
+    
+    .hamburger-lines span {
+        width: 18px;
+        height: 1.8px;
+    }
+    
+    .hamburger-lines span:first-child {
+        width: 14px;
+    }
+    
+    .hamburger-lines span:last-child {
+        width: 10px;
     }
 }
 
@@ -322,13 +386,49 @@
         width: 46px;
         height: 46px;
         border-radius: 23px;
-        font-size: 1.8rem;
     }
     
     .hamburger-menu.shrink {
         width: 40px;
         height: 40px;
         border-radius: 20px;
-        font-size: 1.5rem;
+    }
+    
+    .hamburger-lines {
+        width: 16px;
+        height: 12px;
+        gap: 2px;
+    }
+    
+    .hamburger-lines span {
+        width: 16px;
+        height: 1.5px;
+    }
+    
+    .hamburger-lines span:first-child {
+        width: 12px;
+    }
+    
+    .hamburger-lines span:last-child {
+        width: 8px;
+    }
+    
+    .hamburger-menu.shrink .hamburger-lines {
+        width: 14px;
+        height: 10px;
+        gap: 1.5px;
+    }
+    
+    .hamburger-menu.shrink .hamburger-lines span {
+        width: 14px;
+        height: 1.3px;
+    }
+    
+    .hamburger-menu.shrink .hamburger-lines span:first-child {
+        width: 10px;
+    }
+    
+    .hamburger-menu.shrink .hamburger-lines span:last-child {
+        width: 6px;
     }
 }

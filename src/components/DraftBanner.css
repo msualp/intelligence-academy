@@ -1,0 +1,51 @@
+/* Draft Banner */
+.draft-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #FF3B30 0%, #FF9500 100%);
+    color: var(--white);
+    padding: 0.3rem 2rem;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 500;
+    z-index: 1001;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    height: 35px;
+}
+
+.draft-banner.hidden {
+    transform: translateY(-100%);
+}
+
+.draft-banner .warning-icon {
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.banner-close {
+    position: absolute;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+}
+
+.banner-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}

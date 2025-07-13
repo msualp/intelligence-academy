@@ -1,7 +1,66 @@
 /* Contact Page Styles */
+
+/* CSS Variables for theming */
+:root {
+    --primary-blue: #007AFF;
+    --secondary-blue: #4A90E2;
+    --primary-gray: #1D1D1F;
+    --secondary-gray: #86868B;
+    --light-gray: #F5F5F7;
+    --white: #FFFFFF;
+    --accent-green: #30D158;
+    --accent-orange: #FF9500;
+    --text-primary: #1D1D1F;
+    --text-secondary: #86868B;
+    --border-light: rgba(0, 0, 0, 0.1);
+    --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
+    --border-radius: 12px;
+    --border-radius-large: 20px;
+    
+    /* Page specific variables */
+    --bg-primary: rgba(255, 255, 255, 0.9);
+    --bg-secondary: rgba(255, 255, 255, 0.7);
+    --gradient-start: #1D1D1F;
+    --gradient-mid: #007AFF;
+    --gradient-end: #FF9500;
+    --hero-text: #1D1D1F;
+    --hero-description: #86868B;
+    --section-spacing: 80px;
+    --container-padding: 2rem;
+}
+
+/* Dark Mode Variables */
+[data-theme="dark"] {
+    --primary-gray: #E5E5E7;
+    --secondary-gray: #A1A1A6;
+    --light-gray: #1C1C1E;
+    --white: #000000;
+    --text-primary: #FFFFFF;
+    --text-secondary: #A1A1A6;
+    --border-light: rgba(255, 255, 255, 0.1);
+    --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.3);
+    --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.4);
+    
+    /* Dark mode page variables */
+    --bg-primary: rgba(28, 28, 30, 0.9);
+    --bg-secondary: rgba(28, 28, 30, 0.7);
+    --gradient-start: #FFFFFF;
+    --gradient-mid: #007AFF;
+    --gradient-end: #FF9500;
+    --hero-text: #FFFFFF;
+    --hero-description: rgba(255, 255, 255, 0.8);
+}
 .contact-page {
   min-height: 100vh;
   padding-top: 120px;
+  background: linear-gradient(135deg, #F5F5F7 0%, #E8E8ED 100%);
+  color: var(--text-primary);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+[data-theme="dark"] .contact-page {
+  background: linear-gradient(135deg, #000000 0%, #1C1C1E 100%);
 }
 
 /* Contact Hero */
@@ -31,7 +90,7 @@
 
 .contact-hero .hero-description {
   font-size: clamp(1.1rem, 2.5vw, 1.35rem);
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--hero-description);
   line-height: 1.7;
   max-width: 700px;
   margin: 0 auto;

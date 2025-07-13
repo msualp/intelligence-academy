@@ -40,3 +40,7 @@ applications/
 
 # Vercel
 .vercel/
+
+# Local history
+.history/
+.lh/

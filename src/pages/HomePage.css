@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 155px; /* Account for fixed header + banner */
+}
+
 :root {
     --primary-blue: #007AFF;
     --primary-gray: #1D1D1F;
@@ -57,119 +62,7 @@
     --dropdown-bg: rgba(28, 28, 30, 0.9);
 }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    line-height: 1.6;
-    color: var(--text-primary);
-    background: var(--bg-gradient);
-    overflow-x: hidden;
-    transition: background 0.3s ease, color 0.3s ease;
-}
-
-/* Particle Background */
-.particles-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -1;
-    overflow: hidden;
-}
-
-.particle {
-    position: absolute;
-    border-radius: 50%;
-    animation: float infinite ease-in-out;
-    box-shadow: 0 0 20px rgba(0, 122, 255, 0.3);
-    filter: blur(0.5px);
-}
-
-.particle:nth-child(1) {
-    width: 80px;
-    height: 80px;
-    top: 20%;
-    left: 10%;
-    background: radial-gradient(circle at 30% 30%, rgba(0, 122, 255, 0.8), rgba(0, 122, 255, 0.4), transparent);
-    animation-duration: 20s;
-    animation-delay: 0s;
-    box-shadow: 0 0 30px rgba(0, 122, 255, 0.5);
-}
-
-.particle:nth-child(2) {
-    width: 60px;
-    height: 60px;
-    top: 60%;
-    left: 80%;
-    background: radial-gradient(circle at 30% 30%, rgba(255, 149, 0, 0.8), rgba(255, 149, 0, 0.4), transparent);
-    animation-duration: 25s;
-    animation-delay: -5s;
-    box-shadow: 0 0 25px rgba(255, 149, 0, 0.5);
-}
-
-.particle:nth-child(3) {
-    width: 40px;
-    height: 40px;
-    top: 80%;
-    left: 20%;
-    background: radial-gradient(circle at 30% 30%, rgba(0, 255, 240, 0.8), rgba(0, 255, 240, 0.4), transparent);
-    animation-duration: 18s;
-    animation-delay: -10s;
-    box-shadow: 0 0 20px rgba(0, 255, 240, 0.5);
-}
-
-.particle:nth-child(4) {
-    width: 100px;
-    height: 100px;
-    top: 10%;
-    left: 70%;
-    background: radial-gradient(circle at 30% 30%, rgba(88, 86, 214, 0.8), rgba(88, 86, 214, 0.4), transparent);
-    animation-duration: 22s;
-    animation-delay: -8s;
-    box-shadow: 0 0 35px rgba(88, 86, 214, 0.5);
-}
-
-.particle:nth-child(5) {
-    width: 50px;
-    height: 50px;
-    top: 40%;
-    left: 5%;
-    background: radial-gradient(circle at 30% 30%, rgba(255, 59, 48, 0.8), rgba(255, 59, 48, 0.4), transparent);
-    animation-duration: 24s;
-    animation-delay: -12s;
-    box-shadow: 0 0 22px rgba(255, 59, 48, 0.5);
-}
-
-.particle:nth-child(6) {
-    width: 70px;
-    height: 70px;
-    top: 70%;
-    left: 60%;
-    background: radial-gradient(circle at 30% 30%, rgba(48, 209, 88, 0.8), rgba(48, 209, 88, 0.4), transparent);
-    animation-duration: 19s;
-    animation-delay: -3s;
-    box-shadow: 0 0 28px rgba(48, 209, 88, 0.5);
-}
-
-@keyframes float {
-    0%, 100% { 
-        transform: translateY(0px) translateX(0px) scale(1) rotate(0deg);
-        opacity: 0.6;
-    }
-    25% { 
-        transform: translateY(-40px) translateX(30px) scale(1.2) rotate(90deg);
-        opacity: 0.9;
-    }
-    50% { 
-        transform: translateY(-80px) translateX(-25px) scale(0.8) rotate(180deg);
-        opacity: 0.7;
-    }
-    75% { 
-        transform: translateY(-30px) translateX(35px) scale(1.1) rotate(270deg);
-        opacity: 0.8;
-    }
-}
+/* Body styles moved to index.css to avoid duplication */
 
 /* Typography - Enhanced Mac UI-inspired */
 .hero-title {
@@ -821,7 +714,7 @@ body {
     text-align: center;
     background: transparent;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .hero.banner-hidden {
@@ -995,6 +888,7 @@ body {
 
 .scroll-indicator {
     margin-top: 2rem;
+    margin-bottom: 8rem; /* Space for footer text */
     text-align: center;
     animation: fadeInUp 1s ease-out 1.2s both;
 }
@@ -1018,11 +912,24 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+[data-theme="dark"] .scroll-link {
+    background: transparent;
+    border: 1px solid transparent;
+    color: rgba(255, 255, 255, 0.8);
+}
+
 .scroll-link:hover {
     color: var(--primary-blue);
     background: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
     box-shadow: 0 4px 20px rgba(0, 122, 255, 0.2);
+}
+
+[data-theme="dark"] .scroll-link:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--primary-blue);
+    box-shadow: 0 4px 20px rgba(0, 122, 255, 0.4);
 }
 
 .scroll-arrow {
@@ -1043,9 +950,18 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 1.5rem 2rem 1.5rem;
+    padding: 1.5rem 2rem 3rem;
     background: var(--hero-footer-bg);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.hero-footer p {
+    margin: 0;
+    padding: 0;
 }
 
 .disclaimer {
@@ -1053,8 +969,8 @@ body {
     color: var(--text-secondary);
     font-style: italic;
     max-width: 800px;
-    margin: 0 auto 1rem;
-    line-height: 1.4;
+    margin: 0 auto 0;
+    line-height: 1.3;
     text-align: center;
 }
 
@@ -1064,7 +980,7 @@ body {
     font-style: italic;
     max-width: 600px;
     margin: 0 auto;
-    line-height: 1.4;
+    line-height: 1.3;
     text-align: center;
 }
 
@@ -1090,6 +1006,7 @@ body {
 .differentiators-section {
     padding: 80px 2rem;
     background: var(--white);
+    scroll-margin-top: 120px; /* Account for fixed header */
 }
 
 [data-theme="dark"] .differentiators-section {
@@ -1451,6 +1368,16 @@ html {
         top: 32px;
     }
     
+    /* Hide header Apply button on smaller screens */
+    .cta-container {
+        display: none !important;
+    }
+    
+    /* Hide hero footer fine print on smaller screens */
+    .hero-footer {
+        display: none !important;
+    }
+    
     .hero {
         padding-top: calc(32px + 100px);
         height: 100vh;
@@ -1514,23 +1441,30 @@ html {
     }
     
     .hero-title {
-        font-size: clamp(2.2rem, 9vw, 3.5rem);
-        margin-bottom: 1rem;
+        font-size: clamp(1.75rem, 7vw, 2.5rem);
+        margin-bottom: 0.75rem;
+        line-height: 1.1;
     }
     
     .hero-subtitle {
-        font-size: clamp(1.2rem, 5vw, 1.8rem);
-        margin-bottom: 1.5rem;
+        font-size: clamp(1rem, 4vw, 1.4rem);
+        margin-bottom: 1rem;
+        line-height: 1.2;
     }
     
     .hero-description {
-        font-size: clamp(1rem, 3.5vw, 1.2rem);
-        margin-bottom: 2.5rem;
+        font-size: clamp(0.875rem, 3vw, 1rem);
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
     }
     
     .primary-cta {
-        padding: 1.1rem 2.2rem;
-        font-size: 1.1rem;
+        padding: 0.875rem 1.75rem;
+        font-size: 0.95rem;
+    }
+    
+    .secondary-text {
+        font-size: 0.85rem;
     }
     
     .hero-footer {

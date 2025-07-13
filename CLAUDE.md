@@ -2,137 +2,119 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Project Overview
-
-Intelligence Academy is a React-based single-page application for Rowan University's AI Startup Accelerator program. Originally a static HTML site, it has been migrated to React while preserving the original design and animations.
-
-**Key Facts:**
-- React 18 with Vite as build tool
-- React Router for client-side routing
-- Tailwind CSS + custom CSS for styling
-- Deployed on Vercel with automatic deployments
-- Features a "unicorn-focused" AI accelerator theme with $100K investment offering
-
-## Common Commands
+## Development Commands
 
 ```bash
-# Install dependencies
-npm install
-
-# Run development server (port 3000)
+# Start development server (uses Vite, typically runs on port 5173)
 npm run dev
 
 # Build for production
 npm run build
 
-# Preview production build
+# Preview production build locally
 npm run preview
 
-# Serve production build locally
+# Serve built files using the 'serve' package
 npm run serve
 ```
 
-**Note:** No test or lint commands are configured yet. The project focuses on rapid development and deployment.
+## Architecture Overview
 
-## Architecture & Structure
+### Dual Layout System
+The application uses a unique dual-layout routing structure in `src/App.jsx`:
+- **HomePage** (`/`) - Standalone layout with integrated header, banner, and navigation
+- **All other pages** - Shared layout with `<DraftBanner />`, `<Header />`, and `<Footer />` components
 
-### Routing Strategy
-The HomePage (`/`) has its own complete layout with custom header/footer, while all other pages share a common layout with DraftBanner, Header, and Footer components. This is handled in App.jsx using nested routes.
+This means HomePage has its own complete implementation of navigation and header effects, while other pages use the shared Header component.
 
-### Component Architecture
-- **Pages** (`/src/pages/`): Full page components that include their own CSS files
-  - HomePage: Complete standalone page with all sections inline
-  - Other pages: Use shared layout components
-- **Components** (`/src/components/`): Reusable UI components
-  - Each component has its own CSS file
-  - Components use CSS modules pattern (importing CSS directly)
+### Form Submission Architecture
+Located in `/api/` directory with multiple implementations:
+- `submit-application.js` - Main Vercel serverless function
+- `submit-application-mailgun.js` - Mailgun email integration
+- `submit-application-simple.js` - Simple local storage version
+- Forms use Mailgun API for professional email delivery with HTML templates
 
-### Styling Approach
-1. **CSS Variables**: Defined in root for colors, shadows, spacing
-2. **Component CSS**: Each component has dedicated CSS file
-3. **Tailwind CSS**: Available but used sparingly to preserve original design
-4. **Dark Mode**: CSS variables switch based on `[data-theme="dark"]`
+### CSS Architecture
+- **CSS Variables** for theming and design tokens (defined in each page's CSS)
+- **Component-scoped CSS** files (e.g., `HomePage.css`, `Header.css`)
+- **Glassmorphism effects** using `backdrop-filter` and `rgba()` transparencies
+- **Particle animation system** with 6 unique particles in the hero section
 
-### Key Design Elements
-- Particle background animation (CSS-based, not canvas)
-- Glassmorphism effects with backdrop-filter
-- Gradient text animations
-- Responsive design with clamp() functions
-- Mac-inspired UI with smooth transitions
+### Particle Background System
+The HomePage features a sophisticated particle animation system:
+- 6 particles with unique colors (blue, orange, cyan, purple, red, green)
+- Each particle has individual `radial-gradient` backgrounds and `box-shadow` glows
+- Complex animation with `translateY`, `translateX`, `scale`, and `rotate` transformations
+- Z-index layering: hero `::before` (-1), particles (1), hero `::after` (2)
 
-## Important Context
+### Navigation System
+- **Homepage**: Full integrated side tray with glassmorphism effects
+- **Other pages**: Shared Header component with matching side tray design
+- **Mobile-first responsive** design with breakpoints at 768px, 1024px
+- **Dark mode toggle** integrated in side tray header controls
 
-### Recent Migration
-The project was recently migrated from a single HTML file to React. The original design is preserved in `/archive/new_homepage_original.html`. When making changes:
-1. Preserve the original aesthetic and animations
-2. Maintain responsiveness across all breakpoints
-3. Keep the glassmorphism and gradient effects
-4. Ensure dark mode works properly
+### State Management Patterns
+- Local component state with `useState` for UI interactions
+- Scroll-based state management for header shrinking effects
+- Intersection Observer API for scroll-triggered animations
+- Form validation with real-time error display
 
-### HomePage Structure
-The HomePage component contains all sections inline rather than using separate components. This was intentional to preserve the exact original design. The sections include:
-- Hero with particle background
-- Differentiators
-- Statistics  
-- Program overview
-- Call to action
-- Custom footer
+## Key Implementation Details
 
-### Dark Mode Implementation
-- Toggle component in header (appears on menu hover)
-- Uses localStorage to persist preference
-- CSS variables automatically adjust colors
-- Smooth transitions between modes
+### Email Configuration
+Current setup uses `sociail.com` domain temporarily in Mailgun integration. The target domain `iamunicorn.org` requires DNS configuration as documented in `docs/MAILGUN_SETUP.md`.
 
-### Deployment Configuration
-- Vercel deployment via `vercel.json`
-- SPA configuration with rewrites to handle client-side routing
-- Automatic deployments from main branch
+### Environment Variables Required
+```bash
+MAILGUN_API_KEY=your_mailgun_api_key
+MAILGUN_DOMAIN=sociail.com  # Currently configured domain
+ADMIN_EMAIL=admin@intelligence-academy.rowan.edu
+```
 
-## Working with This Codebase
+### Vercel Deployment Configuration
+- **SPA routing**: `vercel.json` redirects all routes to `/index.html`
+- **Serverless functions**: API routes in `/api/` directory
+- **CORS headers**: Configured for form submission endpoints
+- **Build output**: Static files in `/dist` directory
 
-### Adding New Features
-1. For HomePage changes: Edit directly in HomePage.jsx/css
-2. For new pages: Create in `/src/pages/` with matching CSS file
-3. For shared components: Add to `/src/components/`
-4. Maintain existing CSS variable naming conventions
+### Mobile-First Responsive Design
+- **Dynamic viewport units**: Uses `100dvh` for mobile browser compatibility
+- **Clamp() functions**: Responsive typography scaling
+- **Touch-friendly**: 44px minimum touch targets
+- **Backdrop-filter fallbacks**: Graceful degradation for older browsers
 
-### Common Tasks
+### Development Considerations
+- **No traditional CSS framework**: Uses custom CSS with design system variables
+- **React 18**: Uses modern React patterns (no class components)
+- **Vite HMR**: Fast development with hot module replacement
+- **ES Modules**: Modern JavaScript module system throughout
 
-**Creating a new page:**
-1. Create `PageName.jsx` and `PageName.css` in `/src/pages/`
-2. Add route in `App.jsx`
-3. Import shared components as needed
-4. Follow existing page structure for consistency
+### Form Handling Specifics
+- **GDPR compliance**: Consent checkbox and data retention notices
+- **Real-time validation**: Client-side validation with server-side verification
+- **Email templates**: Professional HTML emails for both applicants and admins
+- **File structure**: Form submissions saved locally as JSON and text files for backup
 
-**Modifying animations:**
-- Particle animations: `ParticleBackground.css`
-- Text gradients: Look for `gradientShift` keyframes
-- Hover effects: `.interactive` classes and component-specific hovers
+## Common Troubleshooting
 
-**Updating content:**
-- Most content is in JSX files, not separate data files
-- Hero content: `HomePage.jsx` lines 231-236
-- Footer links and info: `Footer.jsx` or page-specific footers
+### Particle Visibility Issues
+If particles aren't visible, check:
+1. Z-index conflicts (particles should be z-index: 1)
+2. Hero background overlays (should be minimal opacity)
+3. Body background (should be transparent, not solid gradient)
 
-### Performance Considerations
-- Images should be optimized before adding
-- Animations use CSS transforms for better performance
-- Particle background is CSS-based, not canvas, for simplicity
+### Header Consistency Issues
+When updating navigation, remember to update BOTH:
+1. `src/components/Header.jsx` (shared component)
+2. `src/pages/HomePage.jsx` (integrated navigation)
 
-### Responsive Breakpoints
-- Mobile: < 480px
-- Tablet: < 768px  
-- Desktop: < 1024px
-- Wide: > 1600px
+### Email Delivery Issues
+1. Verify Mailgun API keys in environment variables
+2. Check domain configuration (currently using sociail.com)
+3. Test with simple version first (`submit-application-simple.js`)
 
-Each breakpoint has specific adjustments for typography, spacing, and layout.
-
-## Future Development Notes
-
-The original improvement document (`WEBSITE-IMPROVEMENT-RECOMMENDATIONS.md`) outlined plans for enhanced "unicorn factory" messaging, but these have largely been implemented. Key areas for future work:
-- Add backend API integration for application forms
-- Implement analytics tracking
-- Add more interactive data visualizations
-- Create admin dashboard for content management
-- Add testimonials and success stories sections
+### Mobile Layout Issues
+- Always test with real mobile devices
+- Check dynamic viewport height (`100dvh`) support
+- Verify touch targets meet accessibility guidelines
+- Test side tray navigation on various screen sizes

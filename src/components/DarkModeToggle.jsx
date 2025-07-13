@@ -10,7 +10,7 @@ function DarkModeToggle({ show, className = '' }) {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
     
     // Default to system preference if no saved preference
-    if (savedTheme === 'dark' || (savedTheme !== 'light' && prefersDark)) {
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
       setIsDark(true)
       document.documentElement.setAttribute('data-theme', 'dark')
     } else {

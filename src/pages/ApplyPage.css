@@ -1,7 +1,60 @@
 /* Apply Page Styles */
+
+/* CSS Variables for theming */
+:root {
+    --primary-blue: #007AFF;
+    --secondary-blue: #4A90E2;
+    --primary-gray: #1D1D1F;
+    --secondary-gray: #86868B;
+    --light-gray: #F5F5F7;
+    --white: #FFFFFF;
+    --accent-green: #30D158;
+    --accent-orange: #FF9500;
+    --text-primary: #1D1D1F;
+    --text-secondary: #86868B;
+    --border-light: rgba(0, 0, 0, 0.1);
+    --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
+    --shadow-large: 0 20px 60px rgba(0, 0, 0, 0.15);
+    --border-radius: 12px;
+    --border-radius-large: 20px;
+    
+    /* Apply page specific variables */
+    --bg-primary: rgba(255, 255, 255, 0.9);
+    --apply-bg: linear-gradient(135deg, #F5F5F7 0%, #E8E8ED 100%);
+    --apply-hero-text: #1D1D1F;
+    --apply-hero-description: #86868B;
+    --apply-input-bg: rgba(255, 255, 255, 0.95);
+    --apply-input-border: rgba(0, 0, 0, 0.15);
+}
+
+/* Dark Mode Variables */
+[data-theme="dark"] {
+    --primary-gray: #E5E5E7;
+    --secondary-gray: #A1A1A6;
+    --light-gray: #1C1C1E;
+    --white: #000000;
+    --text-primary: #FFFFFF;
+    --text-secondary: #A1A1A6;
+    --border-light: rgba(255, 255, 255, 0.1);
+    --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.3);
+    --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.4);
+    --shadow-large: 0 20px 60px rgba(0, 0, 0, 0.3);
+    
+    /* Dark mode apply page variables */
+    --bg-primary: rgba(255, 255, 255, 0.03);
+    --apply-bg: linear-gradient(135deg, #000000 0%, #1C1C1E 100%);
+    --apply-hero-text: #FFFFFF;
+    --apply-hero-description: rgba(255, 255, 255, 0.8);
+    --apply-input-bg: rgba(255, 255, 255, 0.08);
+    --apply-input-border: rgba(255, 255, 255, 0.15);
+}
 .apply-page {
   min-height: 100vh;
   padding-top: 120px;
+  background: var(--apply-bg);
+  color: var(--text-primary);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* Apply Hero */
@@ -23,7 +76,7 @@
   font-size: clamp(2.2rem, 5vw, 3.5rem);
   font-weight: 800;
   margin-bottom: clamp(1rem, 3vw, 1.5rem);
-  background: linear-gradient(135deg, #fff, var(--accent-orange));
+  background: linear-gradient(135deg, var(--apply-hero-text), var(--accent-orange));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -32,7 +85,7 @@
 
 .apply-hero .hero-description {
   font-size: clamp(1.1rem, 2.5vw, 1.35rem);
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--apply-hero-description);
   line-height: 1.6;
   margin-bottom: clamp(1.5rem, 3vw, 2rem);
 }
@@ -51,7 +104,7 @@
 
 .deadline-label {
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-secondary);
   font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
@@ -63,7 +116,7 @@
 
 .hero-paragraph {
   font-size: clamp(1rem, 2.2vw, 1.2rem);
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--apply-hero-description);
   line-height: 1.6;
   margin-bottom: clamp(2rem, 4vw, 2.5rem);
   max-width: 650px;
@@ -75,7 +128,7 @@
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   font-size: clamp(0.95rem, 2vw, 1.1rem);
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--text-primary);
   font-weight: 600;
   max-width: 600px;
   margin-left: auto;
@@ -84,9 +137,9 @@
 }
 
 .hero-learn-more {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
+  background: rgba(0, 122, 255, 0.1);
+  border: 1px solid rgba(0, 122, 255, 0.2);
+  color: var(--primary-blue);
   padding: 0.75rem 1.5rem;
   border-radius: 25px;
   font-size: clamp(0.9rem, 2vw, 1rem);
@@ -96,6 +149,12 @@
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   margin-bottom: 2rem;
+}
+
+.hero-learn-more:hover {
+  background: rgba(0, 122, 255, 0.15);
+  border-color: rgba(0, 122, 255, 0.3);
+  transform: translateY(-2px);
 }
 
 .hero-learn-more:hover {
@@ -206,8 +265,8 @@ select,
 textarea {
   width: 100%;
   padding: clamp(0.75rem, 2vw, 1rem);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--apply-input-bg);
+  border: 1px solid var(--apply-input-border);
   border-radius: var(--border-radius);
   color: var(--text-primary);
   font-size: clamp(0.9rem, 2vw, 1rem);
@@ -229,9 +288,15 @@ input:focus,
 select:focus,
 textarea:focus {
   outline: none;
-  border-color: var(--secondary-blue);
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.15);
+}
+
+/* Light mode focus states */
+:root input:focus,
+:root select:focus,
+:root textarea:focus {
+  background: rgba(255, 255, 255, 1);
 }
 
 [data-theme="dark"] input:focus,

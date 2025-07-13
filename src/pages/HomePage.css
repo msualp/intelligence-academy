@@ -80,9 +80,10 @@ body {
 
 .particle {
     position: absolute;
-    background: linear-gradient(45deg, rgba(0, 122, 255, 0.4), rgba(255, 149, 0, 0.3));
     border-radius: 50%;
     animation: float infinite ease-in-out;
+    box-shadow: 0 0 20px rgba(0, 122, 255, 0.3);
+    filter: blur(0.5px);
 }
 
 .particle:nth-child(1) {
@@ -90,8 +91,10 @@ body {
     height: 80px;
     top: 20%;
     left: 10%;
+    background: radial-gradient(circle at 30% 30%, rgba(0, 122, 255, 0.8), rgba(0, 122, 255, 0.4), transparent);
     animation-duration: 20s;
     animation-delay: 0s;
+    box-shadow: 0 0 30px rgba(0, 122, 255, 0.5);
 }
 
 .particle:nth-child(2) {
@@ -99,8 +102,10 @@ body {
     height: 60px;
     top: 60%;
     left: 80%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 149, 0, 0.8), rgba(255, 149, 0, 0.4), transparent);
     animation-duration: 25s;
     animation-delay: -5s;
+    box-shadow: 0 0 25px rgba(255, 149, 0, 0.5);
 }
 
 .particle:nth-child(3) {
@@ -108,8 +113,10 @@ body {
     height: 40px;
     top: 80%;
     left: 20%;
+    background: radial-gradient(circle at 30% 30%, rgba(0, 255, 240, 0.8), rgba(0, 255, 240, 0.4), transparent);
     animation-duration: 18s;
     animation-delay: -10s;
+    box-shadow: 0 0 20px rgba(0, 255, 240, 0.5);
 }
 
 .particle:nth-child(4) {
@@ -117,8 +124,10 @@ body {
     height: 100px;
     top: 10%;
     left: 70%;
+    background: radial-gradient(circle at 30% 30%, rgba(88, 86, 214, 0.8), rgba(88, 86, 214, 0.4), transparent);
     animation-duration: 22s;
     animation-delay: -8s;
+    box-shadow: 0 0 35px rgba(88, 86, 214, 0.5);
 }
 
 .particle:nth-child(5) {
@@ -126,8 +135,10 @@ body {
     height: 50px;
     top: 40%;
     left: 5%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 59, 48, 0.8), rgba(255, 59, 48, 0.4), transparent);
     animation-duration: 24s;
     animation-delay: -12s;
+    box-shadow: 0 0 22px rgba(255, 59, 48, 0.5);
 }
 
 .particle:nth-child(6) {
@@ -135,26 +146,28 @@ body {
     height: 70px;
     top: 70%;
     left: 60%;
+    background: radial-gradient(circle at 30% 30%, rgba(48, 209, 88, 0.8), rgba(48, 209, 88, 0.4), transparent);
     animation-duration: 19s;
     animation-delay: -3s;
+    box-shadow: 0 0 28px rgba(48, 209, 88, 0.5);
 }
 
 @keyframes float {
     0%, 100% { 
-        transform: translateY(0px) translateX(0px) scale(1);
-        opacity: 0.3;
-    }
-    25% { 
-        transform: translateY(-30px) translateX(20px) scale(1.1);
+        transform: translateY(0px) translateX(0px) scale(1) rotate(0deg);
         opacity: 0.6;
     }
+    25% { 
+        transform: translateY(-40px) translateX(30px) scale(1.2) rotate(90deg);
+        opacity: 0.9;
+    }
     50% { 
-        transform: translateY(-60px) translateX(-15px) scale(0.9);
-        opacity: 0.4;
+        transform: translateY(-80px) translateX(-25px) scale(0.8) rotate(180deg);
+        opacity: 0.7;
     }
     75% { 
-        transform: translateY(-20px) translateX(25px) scale(1.05);
-        opacity: 0.5;
+        transform: translateY(-30px) translateX(35px) scale(1.1) rotate(270deg);
+        opacity: 0.8;
     }
 }
 
@@ -798,7 +811,9 @@ body {
     margin-top: 0;
     padding-top: calc(35px + 120px);
     height: 100vh;
+    height: 100dvh; /* Dynamic viewport height for mobile browsers */
     min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -812,7 +827,9 @@ body {
 .hero.banner-hidden {
     padding-top: 120px;
     height: 100vh;
+    height: 100dvh;
     min-height: 100vh;
+    min-height: 100dvh;
 }
 
 .hero::before {

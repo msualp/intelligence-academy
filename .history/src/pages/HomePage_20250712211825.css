@@ -321,7 +321,7 @@ body {
 .nav {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -329,7 +329,7 @@ body {
 }
 
 .nav.shrink {
-    padding: 1rem 1rem;
+    padding: 1rem 2rem;
 }
 
 .logo {
@@ -493,7 +493,7 @@ body {
 .header-actions {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1rem;
     position: relative;
 }
 
@@ -556,6 +556,12 @@ body {
     position: relative;
 }
 
+.menu-container:hover .dark-mode-toggle {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 1s;
+}
+
 /* Side Tray */
 .side-tray {
     position: fixed;
@@ -563,11 +569,11 @@ body {
     right: -400px;
     width: 400px;
     height: 100vh;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(40px) saturate(200%);
-    -webkit-backdrop-filter: blur(40px) saturate(200%);
-    border-left: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: -15px 0 50px rgba(0, 0, 0, 0.2);
+    background: var(--card-bg);
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    border-left: 1px solid var(--card-border);
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
     z-index: 2000;
     transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     overflow-y: auto;
@@ -598,19 +604,6 @@ body {
     font-weight: 800;
     color: var(--text-primary);
     margin: 0;
-}
-
-.tray-header-controls {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.tray-dark-mode {
-    opacity: 1 !important;
-    visibility: visible !important;
-    position: static !important;
-    transform: none !important;
 }
 
 .close-tray {
@@ -699,10 +692,9 @@ body {
 }
 
 .nav-icon {
-    width: 20px;
-    height: 20px;
-    stroke-width: 2;
-    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
 }
 
 .side-tray-footer {
@@ -1028,7 +1020,6 @@ body {
     right: 0;
     padding: 1.5rem 2rem 1.5rem;
     background: var(--hero-footer-bg);
-    text-align: center;
 }
 
 .disclaimer {
@@ -1036,9 +1027,8 @@ body {
     color: var(--text-secondary);
     font-style: italic;
     max-width: 800px;
-    margin: 0 auto 1rem;
+    margin: 0 auto 0.8rem;
     line-height: 1.4;
-    text-align: center;
 }
 
 .footnote {
@@ -1048,7 +1038,6 @@ body {
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.4;
-    text-align: center;
 }
 
 .learn-more-link {

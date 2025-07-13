@@ -556,6 +556,12 @@ body {
     position: relative;
 }
 
+.menu-container:hover .dark-mode-toggle {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 1s;
+}
+
 /* Side Tray */
 .side-tray {
     position: fixed;
@@ -563,11 +569,11 @@ body {
     right: -400px;
     width: 400px;
     height: 100vh;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(40px) saturate(200%);
-    -webkit-backdrop-filter: blur(40px) saturate(200%);
-    border-left: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: -15px 0 50px rgba(0, 0, 0, 0.2);
+    background: var(--card-bg);
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    border-left: 1px solid var(--card-border);
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
     z-index: 2000;
     transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     overflow-y: auto;
@@ -699,10 +705,9 @@ body {
 }
 
 .nav-icon {
-    width: 20px;
-    height: 20px;
-    stroke-width: 2;
-    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
 }
 
 .side-tray-footer {

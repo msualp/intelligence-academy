@@ -1,0 +1,22 @@
+{
+    "sourceFile": "README.md",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1752350332945,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1752350348489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,4 +13,116 @@\n \n ## Features\n \n - Responsive design for all device sizes\n+- Interactive particle background animation\n+- Animated hero section with gradient text effects\n+- Interactive UI elements with hover effects\n+- Modern, clean aesthetic with glassmorphism effects\n+- Full-screen hero experience\n+- Smooth scrolling navigation\n+- Mobile-optimized design\n+\n+## Technologies Used\n+\n+- **React 18** - Modern React with hooks\n+- **React Router DOM** - Client-side routing\n+- **Vite** - Fast build tool and dev server\n+- **Tailwind CSS** - Utility-first CSS framework\n+- **PostCSS** - CSS processing\n+- **Custom CSS** - Advanced animations and effects\n+\n+## Development\n+\n+### Prerequisites\n+- Node.js (v16 or higher)\n+- npm or yarn\n+\n+### Installation\n+```bash\n+# Clone the repository\n+git clone https://github.com/msualp/intelligence-academy.git\n+\n+# Navigate to project directory\n+cd intelligence-academy\n+\n+# Install dependencies\n+npm install\n+```\n+\n+### Development Server\n+```bash\n+# Start development server\n+npm run dev\n+\n+# The app will be available at http://localhost:5173\n+```\n+\n+### Build for Production\n+```bash\n+# Build the project\n+npm run build\n+\n+# Preview the production build\n+npm run preview\n+```\n+\n+## Project Structure\n+\n+```\n+src/\n+├── components/          # Reusable React components\n+│   ├── Header.jsx      # Navigation header\n+│   ├── Footer.jsx      # Site footer\n+│   └── ...\n+├── pages/              # Page components\n+│   ├── HomePage.jsx    # Main landing page\n+│   ├── ApplyPage.jsx   # Application form\n+│   └── ...\n+├── styles/             # Global styles\n+├── hooks/              # Custom React hooks\n+└── utils/              # Utility functions\n+```\n+\n+## Key Features\n+\n+### Full-Screen Hero Experience\n+- Animated gradient text effects\n+- Particle background animation\n+- Responsive typography with clamp() functions\n+- Smooth scroll indicators\n+\n+### Interactive Elements\n+- Glassmorphism header with blur effects\n+- Hover animations on cards and buttons\n+- Responsive hamburger menu\n+- Loading animations on scroll\n+\n+### Mobile-First Design\n+- Responsive breakpoints for all screen sizes\n+- Touch-friendly interface elements\n+- Optimized performance on mobile devices\n+\n+## Deployment\n+\n+This site is deployed on Vercel with automatic deployments from the main branch.\n+\n+### Deploy to Vercel\n+```bash\n+# Install Vercel CLI\n+npm i -g vercel\n+\n+# Deploy\n+vercel\n+```\n+\n+## Contributing\n+\n+1. Fork the repository\n+2. Create a feature branch (`git checkout -b feature/amazing-feature`)\n+3. Commit your changes (`git commit -m 'Add some amazing feature'`)\n+4. Push to the branch (`git push origin feature/amazing-feature`)\n+5. Open a Pull Request\n+\n+## License\n+\n+All rights reserved. © 2026 Intelligence Academy @ Rowan University.\n"
+                }
+            ],
+            "date": 1752350332945,
+            "name": "Commit-0",
+            "content": "# Intelligence Academy @ Rowan\n\nA modern React application for Rowan University's AI Startup Accelerator & Unicorn Factory.\n\n## Overview\n\nThis is a single-page React application for the Intelligence Academy at Rowan University, an AI startup accelerator program that offers:\n\n- $100K investment per startup\n- 16-week accelerator program\n- Access to AI research labs and resources\n- Mentorship and talent pipeline\n\n## Features\n\n- Responsive design for all device sizes\n"
+        }
+    ]
+}

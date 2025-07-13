@@ -2,10 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* CSS Variables - Preserved for compatibility */
+/* CENTRALIZED CSS VARIABLES - Single Source of Truth */
 :root {
+    /* Core Brand Colors */
     --primary-blue: #007AFF;
-    --secondary-blue: #0051A2;
+    --secondary-blue: #4A90E2;
     --light-blue: #E6F2FF;
     --accent-orange: #FF9500;
     --accent-green: #30D158;
@@ -13,13 +14,38 @@
     --secondary-gray: #86868B;
     --light-gray: #F5F5F7;
     --white: #FFFFFF;
-    --gradient-start: #007AFF;
-    --gradient-mid: #0056D6;
-    --gradient-end: #4A90E2;
+    
+    /* Text Colors */
     --text-primary: #1D1D1F;
     --text-secondary: #86868B;
-    --bg-primary: #FFFFFF;
-    --bg-secondary: #F5F5F7;
+    
+    /* Background Colors */
+    --bg-primary: rgba(255, 255, 255, 0.9);
+    --bg-secondary: rgba(255, 255, 255, 0.7);
+    --bg-gradient: linear-gradient(135deg, #F5F5F7 0%, #E8E8ED 100%);
+    
+    /* Gradient Colors */
+    --gradient-start: #1D1D1F;
+    --gradient-mid: #007AFF;
+    --gradient-end: #FF9500;
+    
+    /* Hero Text Colors */
+    --hero-text: #1D1D1F;
+    --hero-description: #86868B;
+    
+    /* Apply Page Specific */
+    --apply-bg: linear-gradient(135deg, #F5F5F7 0%, #E8E8ED 100%);
+    --apply-input-bg: rgba(255, 255, 255, 0.95);
+    --apply-input-border: rgba(0, 0, 0, 0.15);
+    
+    /* Component Styles */
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --card-border: rgba(255, 255, 255, 0.3);
+    --header-bg: rgba(255, 255, 255, 0.85);
+    --header-bg-scrolled: rgba(255, 255, 255, 0.95);
+    --dropdown-bg: rgba(255, 255, 255, 0.9);
+    
+    /* Spacing and Layout */
     --border-radius: 12px;
     --border-radius-large: 20px;
     --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -30,17 +56,48 @@
     --section-spacing: clamp(4rem, 8vw, 8rem);
 }
 
-/* Dark Mode Variables */
+/* CENTRALIZED DARK MODE VARIABLES */
 [data-theme="dark"] {
+    /* Core Colors in Dark Mode */
+    --primary-gray: #E5E5E7;
+    --secondary-gray: #A1A1A6;
+    --light-gray: #1C1C1E;
+    --white: #000000;
+    
+    /* Text Colors in Dark Mode */
     --text-primary: #FFFFFF;
-    --text-secondary: #A0A0A0;
-    --bg-primary: #1A1A1A;
-    --bg-secondary: #2A2A2A;
-    --light-gray: #2A2A2A;
-    --primary-gray: #FFFFFF;
-    --secondary-gray: #A0A0A0;
-    --shadow-small: 0 2px 8px rgba(0, 0, 0, 0.3);
-    --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.4);
+    --text-secondary: #A1A1A6;
+    
+    /* Background Colors in Dark Mode */
+    --bg-primary: rgba(28, 28, 30, 0.9);
+    --bg-secondary: rgba(28, 28, 30, 0.7);
+    --bg-gradient: linear-gradient(135deg, #000000 0%, #1C1C1E 100%);
+    
+    /* Gradient Colors in Dark Mode */
+    --gradient-start: #FFFFFF;
+    --gradient-mid: #007AFF;
+    --gradient-end: #FF9500;
+    
+    /* Hero Text Colors in Dark Mode */
+    --hero-text: #FFFFFF;
+    --hero-description: rgba(255, 255, 255, 0.8);
+    
+    /* Apply Page Specific Dark Mode */
+    --apply-bg: linear-gradient(135deg, #000000 0%, #1C1C1E 100%);
+    --apply-input-bg: rgba(255, 255, 255, 0.08);
+    --apply-input-border: rgba(255, 255, 255, 0.15);
+    
+    /* Component Styles in Dark Mode */
+    --card-bg: rgba(28, 28, 30, 0.9);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --header-bg: rgba(0, 0, 0, 0.85);
+    --header-bg-scrolled: rgba(0, 0, 0, 0.95);
+    --dropdown-bg: rgba(28, 28, 30, 0.9);
+    
+    /* Shadows in Dark Mode */
+    --border-light: rgba(255, 255, 255, 0.1);
+    --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.3);
+    --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.4);
     --shadow-large: 0 15px 50px rgba(0, 0, 0, 0.6);
 }
 

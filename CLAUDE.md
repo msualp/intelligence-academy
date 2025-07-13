@@ -4,88 +4,135 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Intelligence Academy is a static landing page for Rowan University's AI Startup Accelerator program. It's a single-page website built with vanilla HTML, CSS, and JavaScript - no frameworks or build process required.
+Intelligence Academy is a React-based single-page application for Rowan University's AI Startup Accelerator program. Originally a static HTML site, it has been migrated to React while preserving the original design and animations.
 
 **Key Facts:**
-- Single HTML file (`index.html`) contains all code
-- Pure static site with inline styles and scripts
-- Deployed on Vercel
-- Currently shows "draft proposal" disclaimer
-- Focused on $100K AI startup accelerator program
+- React 18 with Vite as build tool
+- React Router for client-side routing
+- Tailwind CSS + custom CSS for styling
+- Deployed on Vercel with automatic deployments
+- Features a "unicorn-focused" AI accelerator theme with $100K investment offering
 
 ## Common Commands
 
 ```bash
-# Run development server
-npm start
-# or
-npm dev
+# Install dependencies
+npm install
 
-# Both commands run 'serve' - a static file server on port 3000
+# Run development server (port 3000)
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+
+# Serve production build locally
+npm run serve
 ```
 
-**Note:** No build, test, or lint commands exist - this is intentional as the project has no build process.
+**Note:** No test or lint commands are configured yet. The project focuses on rapid development and deployment.
 
 ## Architecture & Structure
 
-### File Organization
-- `index.html` - Contains entire website (HTML, CSS, JavaScript all inline)
-- `package.json` - Minimal npm configuration with serve dependency
-- `vercel.json` - Deployment configuration
-- `WEBSITE-IMPROVEMENT-RECOMMENDATIONS.md` - Detailed roadmap for future enhancements
+### Routing Strategy
+The HomePage (`/`) has its own complete layout with custom header/footer, while all other pages share a common layout with DraftBanner, Header, and Footer components. This is handled in App.jsx using nested routes.
 
-### Code Style
-- **CSS:** Inline styles using modern CSS features (Grid, Flexbox, custom properties)
-- **JavaScript:** Vanilla JS embedded in script tags, no external dependencies
-- **HTML:** Semantic HTML5 markup
+### Component Architecture
+- **Pages** (`/src/pages/`): Full page components that include their own CSS files
+  - HomePage: Complete standalone page with all sections inline
+  - Other pages: Use shared layout components
+- **Components** (`/src/components/`): Reusable UI components
+  - Each component has its own CSS file
+  - Components use CSS modules pattern (importing CSS directly)
 
-### Key Features Implemented
-1. Neural network animated background
-2. Animated timeline visualization
-3. Responsive design
-4. Interactive hover effects
-5. Gradient-based modern aesthetic
+### Styling Approach
+1. **CSS Variables**: Defined in root for colors, shadows, spacing
+2. **Component CSS**: Each component has dedicated CSS file
+3. **Tailwind CSS**: Available but used sparingly to preserve original design
+4. **Dark Mode**: CSS variables switch based on `[data-theme="dark"]`
+
+### Key Design Elements
+- Particle background animation (CSS-based, not canvas)
+- Glassmorphism effects with backdrop-filter
+- Gradient text animations
+- Responsive design with clamp() functions
+- Mac-inspired UI with smooth transitions
 
 ## Important Context
 
-### Current Status
-The website is a "draft proposal" for an AI startup accelerator. The `WEBSITE-IMPROVEMENT-RECOMMENDATIONS.md` file contains extensive plans for transforming it into a "unicorn factory" focused platform with:
-- 2-minute application forms
-- Fortune 500 partner showcases
-- Unicorn success metrics
-- Regional advantage visualizations
+### Recent Migration
+The project was recently migrated from a single HTML file to React. The original design is preserved in `/archive/new_homepage_original.html`. When making changes:
+1. Preserve the original aesthetic and animations
+2. Maintain responsiveness across all breakpoints
+3. Keep the glassmorphism and gradient effects
+4. Ensure dark mode works properly
 
-### Development Approach
-When making changes:
-1. Everything stays in `index.html` unless specifically restructuring
-2. Maintain inline styles and scripts pattern
-3. Keep it simple - no build process or external dependencies
-4. Focus on static content that works without server-side logic
+### HomePage Structure
+The HomePage component contains all sections inline rather than using separate components. This was intentional to preserve the exact original design. The sections include:
+- Hero with particle background
+- Differentiators
+- Statistics  
+- Program overview
+- Call to action
+- Custom footer
 
-### Deployment
-- Automatic deployment via Vercel on git push
-- No build step required
-- Static hosting configuration in `vercel.json`
+### Dark Mode Implementation
+- Toggle component in header (appears on menu hover)
+- Uses localStorage to persist preference
+- CSS variables automatically adjust colors
+- Smooth transitions between modes
+
+### Deployment Configuration
+- Vercel deployment via `vercel.json`
+- SPA configuration with rewrites to handle client-side routing
+- Automatic deployments from main branch
 
 ## Working with This Codebase
 
-### Adding Features
-Since everything is in one file, locate the appropriate section:
-- Styles are in `<style>` tag in `<head>`
-- Scripts are at the bottom before `</body>`
-- Use existing CSS variables for consistency
-- Follow the established pattern of inline everything
+### Adding New Features
+1. For HomePage changes: Edit directly in HomePage.jsx/css
+2. For new pages: Create in `/src/pages/` with matching CSS file
+3. For shared components: Add to `/src/components/`
+4. Maintain existing CSS variable naming conventions
 
-### Making Changes
-1. Edit `index.html` directly
-2. Test locally with `npm start`
-3. Commit changes (Vercel auto-deploys)
+### Common Tasks
 
-### Future Improvements
-Refer to `WEBSITE-IMPROVEMENT-RECOMMENDATIONS.md` for the comprehensive roadmap, focusing on:
-- Unicorn-focused messaging
-- 2-minute application form
-- Corporate partner integration
-- Success metrics visualization
+**Creating a new page:**
+1. Create `PageName.jsx` and `PageName.css` in `/src/pages/`
+2. Add route in `App.jsx`
+3. Import shared components as needed
+4. Follow existing page structure for consistency
 
-The improvement document serves as the primary guide for any significant enhancements to the website.
+**Modifying animations:**
+- Particle animations: `ParticleBackground.css`
+- Text gradients: Look for `gradientShift` keyframes
+- Hover effects: `.interactive` classes and component-specific hovers
+
+**Updating content:**
+- Most content is in JSX files, not separate data files
+- Hero content: `HomePage.jsx` lines 231-236
+- Footer links and info: `Footer.jsx` or page-specific footers
+
+### Performance Considerations
+- Images should be optimized before adding
+- Animations use CSS transforms for better performance
+- Particle background is CSS-based, not canvas, for simplicity
+
+### Responsive Breakpoints
+- Mobile: < 480px
+- Tablet: < 768px  
+- Desktop: < 1024px
+- Wide: > 1600px
+
+Each breakpoint has specific adjustments for typography, spacing, and layout.
+
+## Future Development Notes
+
+The original improvement document (`WEBSITE-IMPROVEMENT-RECOMMENDATIONS.md`) outlined plans for enhanced "unicorn factory" messaging, but these have largely been implemented. Key areas for future work:
+- Add backend API integration for application forms
+- Implement analytics tracking
+- Add more interactive data visualizations
+- Create admin dashboard for content management
+- Add testimonials and success stories sections

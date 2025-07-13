@@ -1043,7 +1043,7 @@ body {
 
 .footnote {
     font-size: 0.75rem;
-    color: var(--text-secondary);
+    color: var(--text-secondary) !important;
     font-style: italic;
     max-width: 600px;
     margin: 0 auto;

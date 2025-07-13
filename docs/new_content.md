@@ -344,7 +344,7 @@ Base Unit: 1rem (16px)
 - "CONCEPT DEMO - Not an official Rowan University program"
 
 ### Contact Information
-- **Email**: apply@intelligence-academy.rowan.edu
+- **Email**: apply@iamunicorn.org
 - **Phone**: (856) 256-4000
 - **Address**: South Jersey Technology Park, Glassboro, NJ 08028
 

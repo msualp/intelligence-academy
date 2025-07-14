@@ -9,10 +9,13 @@ import ContactPage from './pages/ContactPage'
 import Header from './components/Header'
 import DraftBanner from './components/DraftBanner'
 import Footer from './components/Footer'
+import ParticleBackground from './components/ParticleBackground'
 
 function App() {
   return (
-    <Routes>
+    <>
+      <ParticleBackground />
+      <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/*" element={
         <>
@@ -29,6 +32,7 @@ function App() {
         </>
       } />
     </Routes>
+    </>
   )
 }
 

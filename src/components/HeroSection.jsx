@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom'
 import './HeroSection.css'
 
 function HeroSection() {
+  const scrollToNext = () => {
+    const nextSection = document.querySelector('.differentiators-section') || document.querySelector('.stats-section');
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="hero">
       <div className="hero-background">
@@ -36,18 +43,27 @@ function HeroSection() {
             <span className="stat-label">Week Program</span>
           </div>
         </div>
-      </div>
-      
-      <div className="hero-footer">
-        <p className="disclaimer">
-          <span className="asterisk">*</span>Aspiring unicorn catalyst based on AI sector performance data. While unicorn outcomes remain statistically rare (2% of AI startups vs. 1% traditional), our methodology systematically addresses the factors that give AI companies demonstrable advantages in achieving billion-dollar valuations.
-          <Link to="/about" className="learn-more-link">Learn More</Link>
-        </p>
         
-        <p className="footnote" id="footnote-1">
-          ¹ Source: CB Insights State of AI Report 2024, PitchBook Unicorn Analysis
-          <Link to="/about" className="learn-more-link">Learn More</Link>
-        </p>
+        {/* Learn More Scroll Indicator */}
+        <div className="scroll-indicator">
+          <button onClick={scrollToNext} className="scroll-link">
+            Learn More
+            <span className="scroll-arrow">↓</span>
+          </button>
+        </div>
+        
+        {/* Disclaimers moved to content flow */}
+        <div className="hero-disclaimers">
+          <p className="disclaimer">
+            <span className="asterisk">*</span>Aspiring unicorn catalyst based on AI sector performance data. While unicorn outcomes remain statistically rare (2% of AI startups vs. 1% traditional), our methodology systematically addresses the factors that give AI companies demonstrable advantages in achieving billion-dollar valuations.
+            <Link to="/about" className="learn-more-link">Learn More</Link>
+          </p>
+          
+          <p className="footnote" id="footnote-1">
+            ¹ Source: CB Insights State of AI Report 2024, PitchBook Unicorn Analysis
+            <Link to="/about" className="learn-more-link">Learn More</Link>
+          </p>
+        </div>
       </div>
     </section>
   )

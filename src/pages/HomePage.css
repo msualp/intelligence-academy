@@ -7,7 +7,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 155px; /* Account for fixed header + banner */
+    scroll-padding-top: 80px; /* Account for sticky header */
 }
 
 :root {
@@ -200,8 +200,8 @@ html {
 
 /* Header - Improved */
 .header {
-    position: fixed;
-    top: 35px;
+    position: sticky;
+    top: 0;
     left: 0;
     right: 0;
     background: var(--header-bg);
@@ -216,7 +216,7 @@ html {
 }
 
 .header.banner-hidden {
-    top: 0;
+    /* No longer needs top adjustment */
 }
 
 .header.scrolled {
@@ -690,6 +690,10 @@ html {
     color: var(--white);
 }
 
+[data-theme="dark"] .cta-button {
+    color: var(--white);
+}
+
 [data-theme="dark"] .tray-social a {
     background: rgba(255, 255, 255, 0.1);
 }
@@ -700,13 +704,10 @@ html {
 
 /* Hero Section - Fixed Full Screen Coverage */
 .hero {
-    padding: 0;
+    padding: 2rem 0;
     margin-top: 0;
-    padding-top: calc(35px + 120px);
-    height: 100vh;
-    height: 100dvh; /* Dynamic viewport height for mobile browsers */
-    min-height: 100vh;
-    min-height: 100dvh;
+    min-height: calc(100vh - 35px - 80px); /* Viewport minus banner and header heights */
+    min-height: calc(100dvh - 35px - 80px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -715,14 +716,12 @@ html {
     background: transparent;
     position: relative;
     overflow: visible;
+    transition: min-height 0.3s ease;
 }
 
 .hero.banner-hidden {
-    padding-top: 120px;
-    height: 100vh;
-    height: 100dvh;
-    min-height: 100vh;
-    min-height: 100dvh;
+    min-height: calc(100vh - 80px); /* Viewport minus just header height */
+    min-height: calc(100dvh - 80px);
 }
 
 .hero::before {
@@ -965,7 +964,7 @@ html {
 }
 
 .disclaimer {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--text-secondary);
     font-style: italic;
     max-width: 800px;
@@ -1357,7 +1356,97 @@ html {
     }
 }
 
+/* Tablet styles - 768px to 1024px */
+@media (max-width: 1024px) {
+    /* Hide header Apply button and hero footer on tablets and smaller */
+    .cta-container {
+        display: none !important;
+    }
+    
+    .hero-footer {
+        display: none !important;
+    }
+    
+    /* Scale down header elements proportionally */
+    .draft-banner {
+        padding: 0.4rem 1.5rem;
+        font-size: 0.85rem;
+        height: 36px;
+    }
+    
+    .header {
+        padding: 0 1.5rem;
+    }
+    
+    .logo {
+        font-size: 1.8rem;
+    }
+    
+    .logo-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .logo.shrink {
+        font-size: 1.4rem;
+    }
+    
+    .logo-subtitle.shrink {
+        font-size: 0.9rem;
+    }
+    
+    .hamburger-menu {
+        width: 52px;
+        height: 52px;
+        border-radius: 26px;
+        font-size: 2.1rem;
+    }
+    
+    .hamburger-menu.shrink {
+        width: 46px;
+        height: 46px;
+        border-radius: 23px;
+        font-size: 1.8rem;
+    }
+    
+    /* Scale hero section */
+    .hero {
+        min-height: calc(100vh - 36px - 70px); /* Adjusted for tablet sizes */
+    }
+    
+    .hero.banner-hidden {
+        min-height: calc(100vh - 70px);
+    }
+    
+    .hero-container {
+        padding: 0 2rem;
+        max-width: 90%;
+    }
+    
+    .hero-title {
+        font-size: clamp(2.2rem, 8vw, 3.5rem);
+        margin-bottom: 0.8rem;
+        line-height: 1.05;
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(1.3rem, 5vw, 2rem);
+        margin-bottom: 1.2rem;
+        line-height: 1.25;
+    }
+    
+    .hero-description {
+        font-size: clamp(1rem, 3.5vw, 1.3rem);
+        margin-bottom: 2rem;
+        line-height: 1.6;
+        max-width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Mobile styles - up to 768px */
 @media (max-width: 768px) {
+    /* Further scale down header */
     .draft-banner {
         padding: 0.25rem 1rem;
         font-size: 0.75rem;
@@ -1365,35 +1454,15 @@ html {
     }
     
     .header {
-        top: 32px;
-    }
-    
-    /* Hide header Apply button on smaller screens */
-    .cta-container {
-        display: none !important;
-    }
-    
-    /* Hide hero footer fine print on smaller screens */
-    .hero-footer {
-        display: none !important;
-    }
-    
-    .hero {
-        padding-top: calc(32px + 100px);
-        height: 100vh;
-    }
-    
-    .hero.banner-hidden {
-        padding-top: 100px;
-        height: 100vh;
+        padding: 0 1rem;
     }
     
     .logo {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
     
     .logo-subtitle {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
     
     .logo.shrink {
@@ -1404,117 +1473,76 @@ html {
         font-size: 0.8rem;
     }
     
-    .nav {
-        padding: 1rem;
-    }
-    
-    .nav.shrink {
-        padding: 0.8rem 1rem;
-    }
-    
-    .cta-button {
-        padding: 0.8rem 1.4rem;
-        font-size: 1rem;
-    }
-    
-    .cta-button.shrink {
-        padding: 0.7rem 1.2rem;
-        font-size: 0.9rem;
-    }
-    
     .hamburger-menu {
-        width: 50px;
-        height: 50px;
-        border-radius: 25px;
-        font-size: 2rem;
+        width: 48px;
+        height: 48px;
+        border-radius: 24px;
+        font-size: 1.9rem;
     }
     
     .hamburger-menu.shrink {
-        width: 44px;
-        height: 44px;
-        border-radius: 22px;
-        font-size: 1.7rem;
+        width: 42px;
+        height: 42px;
+        border-radius: 21px;
+        font-size: 1.6rem;
+    }
+    
+    /* Mobile hero adjustments */
+    .hero {
+        min-height: calc(100vh - 32px - 65px); /* Adjusted for mobile sizes */
+        padding: 1.5rem 0;
+    }
+    
+    .hero.banner-hidden {
+        min-height: calc(100vh - 65px);
     }
     
     .hero-container {
-        padding: 0 1rem;
+        padding: 0 1.5rem;
+        max-width: 95%;
     }
     
     .hero-title {
-        font-size: clamp(1.75rem, 7vw, 2.5rem);
+        font-size: clamp(1.8rem, 8vw, 2.8rem);
         margin-bottom: 0.75rem;
         line-height: 1.1;
     }
     
     .hero-subtitle {
-        font-size: clamp(1rem, 4vw, 1.4rem);
+        font-size: clamp(1.1rem, 5vw, 1.6rem);
         margin-bottom: 1rem;
         line-height: 1.2;
     }
     
     .hero-description {
-        font-size: clamp(0.875rem, 3vw, 1rem);
-        margin-bottom: 1.5rem;
+        font-size: clamp(0.9rem, 4vw, 1.1rem);
+        margin-bottom: 1.8rem;
         line-height: 1.5;
+        max-width: 100%;
     }
     
     .primary-cta {
-        padding: 0.875rem 1.75rem;
-        font-size: 0.95rem;
+        padding: 0.9rem 1.8rem;
+        font-size: 1rem;
+        border-radius: 30px;
     }
     
     .secondary-text {
         font-size: 0.85rem;
-    }
-    
-    .hero-footer {
-        padding: 1.5rem 1rem;
-    }
-    
-    .hero-highlights {
-        grid-template-columns: 1fr;
-    }
-    
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .program-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .comparison-table {
-        font-size: 0.9rem;
-    }
-    
-    .comparison-table th,
-    .comparison-table td {
-        padding: 1rem;
-    }
-    
-    .particle:nth-child(n+4) {
-        display: none;
+        margin-top: 0.8rem;
     }
 }
 
+/* Small mobile styles - up to 480px */
 @media (max-width: 480px) {
-    .hero-title {
-        font-size: clamp(1.8rem, 10vw, 2.8rem);
-        line-height: 0.9;
+    .draft-banner {
+        padding: 0.2rem 0.75rem;
+        font-size: 0.7rem;
+        height: 28px;
     }
     
-    .hero-subtitle {
-        font-size: clamp(1rem, 6vw, 1.5rem);
-    }
-    
-    .hero-description {
-        font-size: clamp(0.9rem, 4.5vw, 1.1rem);
-        margin-bottom: 2rem;
-    }
-    
-    .primary-cta {
-        padding: 1rem 1.8rem;
-        font-size: 1rem;
+    .header {
+        padding: 0 0.75rem;
     }
     
     .logo {
@@ -1526,47 +1554,67 @@ html {
     }
     
     .logo.shrink {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
     
     .logo-subtitle.shrink {
-        font-size: 0.7rem;
+        font-size: 0.75rem;
     }
     
     .hamburger-menu {
-        width: 46px;
-        height: 46px;
-        border-radius: 23px;
-        font-size: 1.8rem;
+        width: 44px;
+        height: 44px;
+        border-radius: 22px;
+        font-size: 1.7rem;
     }
     
     .hamburger-menu.shrink {
-        width: 40px;
-        height: 40px;
-        border-radius: 20px;
-        font-size: 1.5rem;
+        width: 38px;
+        height: 38px;
+        border-radius: 19px;
+        font-size: 1.4rem;
+    }
+    
+    .hero {
+        min-height: calc(100vh - 28px - 60px); /* Adjusted for small mobile */
+        padding: 1rem 0;
+    }
+    
+    .hero.banner-hidden {
+        min-height: calc(100vh - 60px);
     }
     
     .hero-container {
-        padding: 0 0.75rem;
+        padding: 0 1rem;
     }
     
-    .hero-footer {
-        padding: 1rem 0.75rem;
+    .hero-title {
+        font-size: clamp(1.5rem, 9vw, 2.2rem);
+        margin-bottom: 0.6rem;
+        line-height: 1.05;
     }
     
-    /* Side tray responsive */
-    .side-tray {
-        width: 100vw;
-        right: -100vw;
+    .hero-subtitle {
+        font-size: clamp(0.95rem, 6vw, 1.3rem);
+        margin-bottom: 0.8rem;
+        line-height: 1.15;
     }
     
-    .side-tray.open {
-        right: 0;
+    .hero-description {
+        font-size: clamp(0.8rem, 4.5vw, 1rem);
+        margin-bottom: 1.5rem;
+        line-height: 1.4;
     }
     
-    .side-tray-content {
-        padding: 1.5rem;
+    .primary-cta {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+        border-radius: 25px;
+    }
+    
+    .secondary-text {
+        font-size: 0.8rem;
+        margin-top: 0.7rem;
     }
 }
 

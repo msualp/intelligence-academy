@@ -841,10 +841,7 @@ html {
 }
 
 .secondary-text {
-    background: linear-gradient(135deg, #FF3B30 0%, #FF9500 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--accent-orange);
     font-size: 1rem;
     font-weight: 500;
     animation: fadeInUp 1s ease-out 0.6s both;
@@ -1517,37 +1514,71 @@ html {
     }
     
     .header {
-        padding: 0 0.75rem;
+        padding: 0 0.5rem;
     }
     
-    .logo {
-        font-size: 1.3rem;
+    .nav {
+        padding: 1rem 0.5rem;
+    }
+    
+    .logo-container {
+        gap: 0.5rem;
+        flex: 1;
+        min-width: 0; /* Allow text to shrink */
+    }
+    
+    .logo-text {
+        min-width: 0; /* Allow text to shrink */
+        flex: 1;
+    }
+    
+    .logo-main {
+        font-size: 1.1rem !important;
+        line-height: 1.1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     
     .logo-subtitle {
-        font-size: 0.85rem;
+        font-size: 0.75rem !important;
+        line-height: 1.2;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-top: 2px;
     }
     
-    .logo.shrink {
-        font-size: 1.1rem;
+    .logo.shrink .logo-main {
+        font-size: 1rem !important;
     }
     
-    .logo-subtitle.shrink {
-        font-size: 0.75rem;
+    .logo.shrink .logo-subtitle {
+        font-size: 0.7rem !important;
+    }
+    
+    .unicorn-emoji {
+        font-size: 1.8rem !important;
+        flex-shrink: 0;
+    }
+    
+    .logo.shrink .unicorn-emoji {
+        font-size: 1.6rem !important;
     }
     
     .hamburger-menu {
-        width: 44px;
-        height: 44px;
-        border-radius: 22px;
-        font-size: 1.7rem;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        font-size: 1.5rem;
+        flex-shrink: 0;
     }
     
     .hamburger-menu.shrink {
-        width: 38px;
-        height: 38px;
-        border-radius: 19px;
-        font-size: 1.4rem;
+        width: 36px;
+        height: 36px;
+        border-radius: 18px;
+        font-size: 1.3rem;
     }
     
     .hero {
@@ -1586,6 +1617,65 @@ html {
     .secondary-text {
         font-size: 0.8rem;
         margin-top: 0.7rem;
+    }
+}
+
+/* Very small mobile styles - up to 360px */
+@media (max-width: 360px) {
+    .draft-banner {
+        padding: 0.15rem 0.5rem;
+        font-size: 0.65rem;
+        height: 26px;
+    }
+    
+    .header {
+        padding: 0 0.25rem;
+    }
+    
+    .nav {
+        padding: 0.8rem 0.25rem;
+    }
+    
+    .logo-container {
+        gap: 0.4rem;
+    }
+    
+    .logo-main {
+        font-size: 1rem !important;
+    }
+    
+    .logo-subtitle {
+        font-size: 0.7rem !important;
+    }
+    
+    .logo.shrink .logo-main {
+        font-size: 0.9rem !important;
+    }
+    
+    .logo.shrink .logo-subtitle {
+        font-size: 0.65rem !important;
+    }
+    
+    .unicorn-emoji {
+        font-size: 1.6rem !important;
+    }
+    
+    .logo.shrink .unicorn-emoji {
+        font-size: 1.4rem !important;
+    }
+    
+    .hamburger-menu {
+        width: 36px;
+        height: 36px;
+        border-radius: 18px;
+        font-size: 1.3rem;
+    }
+    
+    .hamburger-menu.shrink {
+        width: 32px;
+        height: 32px;
+        border-radius: 16px;
+        font-size: 1.1rem;
     }
 }
 

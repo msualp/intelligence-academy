@@ -1,17 +1,20 @@
-/* Hero Section */
+/* Hero Section - Apple-inspired with full viewport height */
 .hero {
-    height: 100vh;
+    height: 100vh; /* Fallback */
     height: 100dvh; /* Dynamic viewport height for mobile browsers */
-    min-height: 100vh;
-    min-height: 100dvh;
+    min-height: 100vh; /* Fallback */
+    min-height: 100dvh; /* Dynamic viewport height for mobile browsers */
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: var(--container-padding);
+    padding: 0;
     position: relative;
     overflow: hidden;
     background: transparent;
     transition: all 0.3s ease;
+    box-sizing: border-box;
+    margin: 0;
 }
 
 .hero.banner-hidden {
@@ -60,17 +63,22 @@
 
 .hero-content {
     max-width: clamp(600px, 90vw, 1000px);
+    width: 100%;
     text-align: center;
     z-index: 1;
     position: relative;
     padding: 0 clamp(1rem, 5vw, 3rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-title {
-    font-size: clamp(2.2rem, 6vw, 4.2rem);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
     font-weight: 800;
     letter-spacing: -0.03em;
-    line-height: 0.95;
+    line-height: 1.05;
     margin-bottom: 0.8rem;
     background: linear-gradient(135deg, 
         var(--primary-blue) 0%, 
@@ -85,21 +93,27 @@
     background-size: 400% 100%;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     animation: gradientShift 12s ease-in-out infinite alternate;
+    width: 100%;
+    white-space: normal;
+    text-wrap: balance;
 }
 
 .hero-subtitle {
     font-size: clamp(1.3rem, 4vw, 2.8rem);
     font-weight: 700;
-    color: var(--white);
+    color: var(--text-primary);
     margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     line-height: 1.2;
     letter-spacing: -0.01em;
+    width: 100%;
+    white-space: normal;
+    text-wrap: balance;
 }
 
 .hero-description {
     font-size: clamp(1.1rem, 2.5vw, 1.35rem);
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--text-secondary);
     margin-bottom: clamp(2.5rem, 6vw, 4rem);
     line-height: 1.7;
     max-width: min(700px, 90%);
@@ -140,8 +154,8 @@
 
 .btn-secondary {
     background: rgba(255, 255, 255, 0.1);
-    color: var(--white);
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: var(--text-primary);
+    border: 2px solid var(--border-light);
     backdrop-filter: blur(10px);
 }
 
@@ -173,7 +187,7 @@
 
 .stat-label {
     font-size: clamp(0.8rem, 1.8vw, 0.95rem);
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--text-secondary);
     text-transform: uppercase;
     letter-spacing: 0.5px;
     line-height: 1.3;
@@ -192,7 +206,7 @@
     gap: 0.5rem;
     background: none;
     border: none;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-secondary);
     text-decoration: none;
     font-weight: 600;
     font-size: 1rem;
@@ -202,16 +216,16 @@
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid var(--border-light);
     cursor: pointer;
     font-family: inherit;
 }
 
 .scroll-link:hover {
-    color: var(--white);
+    color: var(--primary-blue);
     background: rgba(255, 255, 255, 0.15);
     transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow-light);
 }
 
 .scroll-arrow {
@@ -243,7 +257,7 @@
 
 .hero-disclaimers .disclaimer {
     font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--text-secondary);
     margin-bottom: 0.5rem;
     line-height: 1.4;
     font-weight: 400;
@@ -252,7 +266,7 @@
 
 .hero-disclaimers .footnote {
     font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--text-secondary);
     margin-bottom: 0;
     line-height: 1.4;
     font-weight: 400;
@@ -265,14 +279,15 @@
 }
 
 .hero-disclaimers .learn-more-link {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--primary-blue);
     text-decoration: underline;
     margin-left: 0.25rem;
     transition: color 0.3s ease;
 }
 
 .hero-disclaimers .learn-more-link:hover {
-    color: var(--white);
+    color: var(--primary-blue);
+    opacity: 0.8;
 }
 
 @keyframes float {
@@ -315,7 +330,7 @@
 .disclaimer,
 .footnote {
     font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--text-secondary);
     max-width: 800px;
     margin: 0 auto 0.5rem;
     line-height: 1.4;
@@ -329,21 +344,25 @@
 }
 
 .learn-more-link {
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--primary-blue);
     text-decoration: underline;
     margin-left: 0.25rem;
     transition: color 0.3s ease;
 }
 
 .learn-more-link:hover {
-    color: var(--white);
+    color: var(--primary-blue);
+    opacity: 0.8;
 }
 
-/* Responsive Design */
+/* Responsive Design - Improved for all screen sizes */
 @media (max-width: 1024px) {
     .hero {
-        min-height: calc(100vh - 80px);
-        padding-top: 100px;
+        height: 100vh; /* Fallback */
+        height: 100dvh; /* Dynamic viewport height */
+        min-height: 100vh;
+        min-height: 100dvh;
+        padding: 0;
     }
     
     .floating-element:nth-child(1) {
@@ -369,17 +388,22 @@
 
 @media (max-width: 768px) {
     .hero {
-        min-height: calc(100vh - 70px);
-        padding: 80px 1rem 2rem;
+        height: 100vh; /* Fallback */
+        height: 100dvh; /* Dynamic viewport height */
+        min-height: 100vh;
+        min-height: 100dvh;
+        padding: 0;
+        justify-content: center;
     }
     
     .hero-content {
         padding: 0;
+        margin-top: 2rem;
     }
     
     .hero-title {
         font-size: clamp(2rem, 8vw, 3.5rem);
-        line-height: 1;
+        line-height: 1.1;
         margin-bottom: 1rem;
     }
     
@@ -399,6 +423,7 @@
         align-items: center;
         gap: 1rem;
         margin-bottom: 2.5rem;
+        width: 100%;
     }
     
     .btn-primary,
@@ -450,8 +475,9 @@
     .hero-footer {
         position: relative;
         bottom: auto;
-        margin-top: 3rem;
+        margin-top: 2rem;
         padding: 0;
+        width: 100%;
     }
     
     .disclaimer,
@@ -483,16 +509,27 @@
 
 @media (max-width: 480px) {
     .hero {
-        padding: 70px 0.75rem 1.5rem;
+        height: 100vh; /* Fallback */
+        height: 100dvh; /* Dynamic viewport height */
+        min-height: 100vh;
+        min-height: 100dvh;
+        padding: 0;
+        justify-content: center;
+    }
+    
+    .hero-content {
+        margin-top: 1.5rem;
     }
     
     .hero-title {
         font-size: clamp(1.8rem, 10vw, 2.8rem);
         letter-spacing: -0.02em;
+        line-height: 1.15;
     }
     
     .hero-subtitle {
         font-size: clamp(1rem, 5vw, 1.5rem);
+        line-height: 1.3;
     }
     
     .hero-description {
@@ -528,6 +565,10 @@
         text-align: right;
         max-width: 60%;
     }
+    
+    .hero-footer {
+        margin-top: 1.5rem;
+    }
 }
 
 /* Touch device optimizations */
@@ -543,5 +584,40 @@
     .learn-more-link {
         padding: 0.5rem;
         margin: -0.5rem;
+    }
+}
+
+/* Ultra-wide screen optimizations */
+@media (min-width: 1800px) {
+    .hero-title {
+        font-size: clamp(3.5rem, 6vw, 5.5rem);
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(2rem, 4vw, 3.5rem);
+    }
+    
+    .hero-description {
+        font-size: clamp(1.2rem, 2vw, 1.6rem);
+        max-width: 900px;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        padding: 1.2rem 3rem;
+        font-size: 1.3rem;
+    }
+    
+    .hero-stats {
+        max-width: 800px;
+        gap: 3rem;
+    }
+    
+    .stat-number {
+        font-size: 3.5rem;
+    }
+    
+    .stat-label {
+        font-size: 1.1rem;
     }
 }

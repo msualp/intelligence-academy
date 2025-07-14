@@ -29,9 +29,11 @@
     --gradient-mid: #007AFF;
     --gradient-end: #FF9500;
     
-    /* Hero Text Colors */
+    /* Hero Section */
     --hero-text: #1D1D1F;
     --hero-description: #86868B;
+    --hero-bg-overlay: linear-gradient(135deg, rgba(245, 245, 247, 0.4) 0%, rgba(232, 232, 237, 0.4) 100%);
+    --hero-footer-bg: linear-gradient(to top, rgba(245, 245, 247, 0.95) 0%, rgba(245, 245, 247, 0.7) 70%, transparent 100%);
     
     /* Apply Page Specific */
     --apply-bg: linear-gradient(135deg, #F5F5F7 0%, #E8E8ED 100%);
@@ -54,6 +56,13 @@
     --border-light: rgba(0, 0, 0, 0.1);
     --container-padding: clamp(1rem, 4vw, 3rem);
     --section-spacing: clamp(4rem, 8vw, 8rem);
+    
+    /* Standardized Breakpoints */
+    --breakpoint-sm: 480px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1536px;
 }
 
 /* CENTRALIZED DARK MODE VARIABLES */
@@ -62,7 +71,7 @@
     --primary-gray: #E5E5E7;
     --secondary-gray: #A1A1A6;
     --light-gray: #1C1C1E;
-    --white: #000000;
+    --white: #FFFFFF;
     
     /* Text Colors in Dark Mode */
     --text-primary: #FFFFFF;
@@ -78,9 +87,11 @@
     --gradient-mid: #007AFF;
     --gradient-end: #FF9500;
     
-    /* Hero Text Colors in Dark Mode */
+    /* Hero Section in Dark Mode */
     --hero-text: #FFFFFF;
     --hero-description: rgba(255, 255, 255, 0.8);
+    --hero-bg-overlay: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(28, 28, 30, 0.6) 100%);
+    --hero-footer-bg: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.7) 70%, transparent 100%);
     
     /* Apply Page Specific Dark Mode */
     --apply-bg: linear-gradient(135deg, #000000 0%, #1C1C1E 100%);
@@ -161,21 +172,32 @@ body {
     transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-/* Responsive Container */
+/* Responsive Container System */
 .container {
+    width: 100%;
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 var(--container-padding);
 }
 
 .container-narrow {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--container-padding);
 }
 
 .container-wide {
+    width: 100%;
     max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+/* Apple-inspired content container with increased negative space */
+.content-container {
+    width: 100%;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 var(--container-padding);
 }
@@ -193,7 +215,7 @@ body {
     padding: calc(var(--section-spacing) * 1.25) 0;
 }
 
-/* Responsive Grid */
+/* Responsive Grid System */
 .grid-responsive {
     display: grid;
     gap: clamp(1.5rem, 4vw, 3rem);
@@ -211,25 +233,65 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
 }
 
-/* Responsive Typography */
+/* Apple-inspired grid with more negative space */
+.grid-apple {
+    display: grid;
+    gap: clamp(2rem, 5vw, 4rem);
+}
+
+.grid-apple-2 {
+    grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+}
+
+.grid-apple-3 {
+    grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+}
+
+.grid-apple-4 {
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+}
+
+/* Apple-inspired Typography System */
 .responsive-text {
     font-size: clamp(1rem, 2.5vw, 1.25rem);
     line-height: 1.6;
+    letter-spacing: -0.01em;
 }
 
 .responsive-heading-1 {
-    font-size: clamp(2rem, 5vw, 4rem);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
     line-height: 1.1;
+    letter-spacing: -0.03em;
+    font-weight: 700;
 }
 
 .responsive-heading-2 {
-    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-size: clamp(1.8rem, 4vw, 3.2rem);
     line-height: 1.2;
+    letter-spacing: -0.02em;
+    font-weight: 700;
 }
 
 .responsive-heading-3 {
-    font-size: clamp(1.25rem, 3vw, 2rem);
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
     line-height: 1.3;
+    letter-spacing: -0.015em;
+    font-weight: 600;
+}
+
+.responsive-heading-4 {
+    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    font-weight: 600;
+}
+
+.text-balance {
+    text-wrap: balance;
+}
+
+.text-nowrap {
+    white-space: nowrap;
 }
 
 /* Responsive Utilities */
@@ -250,10 +312,23 @@ body {
     justify-content: center;
 }
 
-/* Responsive Breakpoints */
+/* Standardized Responsive Breakpoints */
+@media (max-width: 1536px) {
+    :root {
+        --container-padding: clamp(1.5rem, 4vw, 2.5rem);
+    }
+}
+
+@media (max-width: 1280px) {
+    :root {
+        --container-padding: clamp(1.25rem, 3.5vw, 2rem);
+        --section-spacing: clamp(3.5rem, 7vw, 7rem);
+    }
+}
+
 @media (max-width: 1024px) {
     :root {
-        --container-padding: clamp(1rem, 3vw, 2rem);
+        --container-padding: clamp(1rem, 3vw, 1.75rem);
         --section-spacing: clamp(3rem, 6vw, 6rem);
     }
 }
@@ -265,11 +340,11 @@ body {
     }
     
     .hide-mobile {
-        display: none;
+        display: none !important;
     }
     
     .hide-desktop {
-        display: block;
+        display: block !important;
     }
     
     /* Mobile-first button styles */
@@ -297,6 +372,26 @@ body {
     /* Ensure proper text sizing on small screens */
     p, li, span {
         font-size: max(0.875rem, 14px);
+    }
+}
+
+/* Ultra-wide screen optimizations */
+@media (min-width: 1800px) {
+    :root {
+        --container-padding: clamp(2rem, 5vw, 4rem);
+        --section-spacing: clamp(5rem, 10vw, 10rem);
+    }
+    
+    .responsive-heading-1 {
+        font-size: clamp(3.5rem, 6vw, 5.5rem);
+    }
+    
+    .responsive-heading-2 {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+    }
+    
+    .responsive-heading-3 {
+        font-size: clamp(1.8rem, 4vw, 3rem);
     }
 }
 

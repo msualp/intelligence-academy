@@ -1,8 +1,28 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './HeroSection.css'
 
 function HeroSection() {
+  // Ensure hero section takes full viewport height
+  useEffect(() => {
+    const setHeroHeight = () => {
+      const hero = document.querySelector('.hero');
+      if (hero) {
+        hero.style.height = `${window.innerHeight}px`;
+      }
+    };
+    
+    // Set initial height
+    setHeroHeight();
+    
+    // Update on resize
+    window.addEventListener('resize', setHeroHeight);
+    
+    return () => {
+      window.removeEventListener('resize', setHeroHeight);
+    };
+  }, []);
+
   const scrollToNext = () => {
     const nextSection = document.querySelector('.differentiators-section') || document.querySelector('.stats-section');
     if (nextSection) {

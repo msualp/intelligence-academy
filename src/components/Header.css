@@ -57,12 +57,15 @@
     text-decoration: none;
     line-height: 1.1;
     transition: all 0.3s ease;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .logo-container {
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    overflow: hidden;
 }
 
 .unicorn-emoji {
@@ -84,6 +87,8 @@
 .logo-text {
     display: flex;
     flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
 }
 
 .logo-main {
@@ -91,6 +96,9 @@
     font-weight: 800;
     line-height: 1.1;
     color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .logo-subtitle {
@@ -99,6 +107,9 @@
     font-weight: 600;
     margin-top: 4px;
     transition: font-size 0.3s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .logo.shrink {
@@ -372,6 +383,7 @@
     
     .unicorn-emoji {
         font-size: 2rem;
+        flex-shrink: 0;
     }
     
     .logo.shrink .unicorn-emoji {
@@ -401,6 +413,7 @@
     .cta-button {
         padding: 0.8rem 1.4rem;
         font-size: 1rem;
+        white-space: nowrap;
     }
     
     .cta-button.shrink {
@@ -412,6 +425,7 @@
         width: 50px;
         height: 50px;
         border-radius: 25px;
+        flex-shrink: 0;
     }
     
     .hamburger-menu.shrink {
@@ -438,6 +452,10 @@
     .hamburger-lines span:last-child {
         width: 10px;
     }
+    
+    .header-actions {
+        gap: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -448,10 +466,15 @@
     
     .unicorn-emoji {
         font-size: 1.8rem;
+        flex-shrink: 0;
     }
     
     .logo.shrink .unicorn-emoji {
         font-size: 1.5rem;
+    }
+    
+    .logo-text {
+        max-width: 150px;
     }
     
     .logo-subtitle {
@@ -470,6 +493,7 @@
         width: 46px;
         height: 46px;
         border-radius: 23px;
+        flex-shrink: 0;
     }
     
     .hamburger-menu.shrink {
@@ -514,6 +538,18 @@
     
     .hamburger-menu.shrink .hamburger-lines span:last-child {
         width: 6px;
+    }
+    
+    .header-actions {
+        gap: 0.75rem;
+    }
+    
+    .nav {
+        padding: 0.8rem 0.75rem;
+    }
+    
+    .nav.shrink {
+        padding: 0.6rem 0.75rem;
     }
 }
 

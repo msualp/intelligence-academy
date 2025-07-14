@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import DarkModeToggle from '../components/DarkModeToggle';
 import './HomePage.css';
+import '../components/HeroSection.css';
+import '../components/Header.css';
 
 const HomePage = () => {
   const [isBannerHidden, setIsBannerHidden] = useState(false);
@@ -150,6 +152,10 @@ const HomePage = () => {
             </div>
             
             <div className="menu-container">
+              <DarkModeToggle 
+                show={true} 
+                className={isHeaderShrunk ? 'shrink' : ''}
+              />
               <button 
                 className={`hamburger-menu ${isHeaderShrunk ? 'shrink' : ''}`}
                 onClick={(e) => {
@@ -271,9 +277,9 @@ const HomePage = () => {
         <section id="home" className={`hero loading ${isBannerHidden ? 'banner-hidden' : ''}`}>
         <div className="hero-container">
           <div className="hero-content">
-            <h1 className="hero-title">Transform Your AI Vision Into Reality</h1>
-            <h2 className="hero-subtitle">The AI Unicorn Advantage is Real</h2>
-            <p className="hero-description">
+            <h1 className="hero-title text-balance">Transform Your AI Vision Into Reality</h1>
+            <h2 className="hero-subtitle text-balance">The AI Unicorn Advantage is Real</h2>
+            <p className="hero-description text-balance">
               More AI startups are reaching billion-dollar valuations in <span className="stat-highlight">quarter the time</span> with <span className="stat-highlight">half the team</span> and <span className="stat-highlight">double the success rate</span><a href="#footnote-1" className="footnote-ref">¹</a> vs. traditional unicorns. Our program focuses on the specific methodology and partnerships that maximize your AI startup's unicorn potential.
             </p>
             
@@ -291,7 +297,7 @@ const HomePage = () => {
         </div>
         
         <div className="hero-footer">
-          <p className="disclaimer">
+          <p className="disclaimer text-balance">
             <span className="asterisk">*</span>Aspiring unicorn catalyst based on AI sector performance data. While unicorn outcomes remain statistically rare (2% of AI startups vs. 1% traditional), our methodology systematically addresses the factors that give AI companies demonstrable advantages in achieving billion-dollar valuations.<a href="#stats" className="learn-more-link">Learn More</a>
           </p>
           
@@ -305,8 +311,8 @@ const HomePage = () => {
       <section id="differentiators" className="differentiators-section loading">
         <div className="container">
           <div className="differentiators-intro">
-            <h2 className="section-title">What Makes Us Different</h2>
-            <p>Our unicorn-focused methodology combines the best of regional connection, university research, corporate partnerships, and entrepreneurial excellence all with a strong focus on AI.</p>
+            <h2 className="homepage-section-title text-balance">What Makes Us Different</h2>
+            <p className="text-balance">Our unicorn-focused methodology combines the best of regional connection, university research, corporate partnerships, and entrepreneurial excellence all with a strong focus on AI.</p>
           </div>
           
           <div className="hero-highlights">
@@ -357,8 +363,8 @@ const HomePage = () => {
       {/* Statistics Section */}
       <section id="stats" className="stats-section loading">
         <div className="container">
-          <h2 className="section-title">Why AI Companies Become Unicorns Differently</h2>
-          <p className="section-subtitle">The statistics that drive our unicorn-focused methodology</p>
+          <h2 className="homepage-section-title text-balance">Why AI Companies Become Unicorns Differently</h2>
+          <p className="homepage-section-subtitle text-balance">The statistics that drive our unicorn-focused methodology</p>
           
           <div className="stats-grid">
             <div 
@@ -432,8 +438,8 @@ const HomePage = () => {
       {/* Program Section */}
       <section id="program" className="program-section loading">
         <div className="container">
-          <h2 className="section-title">How We Maximize Your Unicorn Potential</h2>
-          <p className="section-subtitle">Every program element designed for exponential growth</p>
+          <h2 className="homepage-section-title text-balance">How We Maximize Your Unicorn Potential</h2>
+          <p className="homepage-section-subtitle text-balance">Every program element designed for exponential growth</p>
           
           <div className="program-grid">
             <div 
@@ -506,9 +512,9 @@ const HomePage = () => {
       {/* Call to Action Section */}
       <section id="apply" className="cta-section loading">
         <div className="container">
-          <h2 className="section-title">Ready to Build Your AI Unicorn<span className="asterisk">*</span>?</h2>
-          <p className="section-subtitle">Submit your 2-minute application and take the first step toward billion-dollar impact</p>
-          <Link to="/apply" className="cta-white">Submit 2-Min Application</Link>
+          <h2 className="homepage-section-title text-balance">Ready to Build Your AI Unicorn<span className="asterisk">*</span>?</h2>
+          <p className="homepage-section-subtitle text-balance">Submit your 2-minute application and take the first step toward billion-dollar impact</p>
+          <Link to="/apply" className="btn btn-secondary">Submit 2-Min Application</Link>
           <p style={{ marginTop: '1rem', opacity: 0.8 }}>Spring 2026 Cohort - Limited to 8 Teams</p>
         </div>
       </section>

@@ -64,6 +64,21 @@ html {
 
 /* Body styles moved to index.css to avoid duplication */
 
+/* Page wrapper for proper document flow */
+.homepage-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Main content area to ensure proper spacing */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
 /* Typography - Enhanced Mac UI-inspired */
 .hero-title {
     font-size: clamp(2.5rem, 7vw, 4.8rem);
@@ -146,64 +161,22 @@ html {
     margin-bottom: 3rem;
 }
 
-/* Draft Banner */
-.draft-banner {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(135deg, #FF3B30 0%, #FF9500 100%);
-    color: var(--white);
-    padding: 0.3rem 2rem;
-    text-align: center;
-    font-size: 0.8rem;
-    font-weight: 500;
-    z-index: 1001;
-    line-height: 1.2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease;
-    height: 35px;
+/* Header Wrapper - Handles sticky behavior */
+.header-wrapper {
+    position: relative;
+    z-index: 1000;
+    transition: all 0.3s ease;
 }
 
-.draft-banner.hidden {
-    transform: translateY(-100%);
-}
-
-.draft-banner .warning-icon {
-    margin-right: 0.5rem;
-    font-size: 0.9rem;
-}
-
-.banner-close {
-    position: absolute;
-    right: 1rem;
-    background: none;
-    border: none;
-    color: var(--white);
-    font-size: 1.2rem;
-    cursor: pointer;
-    padding: 0.25rem;
-    border-radius: 4px;
-    transition: background 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-}
-
-.banner-close:hover {
-    background: rgba(255, 255, 255, 0.2);
+/* When banner is hidden, header moves to top */
+.banner-hidden .header-wrapper {
+    /* No change needed - header handles its own positioning */
 }
 
 /* Header - Improved */
 .header {
     position: sticky;
     top: 0;
-    left: 0;
-    right: 0;
     background: var(--header-bg);
     backdrop-filter: blur(25px) saturate(180%);
     -webkit-backdrop-filter: blur(25px) saturate(180%);
@@ -211,12 +184,8 @@ html {
     border-top: none;
     border-bottom: 1px solid var(--border-light);
     box-shadow: var(--shadow-light);
-    z-index: 1000;
     transition: all 0.3s ease;
-}
-
-.header.banner-hidden {
-    /* No longer needs top adjustment */
+    z-index: 999;
 }
 
 .header.scrolled {
@@ -702,12 +671,11 @@ html {
     background: var(--primary-blue);
 }
 
-/* Hero Section - Fixed Full Screen Coverage */
+/* Hero Section - Full Height with Proper Spacing */
 .hero {
-    padding: 2rem 0;
+    padding: 3rem 0 4rem 0;
     margin-top: 0;
-    min-height: calc(100vh - 35px - 80px); /* Viewport minus banner and header heights */
-    min-height: calc(100dvh - 35px - 80px);
+    min-height: 100vh; /* Full viewport height */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -716,12 +684,7 @@ html {
     background: transparent;
     position: relative;
     overflow: visible;
-    transition: min-height 0.3s ease;
-}
-
-.hero.banner-hidden {
-    min-height: calc(100vh - 80px); /* Viewport minus just header height */
-    min-height: calc(100dvh - 80px);
+    transition: all 0.3s ease;
 }
 
 .hero::before {
@@ -949,13 +912,13 @@ html {
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 1.5rem 2rem 3rem;
+    padding: 2rem 2rem 4rem;
     background: var(--hero-footer-bg);
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.2rem;
+    gap: 1.5rem;
 }
 
 .hero-footer p {
@@ -963,24 +926,26 @@ html {
     padding: 0;
 }
 
-.disclaimer {
-    font-size: 0.75rem;
+.hero-footer .disclaimer {
+    font-size: 0.75rem !important;
     color: var(--text-secondary);
     font-style: italic;
     max-width: 800px;
-    margin: 0 auto 0;
-    line-height: 1.3;
+    margin: 0 auto;
+    line-height: 1.4;
     text-align: center;
+    font-weight: 400;
 }
 
-.footnote {
-    font-size: 0.75rem;
+.hero-footer .footnote {
+    font-size: 0.75rem !important;
     color: var(--text-secondary) !important;
     font-style: italic;
     max-width: 600px;
     margin: 0 auto;
-    line-height: 1.3;
+    line-height: 1.4;
     text-align: center;
+    font-weight: 400;
 }
 
 .learn-more-link {
@@ -1358,14 +1323,6 @@ html {
 
 /* Tablet styles - 768px to 1024px */
 @media (max-width: 1024px) {
-    /* Hide header Apply button and hero footer on tablets and smaller */
-    .cta-container {
-        display: none !important;
-    }
-    
-    .hero-footer {
-        display: none !important;
-    }
     
     /* Scale down header elements proportionally */
     .draft-banner {
@@ -1410,11 +1367,8 @@ html {
     
     /* Scale hero section */
     .hero {
-        min-height: calc(100vh - 36px - 70px); /* Adjusted for tablet sizes */
-    }
-    
-    .hero.banner-hidden {
-        min-height: calc(100vh - 70px);
+        padding: 3rem 0;
+        min-height: 75vh;
     }
     
     .hero-container {
@@ -1446,6 +1400,29 @@ html {
 
 /* Mobile styles - up to 768px */
 @media (max-width: 768px) {
+    /* Hide header Apply button on mobile */
+    .cta-container {
+        display: none !important;
+        transition: none !important;
+    }
+    
+    /* Move hero footer outside of hero section on mobile */
+    .hero-footer {
+        position: static !important;
+        background: var(--white) !important;
+        padding: 2rem 1.5rem !important;
+        margin-top: 0 !important;
+    }
+    
+    [data-theme="dark"] .hero-footer {
+        background: var(--white) !important;
+    }
+    
+    /* Prevent menu from auto-opening on resize */
+    .side-tray {
+        transition: none !important;
+    }
+    
     /* Further scale down header */
     .draft-banner {
         padding: 0.25rem 1rem;
@@ -1489,12 +1466,8 @@ html {
     
     /* Mobile hero adjustments */
     .hero {
-        min-height: calc(100vh - 32px - 65px); /* Adjusted for mobile sizes */
-        padding: 1.5rem 0;
-    }
-    
-    .hero.banner-hidden {
-        min-height: calc(100vh - 65px);
+        padding: 2rem 0;
+        min-height: 70vh;
     }
     
     .hero-container {
@@ -1576,12 +1549,8 @@ html {
     }
     
     .hero {
-        min-height: calc(100vh - 28px - 60px); /* Adjusted for small mobile */
-        padding: 1rem 0;
-    }
-    
-    .hero.banner-hidden {
-        min-height: calc(100vh - 60px);
+        padding: 1.5rem 0;
+        min-height: 65vh;
     }
     
     .hero-container {

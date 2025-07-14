@@ -112,23 +112,21 @@ const HomePage = () => {
   };
 
   return (
-    <>
-      {/* Particle Container */}
-      <div className="particles-container">
-        {[1, 2, 3, 4, 5, 6].map(i => (
-          <div key={i} className="particle"></div>
-        ))}
-      </div>
-
-      {/* Draft Banner */}
+    <div className="homepage-wrapper">
+      {/* Draft Banner - Fixed at top */}
       <div className={`draft-banner ${isBannerHidden ? 'hidden' : ''}`}>
         <span className="warning-icon">⚠️</span>
         CONCEPT DEMO - Not an official Rowan University program
         <button className="banner-close" onClick={() => setIsBannerHidden(true)}>×</button>
       </div>
 
-      {/* Header */}
-      <header className={`header ${isBannerHidden ? 'banner-hidden' : ''}`}>
+      {/* Banner Spacer - Pushes content down */}
+      <div className={`banner-spacer ${isBannerHidden ? 'hidden' : ''}`}></div>
+
+      {/* Header Wrapper for Sticky Behavior */}
+      <div className="header-wrapper">
+        {/* Header */}
+        <header className={`header ${isBannerHidden ? 'banner-hidden' : ''}`}>
         <nav className={`nav ${isHeaderShrunk ? 'shrink' : ''}`}>
           <Link to="/" className={`logo ${isHeaderShrunk ? 'shrink' : ''}`}>
             <div className="logo-container">
@@ -265,9 +263,12 @@ const HomePage = () => {
           ></div>
         </nav>
       </header>
+      </div>
 
-      {/* Hero Section */}
-      <section id="home" className={`hero loading ${isBannerHidden ? 'banner-hidden' : ''}`}>
+      {/* Main Content Area */}
+      <main className="main-content">
+        {/* Hero Section */}
+        <section id="home" className={`hero loading ${isBannerHidden ? 'banner-hidden' : ''}`}>
         <div className="hero-container">
           <div className="hero-content">
             <h1 className="hero-title">Transform Your AI Vision Into Reality</h1>
@@ -552,7 +553,8 @@ const HomePage = () => {
           <p>&copy; 2026 Intelligence Academy @ Rowan University. All rights reserved.</p>
         </div>
       </footer>
-    </>
+      </main>
+    </div>
   );
 };
 

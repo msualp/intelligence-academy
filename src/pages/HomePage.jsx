@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import DarkModeToggle from '../components/DarkModeToggle';
+import { navigationItems, applicationDeadline } from '../config/navigation.jsx';
 import './HomePage.css';
 
 const HomePage = () => {
@@ -244,61 +245,36 @@ const HomePage = () => {
                   Apply Now
                 </Link>
                 <p className="tray-cta-text">Spring 2026 Cohort</p>
-                <p className="tray-deadline">Applications Due: March 15, 2026</p>
+                <p className="tray-deadline">Applications Due: {applicationDeadline}</p>
               </div>
               
               <nav className="side-tray-nav">
-                <a href="#home" onClick={() => setIsNavDropdownOpen(false)}>
-                  <svg className="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                    <polyline points="9,22 9,12 15,12 15,22"/>
-                  </svg>
-                  Home
-                </a>
-                <a href="#program" onClick={() => setIsNavDropdownOpen(false)}>
-                  <svg className="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <circle cx="12" cy="12" r="3"/>
-                    <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"/>
-                  </svg>
-                  Program Overview
-                </a>
-                <a href="#differentiators" onClick={() => setIsNavDropdownOpen(false)}>
-                  <svg className="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
-                  </svg>
-                  What Makes Us Different
-                </a>
-                <a href="#stats" onClick={() => setIsNavDropdownOpen(false)}>
-                  <svg className="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <line x1="18" y1="20" x2="18" y2="10"/>
-                    <line x1="12" y1="20" x2="12" y2="4"/>
-                    <line x1="6" y1="20" x2="6" y2="14"/>
-                  </svg>
-                  AI Unicorn Statistics
-                </a>
-                <Link to="/partners" onClick={() => setIsNavDropdownOpen(false)}>
-                  <svg className="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
-                    <circle cx="9" cy="7" r="4"/>
-                    <path d="m22 21-3-3m0 0a5.5 5.5 0 1 0-7.78-7.78 5.5 5.5 0 0 0 7.78 7.78Z"/>
-                  </svg>
-                  Corporate Partners
-                </Link>
-                <Link to="/about" onClick={() => setIsNavDropdownOpen(false)}>
-                  <svg className="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <circle cx="12" cy="12" r="10"/>
-                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
-                    <path d="M12 17h.01"/>
-                  </svg>
-                  About Us
-                </Link>
-                <Link to="/contact" onClick={() => setIsNavDropdownOpen(false)}>
-                  <svg className="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                    <polyline points="22,6 12,13 2,6"/>
-                  </svg>
-                  Contact
-                </Link>
+                {navigationItems.map((item) => {
+                  // For homepage, use href for home page only items
+                  if (item.homePageOnly || (item.isHomePage && item.href)) {
+                    return (
+                      <a 
+                        key={item.id} 
+                        href={item.href} 
+                        onClick={() => setIsNavDropdownOpen(false)}
+                      >
+                        <span className="nav-icon">{item.icon}</span>
+                        {item.label}
+                      </a>
+                    );
+                  }
+                  // For all other items, use Link
+                  return (
+                    <Link 
+                      key={item.id} 
+                      to={item.to} 
+                      onClick={() => setIsNavDropdownOpen(false)}
+                    >
+                      <span className="nav-icon">{item.icon}</span>
+                      {item.label}
+                    </Link>
+                  );
+                })}
               </nav>
               
               <div className="side-tray-footer">
@@ -327,6 +303,10 @@ const HomePage = () => {
         <section id="home" className={`hero loading ${isBannerHidden ? 'banner-hidden' : ''}`}>
         <div className="hero-container">
           <div className="hero-content">
+            <a href="#differentiators" className="hero-pill">
+              <span className="pill-icon">🦄</span>
+              <span className="pill-text">Our Goal: Greater Philadelphia's First AI Unicorn by 2030</span>
+            </a>
             <h1 className="hero-title">Transform Your AI Vision Into Reality</h1>
             <h2 className="hero-subtitle">The AI Unicorn Advantage is Real</h2>
             <p className="hero-description">

@@ -99,6 +99,26 @@ function AboutPage() {
           <div className="container">
             <h2 className="section-title">Why AI Companies Become Unicorns Differently</h2>
             <p className="section-subtitle">The statistics that drive our unicorn-focused methodology</p>
+            
+            {/* Key Stats Cards */}
+            <div className="key-stats-grid">
+              <div className="key-stat-card">
+                <div className="stat-number">4x</div>
+                <div className="stat-label">Faster to $1B</div>
+                <div className="stat-detail">7 years vs. 25 years average</div>
+              </div>
+              <div className="key-stat-card">
+                <div className="stat-number">½</div>
+                <div className="stat-label">Team Size</div>
+                <div className="stat-detail">200-500 vs. 1,000+ employees</div>
+              </div>
+              <div className="key-stat-card">
+                <div className="stat-number">2x</div>
+                <div className="stat-label">Success Rate</div>
+                <div className="stat-detail">2% vs. 1% traditional startups</div>
+              </div>
+            </div>
+            
             <div className="stats-table">
               <div className="table-header">
                 <div className="header-cell">Unicorn Metric</div>
@@ -109,9 +129,9 @@ function AboutPage() {
               {unicornStats.map((stat, index) => (
                 <div key={index} className="table-row">
                   <div className="table-cell metric">{stat.metric}</div>
-                  <div className="table-cell traditional-value">{stat.traditional}</div>
-                  <div className="table-cell ai-value">{stat.ai}</div>
-                  <div className="table-cell advantage-value">{stat.advantage}</div>
+                  <div className="table-cell traditional-value" data-label="Traditional Startups">{stat.traditional}</div>
+                  <div className="table-cell ai-value" data-label="AI Startups">{stat.ai}</div>
+                  <div className="table-cell advantage-value" data-label="AI Advantage">{stat.advantage}</div>
                 </div>
               ))}
             </div>

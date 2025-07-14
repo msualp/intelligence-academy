@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import DarkModeToggle from '../components/DarkModeToggle';
 import './HomePage.css';
@@ -7,9 +8,45 @@ const HomePage = () => {
   const [isBannerHidden, setIsBannerHidden] = useState(false);
   const [isNavDropdownOpen, setIsNavDropdownOpen] = useState(false);
   const [isHeaderShrunk, setIsHeaderShrunk] = useState(false);
+  const [showUnicornPopup, setShowUnicornPopup] = useState(false);
+  const [showStatsPopup, setShowStatsPopup] = useState(false);
   const observerRef = useRef(null);
+  const unicornPopupRef = useRef(null);
+  const statsPopupRef = useRef(null);
+  
+  // Create portal container for popups
+  useEffect(() => {
+    // Create portal container if it doesn't exist
+    let portalContainer = document.getElementById('popup-portal');
+    if (!portalContainer) {
+      portalContainer = document.createElement('div');
+      portalContainer.id = 'popup-portal';
+      document.body.appendChild(portalContainer);
+    }
+    
+    // Clean up on unmount
+    return () => {
+      if (portalContainer && document.body.contains(portalContainer)) {
+        document.body.removeChild(portalContainer);
+      }
+    };
+  }, []);
 
   useEffect(() => {
+    // Close popups when clicking outside
+    const handleClickOutside = (e) => {
+      // Only close if the click is not on the trigger elements
+      if (!e.target.classList.contains('unicorn-factory') && 
+          !e.target.classList.contains('asterisk') &&
+          !e.target.classList.contains('stat-highlight') && 
+          !e.target.classList.contains('footnote-ref') &&
+          !e.target.closest('.popup-content')) {
+        setShowUnicornPopup(false);
+        setShowStatsPopup(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    
     // Enhanced scroll handler for header shrink effect with glassmorphism
     const handleScroll = () => {
       const header = document.querySelector('.header');
@@ -83,9 +120,22 @@ const HomePage = () => {
         e.preventDefault();
         const target = document.querySelector(href);
         if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
+          // Get header height to adjust scroll position
+          const header = document.querySelector('.header');
+          const headerHeight = header ? header.offsetHeight : 0;
+          const banner = document.querySelector('.draft-banner');
+          const bannerHeight = banner && !banner.classList.contains('hidden') ? banner.offsetHeight : 0;
+          
+          // Calculate total offset (header + banner + extra padding)
+          const totalOffset = headerHeight + bannerHeight + 20;
+          
+          // Get the target's position
+          const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+          
+          // Scroll to the target with offset
+          window.scrollTo({
+            top: targetPosition - totalOffset,
+            behavior: 'smooth'
           });
         }
       });
@@ -94,6 +144,7 @@ const HomePage = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
       document.removeEventListener('click', handleOutsideClick);
+      document.removeEventListener('mousedown', handleClickOutside);
       if (observerRef.current) {
         observerRef.current.disconnect();
       }
@@ -112,6 +163,7 @@ const HomePage = () => {
   };
 
   return (
+    <>
     <div className="homepage-wrapper">
       {/* Draft Banner - Fixed at top */}
       <div className={`draft-banner ${isBannerHidden ? 'hidden' : ''}`}>
@@ -134,8 +186,12 @@ const HomePage = () => {
               <div className="logo-text">
                 <div className="logo-main">Intelligence Academy <span className="rowan">@ Rowan</span></div>
                 <div className={`logo-subtitle ${isHeaderShrunk ? 'shrink' : ''}`}>
-                  AI Startup Accelerator & <span className="unicorn-factory">Unicorn Factory</span>
-                  <span className="asterisk">*</span>
+                  AI Startup Accelerator & <span 
+                    className="unicorn-factory"
+                    onClick={() => setShowUnicornPopup(!showUnicornPopup)}
+                  >Unicorn Factory<span className="asterisk">*</span></span>
+                  
+                  {/* Unicorn Factory Popup rendered via portal */}
                 </div>
               </div>
             </div>
@@ -274,7 +330,21 @@ const HomePage = () => {
             <h1 className="hero-title">Transform Your AI Vision Into Reality</h1>
             <h2 className="hero-subtitle">The AI Unicorn Advantage is Real</h2>
             <p className="hero-description">
-              More AI startups are reaching billion-dollar valuations in <span className="stat-highlight">quarter the time</span> with <span className="stat-highlight">half the team</span> and <span className="stat-highlight">double the success rate</span><a href="#footnote-1" className="footnote-ref">¹</a> vs. traditional unicorns. Our program focuses on the specific methodology and partnerships that maximize your AI startup's unicorn potential.
+              More AI startups are reaching billion-dollar valuations in <span 
+                className="stat-highlight"
+                onClick={() => setShowStatsPopup(!showStatsPopup)}
+              >quarter the time</span> with <span 
+                className="stat-highlight"
+                onClick={() => setShowStatsPopup(!showStatsPopup)}
+              >half the team</span> and <span 
+                className="stat-highlight"
+                onClick={() => setShowStatsPopup(!showStatsPopup)}
+              >double the success rate</span><span 
+                className="footnote-ref"
+                onClick={() => setShowStatsPopup(!showStatsPopup)}
+              >¹</span> vs. traditional unicorns. Our program focuses on the specific methodology and partnerships that maximize your AI startup's unicorn potential.
+              
+              {/* Stats Popup rendered via portal */}
             </p>
             
             <div className="hero-cta">
@@ -289,14 +359,17 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-        
-        <div className="hero-footer">
+      </section>
+      
+      {/* Fine Print Section */}
+      <section className="fine-print-section">
+        <div className="container">
           <p className="disclaimer">
-            <span className="asterisk">*</span>Aspiring unicorn catalyst based on AI sector performance data. While unicorn outcomes remain statistically rare (2% of AI startups vs. 1% traditional), our methodology systematically addresses the factors that give AI companies demonstrable advantages in achieving billion-dollar valuations.<a href="#stats" className="learn-more-link">Learn More</a>
+            <span className="asterisk">*</span>Aspiring unicorn catalyst based on AI sector performance data. While unicorn outcomes remain statistically rare (2% of AI startups vs. 1% traditional), our methodology systematically addresses the factors that give AI companies demonstrable advantages in achieving billion-dollar valuations.<a href="#differentiators" className="learn-more-link">Learn More</a>
           </p>
           
           <p className="footnote" id="footnote-1">
-            ¹ Source: CB Insights State of AI Report 2024, PitchBook Unicorn Analysis<a href="#stats" className="learn-more-link">Learn More</a>
+            <span className="footnote-number">¹</span> Source: CB Insights State of AI Report 2024, PitchBook Unicorn Analysis<a href="#stats" className="learn-more-link">Learn More</a>
           </p>
         </div>
       </section>
@@ -508,8 +581,8 @@ const HomePage = () => {
         <div className="container">
           <h2 className="section-title">Ready to Build Your AI Unicorn<span className="asterisk">*</span>?</h2>
           <p className="section-subtitle">Submit your 2-minute application and take the first step toward billion-dollar impact</p>
-          <Link to="/apply" className="cta-white">Submit 2-Min Application</Link>
-          <p style={{ marginTop: '1rem', opacity: 0.8 }}>Spring 2026 Cohort - Limited to 8 Teams</p>
+          <Link to="/apply" className="btn-primary">Submit 2-Min Application</Link>
+          <p className="cta-subtext">Spring 2026 Cohort - Limited to 8 Teams</p>
         </div>
       </section>
 
@@ -555,6 +628,67 @@ const HomePage = () => {
       </footer>
       </main>
     </div>
+    
+    {/* Portal for Unicorn Popup */}
+    {showUnicornPopup && ReactDOM.createPortal(
+      <div className="info-popup unicorn-popup" ref={unicornPopupRef}>
+        <div className="popup-content">
+          <button className="popup-close" onClick={() => setShowUnicornPopup(false)}>×</button>
+          <p>
+            <span className="asterisk">*</span>Aspiring unicorn catalyst based on AI sector performance data. While unicorn outcomes remain statistically rare (2% of AI startups vs. 1% traditional).
+          </p>
+          <p style={{ marginTop: '1rem', fontSize: '1.2rem', fontWeight: '500' }}>
+            Our methodology systematically addresses the factors that give AI companies demonstrable advantages in achieving billion-dollar valuations.
+          </p>
+          <p style={{ marginTop: '1rem', fontSize: '1.25rem', fontWeight: '700', color: 'var(--accent-orange)' }}>
+            Intelligence Academy aspires to create Greater Philadelphia's first AI unicorn by 2030.
+          </p>
+          <a 
+            href="#differentiators" 
+            className="popup-learn-more"
+            onClick={() => setShowUnicornPopup(false)}
+          >
+            Learn More
+          </a>
+        </div>
+      </div>,
+      document.getElementById('popup-portal') || document.body
+    )}
+    
+    {/* Portal for Stats Popup */}
+    {showStatsPopup && ReactDOM.createPortal(
+      <div className="info-popup stats-popup" ref={statsPopupRef}>
+        <div className="popup-content">
+          <button className="popup-close" onClick={() => setShowStatsPopup(false)}>×</button>
+          <p>
+            <span className="footnote-number">¹</span> Based on analysis of AI startup success metrics:
+          </p>
+          <p style={{ fontSize: '1.15rem', marginTop: '0.5rem', fontWeight: '500' }}>
+            • <strong>Quarter the time:</strong> AI startups reach $1B valuation in avg. 3.5 years vs. 7+ years for traditional tech (CB Insights)
+          </p>
+          <p style={{ fontSize: '1.15rem', marginTop: '0.5rem', fontWeight: '500' }}>
+            • <strong>Half the team:</strong> Median AI unicorn team size: 250 employees vs. 500+ for traditional unicorns (PitchBook 2024)
+          </p>
+          <p style={{ fontSize: '1.15rem', marginTop: '0.5rem', fontWeight: '500' }}>
+            • <strong>Double the success:</strong> 82% survival rate for accelerator-backed AI startups vs. 40% industry average (NSF I-Corps data)
+          </p>
+          <p style={{ fontSize: '1rem', marginTop: '1rem', fontStyle: 'italic', fontWeight: '500' }}>
+            Sources: CB Insights State of AI Report 2024, PitchBook Unicorn Analysis, NSF I-Corps Program Statistics
+          </p>
+          <a 
+            href="https://www.cbinsights.com/research/report/ai-trends-2024/" 
+            className="popup-learn-more"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ marginTop: '0.5rem' }}
+          >
+            View CB Insights Report
+          </a>
+        </div>
+      </div>,
+      document.getElementById('popup-portal') || document.body
+    )}
+    </>
   );
 };
 

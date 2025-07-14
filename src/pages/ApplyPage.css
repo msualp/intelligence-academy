@@ -1,8 +1,8 @@
 /* Apply Page Styles - Uses centralized CSS variables from src/index.css */
 .apply-page {
   min-height: 100vh;
-  padding-top: 120px;
-  background: transparent;
+  padding-top: 0; /* Removed padding-top as it's now handled by body padding */
+  background: transparent; /* Already transparent to show animated background */
   color: var(--text-primary);
   transition: background 0.3s ease, color 0.3s ease;
 }
@@ -453,6 +453,31 @@ select {
 [data-theme="dark"] .hero-learn-more:hover {
   background: rgba(255, 255, 255, 0.12);
   border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Primary Button Style */
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-orange), var(--gradient-end));
+  color: white !important; /* Ensure text is white in both light and dark modes */
+  padding: 1.1rem 2.4rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4);
+}
+
+[data-theme="dark"] .btn-primary {
+  color: white !important;
 }
 
 [data-theme="dark"] .hero-disclaimer,

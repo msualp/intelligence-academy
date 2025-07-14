@@ -6,7 +6,11 @@ function DraftBanner() {
 
   const handleClose = () => {
     setIsHidden(true)
-    document.querySelector('.header')?.classList.add('banner-hidden')
+    // When banner is hidden, move header to top
+    const header = document.querySelector('.header')
+    if (header) {
+      header.classList.add('banner-hidden')
+    }
     document.querySelector('.hero')?.classList.add('banner-hidden')
   }
 

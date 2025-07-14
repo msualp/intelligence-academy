@@ -3,8 +3,8 @@
 /* Contact Page - Uses centralized CSS variables from src/index.css */
 .contact-page {
   min-height: 100vh;
-  padding-top: 120px;
-  background: var(--bg-gradient);
+  padding-top: 0; /* Removed padding-top as it's now handled by body padding */
+  background: transparent; /* Changed to transparent to show animated background */
   color: var(--text-primary);
   transition: background 0.3s ease, color 0.3s ease;
 }
@@ -312,13 +312,13 @@
 .contact-cta .cta-title {
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 800;
-  color: white;
+  color: var(--text-primary); /* Changed to use text-primary variable for dark mode support */
   margin-bottom: 1rem;
 }
 
 .contact-cta .cta-description {
   font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-secondary); /* Changed to use text-secondary variable for dark mode support */
   margin-bottom: 2rem;
   max-width: 600px;
   margin-left: auto;
@@ -327,7 +327,7 @@
 
 .contact-cta .cta-subtext {
   font-size: clamp(0.9rem, 2vw, 1rem);
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-secondary); /* Changed to use text-secondary variable for dark mode support */
   margin-top: 1rem;
 }
 

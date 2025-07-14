@@ -1,6 +1,9 @@
 /* Draft Banner */
 .draft-banner {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     background: linear-gradient(135deg, #FF3B30 0%, #FF9500 100%);
     color: var(--white);
     padding: 0.3rem 2rem;

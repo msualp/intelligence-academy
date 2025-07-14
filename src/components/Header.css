@@ -1,7 +1,7 @@
 /* Header - Improved */
 .header {
-    position: sticky;
-    top: 0;
+    position: fixed;
+    top: 35px; /* Height of the banner */
     left: 0;
     right: 0;
     background: rgba(255, 255, 255, 0.85);
@@ -13,6 +13,17 @@
     box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     transition: all 0.3s ease;
+}
+
+/* Add padding to body to prevent content from being hidden under fixed elements */
+body {
+    padding-top: calc(35px + 80px); /* Banner height + approximate header height */
+}
+
+/* When banner is hidden, adjust header position */
+.header.banner-hidden {
+    top: 0;
+    transition: top 0.3s ease;
 }
 
 [data-theme="dark"] .header {

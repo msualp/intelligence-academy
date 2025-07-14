@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import ParticleBackground from '../components/ParticleBackground'
 import './ApplyPage.css'
 
 function ApplyPage() {
@@ -145,7 +144,6 @@ function ApplyPage() {
   if (submitted) {
     return (
       <>
-        <ParticleBackground />
         <main className="apply-page">
           <section className="success-section">
             <div className="success-content">
@@ -165,7 +163,6 @@ function ApplyPage() {
 
   return (
     <>
-      <ParticleBackground />
       <main className="apply-page">
         {/* Hero Section */}
         <section className="apply-hero">
@@ -185,10 +182,29 @@ function ApplyPage() {
               Get invited to apply for our exclusive Spring 2026 cohort
             </p>
             <button 
-              className="hero-learn-more"
-              onClick={() => document.querySelector('.application-section').scrollIntoView({ behavior: 'smooth' })}
+              className="btn-primary"
+              onClick={() => {
+                // Get header height to adjust scroll position
+                const header = document.querySelector('.header');
+                const headerHeight = header ? header.offsetHeight : 0;
+                const banner = document.querySelector('.draft-banner');
+                const bannerHeight = banner && !banner.classList.contains('hidden') ? banner.offsetHeight : 0;
+                
+                // Calculate total offset (header + banner + extra padding)
+                const totalOffset = headerHeight + bannerHeight + 20;
+                
+                // Get the target's position
+                const target = document.querySelector('.application-section');
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+                
+                // Scroll to the target with offset
+                window.scrollTo({
+                  top: targetPosition - totalOffset,
+                  behavior: 'smooth'
+                });
+              }}
             >
-              Learn more about our program
+              Start Your 2-min Application Now!
             </button>
             <p className="hero-disclaimer">
               <span className="asterisk">*</span>While we focus on unicorn potential, we recognize that unicorn outcomes remain 

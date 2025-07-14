@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import ParticleBackground from '../components/ParticleBackground'
 import './AboutPage.css'
 
 function AboutPage() {
@@ -82,7 +81,6 @@ function AboutPage() {
 
   return (
     <>
-      <ParticleBackground />
       <main className="about-page">
         {/* Hero Section */}
         <section className="about-hero">

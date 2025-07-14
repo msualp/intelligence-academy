@@ -3,7 +3,7 @@
     padding: 8rem 2rem;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, #1a1a2e, #0a0a0f);
+    background: transparent; /* Changed to transparent to match other pages */
 }
 
 .cta-background {
@@ -47,7 +47,7 @@
 .cta-title {
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 800;
-    color: var(--white);
+    color: var(--text-primary);
     margin-bottom: 1.5rem;
     background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
     background-clip: text;
@@ -59,7 +59,7 @@
 
 .cta-subtitle {
     font-size: 1.25rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-secondary);
     margin-bottom: 3rem;
     line-height: 1.8;
 }
@@ -77,10 +77,17 @@
     justify-content: center;
     gap: 0.5rem;
     padding: 1rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--bg-primary);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-light);
+    transition: all 0.3s ease;
+}
+
+.cta-feature:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-small);
 }
 
 .feature-icon {
@@ -88,7 +95,7 @@
 }
 
 .feature-text {
-    color: var(--white);
+    color: var(--text-primary);
     font-weight: 600;
 }
 
@@ -119,19 +126,33 @@
 
 .btn-contact {
     background: transparent;
-    color: var(--white);
+    color: var(--text-primary);
     padding: 1.25rem 3rem;
     font-size: 1.2rem;
     font-weight: 700;
     border-radius: 50px;
     text-decoration: none;
     transition: all 0.3s ease;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    border: 2px solid var(--border-light);
 }
 
 .btn-contact:hover {
     background: rgba(255, 255, 255, 0.1);
     transform: translateY(-3px);
+}
+
+/* Dark mode specific styles */
+[data-theme="dark"] .cta-feature {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .btn-contact {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .btn-contact:hover {
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .cta-deadline {
